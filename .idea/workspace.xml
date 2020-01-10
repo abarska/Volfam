@@ -276,6 +276,7 @@
     <option name="width" value="1940" />
     <option name="height" value="1060" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -536,7 +537,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="848" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Captures" order="0" sideWeight="0.505" side_tool="true" weight="0.23489933" />
       <window_info content_ui="combo" id="Project" order="1" sideWeight="0.49860334" visible="true" weight="0.20872483" />
