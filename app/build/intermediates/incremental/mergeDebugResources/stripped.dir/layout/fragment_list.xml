@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+                                                       
+                                                  
+                                                             
+
+    
+
+                 
+                            
+                                                                
+           
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" android:tag="layout/fragment_list_0" xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools" tools:context="com.volfam.barska.fragments.ListFragment">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/training_list_recycler"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+        <TextView
+            android:id="@+id/welcomeTextView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:padding="@dimen/spacing_double"
+            android:text="@string/welcome_text"
+            android:textColor="@color/darkTextColor"
+            android:textSize="@dimen/header_text_size"
+            android:tag="binding_1"                         />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/add_training_fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/spacing_double"
+            android:layout_marginBottom="@dimen/spacing_double"
+            android:src="@drawable/ic_fab_volleyball_white_48dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:maxImageSize="@dimen/fab_button" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+         

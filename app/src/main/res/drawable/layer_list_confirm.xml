@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item>
+        <shape android:shape="rectangle">
+            <stroke
+                android:width="@dimen/divider_height"
+                android:color="#000000" />
+            <corners android:radius="8dp" />
+            <solid android:color="@color/primaryColor" />
+            <size
+                android:width="@dimen/confirm_button_width"
+                android:height="@dimen/confirm_button_height" />
+        </shape>
+    </item>
+
+    <item>
+        <bitmap
+            android:gravity="center"
+            android:src="@drawable/checkmark_96dp" />
+    </item>
+</layer-list>

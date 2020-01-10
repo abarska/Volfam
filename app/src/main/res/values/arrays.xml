@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- strings for months-->
+    <array name="months">
+        <item>января</item>
+        <item>февраля</item>
+        <item>марта</item>
+        <item>апреля</item>
+        <item>мая</item>
+        <item>июня</item>
+        <item>июля</item>
+        <item>августа</item>
+        <item>сентября</item>
+        <item>октября</item>
+        <item>ноября</item>
+        <item>декабря</item>
+    </array>
+
+    <!-- strings for days of the week-->
+    <array name="week_days_full">
+        <item>Воскресенье</item>
+        <item>Понедельник</item>
+        <item>Вторник</item>
+        <item>Среда</item>
+        <item>Четверг</item>
+        <item>Пятница</item>
+        <item>Суббота</item>
+    </array>
+
+    <!-- strings for days of the week-->
+    <array name="week_days_short">
+        <item>ВС</item>
+        <item>ПН</item>
+        <item>ВТ</item>
+        <item>СР</item>
+        <item>ЧТ</item>
+        <item>ПТ</item>
+        <item>СБ</item>
+    </array>
+
+    <array name="groups">
+        <item>@string/group_label_light</item>
+        <item>@string/group_label_medium</item>
+        <item>@string/group_label_girls</item>
+        <item>@string/group_label_family</item>
+    </array>
+
+    <array name="trainers">
+        <item>@string/trainer_label_smugilev</item>
+        <item>@string/trainer_label_sokolovskaya</item>
+        <item>@string/no_trainer_label</item>
+    </array>
+
+    <array name="places">
+        <item>@string/place_label_kuznechnaya</item>
+        <item>@string/place_label_didrikhsona</item>
+        <item>@string/place_label_peresyp</item>
+    </array>
+
+</resources>

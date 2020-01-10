@@ -1,0 +1,76 @@
+<resources>
+
+    <string name="app_name">Volfam</string>
+    <string name="welcome_text">Добро пожаловать!\n\n Чтоб создать новую тренировку, нажмите на кнопку внизу экрана</string>
+
+    <string name="date_label">Дата:</string>
+    <string name="time_label">Время:</string>
+    <string name="start_label">Начало:</string>
+    <string name="price_label">Цена:</string>
+
+    <string name="group_label">Группа:</string>
+    <string name="group_label_light">Лайт</string>
+    <string name="group_label_medium">Медиум</string>
+    <string name="group_label_girls">Женская</string>
+    <string name="group_label_family">Семейная</string>
+
+    <string name="trainer_label">Тренер:</string>
+    <string name="trainer_label_smugilev">Смугилёв Олег Анатольевич</string>
+    <string name="trainer_label_sokolovskaya">Соколовская Елена Рабиговна</string>
+    <string name="no_trainer_label">Без тренера</string>
+
+    <string name="place_label">Адрес:</string>
+    <string name="place_label_kuznechnaya">Кузнечная 1 Академия Связи</string>
+    <string name="place_label_didrikhsona">Дидрихсона 4 Строительная Академия</string>
+    <string name="place_label_peresyp">Черноморского Казачества 12 Механико-технологический колледж</string>
+
+    <!-- fragment labels -->
+    <string name="list_fragment_label">Список тренировок</string>
+    <string name="create_fragment_label">Открыть плюсовалку</string>
+    <string name="training_details">Детали тренировки</string>
+    <string name="filter_fragment_label">Настроить фильтры</string>
+
+    <string name="share_intent_text">Плюсуемся!\nДата: %s\nВремя: %s\nГруппа: %s\n%s\nЗал: %s\nСтоимость: %s\n</string>
+    <string name="group_price_formatter">%s - %s</string>
+    <string name="price_formatter">%d грн</string>
+    <string name="free_of_charge_label">бесплатно</string>
+
+    <string name="starttime_with_label">Начало в %s</string>
+    <string name="group_with_label">Группа: %s</string>
+    <string name="trainer_with_label">Тренер: %s</string>
+    <string name="place_with_label">Зал: %s</string>
+
+    <!-- errors -->
+    <string name="label_error">Упс! Ошибочка вышла...</string>
+    <string name="incomplete_data_error">Все поля должны быть заполнены</string>
+    <string name="past_date_error">Неверно выбрана дата</string>
+    <string name="absent_price_error">Не введена стоимость тренировки</string>
+    <string name="incorrect_price_error">Неверно введена стоимость тренировки</string>
+    <string name="incorrect_price_error2">Стоимость тренировки не кратна 5</string>
+    <string name="no_messenger_installed_error">Установите приложение для отправки текстовых сообщений</string>
+    <string name="negative_price_error">Цена не может быть меньше нуля</string>
+
+    <!-- warnings -->
+    <string name="high_price_warning">Подозрительно высокая стоимость тренировки</string>
+
+    <string name="action_delete_label">Удалить все записи</string>
+    <string name="action_filter_label">Фильтры</string>
+    <string name="share_again_checkbox_label">Повторить плюсовалку</string>
+
+    <!-- confirmation dialog strings -->
+    <string name="confirmation_dialog_header">Удалить все записи?</string>
+    <string name="confirmation_dialog_body">Это действие нельзя отменить</string>
+    <string name="yes_button">Да</string>
+    <string name="no_button">Нет</string>
+    <string name="data_deleted_label">Данные удалены</string>
+    <string name="placeholder_text">placeholder</string>
+
+    <string name="past_trainings_label">Прошедшие</string>
+    <string name="future_trainings_label">Запланированные</string>
+    <string name="change_button">Изменить</string>
+    <string name="cancel">Cancel</string>
+
+
+    <string name="key_database_has_values">com.volfam.barska.database_has_values</string>
+
+</resources>

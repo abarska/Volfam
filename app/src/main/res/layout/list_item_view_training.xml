@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="training"
+            type="com.volfam.barska.data.Training" />
+
+        <variable
+            name="clickListener"
+            type="com.volfam.barska.adapters.TrainingClickListener" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="@{() -> clickListener.onClick(training)}">
+
+        <ImageView
+            android:id="@+id/trainer_icon"
+            android:layout_width="@dimen/trainer_image_width"
+            android:layout_height="@dimen/trainer_image_height"
+            android:layout_marginStart="@dimen/spacing_normal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:trainer_image="@{training.trainer}" />
+
+        <TextView
+            android:id="@+id/date_textview"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing_normal"
+            android:layout_marginTop="@dimen/spacing_half"
+            android:layout_marginEnd="@dimen/spacing_normal"
+            android:layout_marginBottom="@dimen/spacing_half"
+            android:textColor="@color/darkTextColor"
+            android:textStyle="bold"
+            app:formatted_date_time="@{training.date}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/trainer_icon"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="placeholder1" />
+
+        <TextView
+            android:id="@+id/group_textview"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/spacing_half"
+            android:textColor="@color/darkTextColor"
+            app:formatted_group_price="@{training}"
+            app:layout_constraintEnd_toEndOf="@+id/date_textview"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/date_textview"
+            app:layout_constraintTop_toBottomOf="@+id/date_textview"
+            tools:text="placeholder2" />
+
+        <TextView
+            android:id="@+id/place_textview"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/spacing_half"
+            android:textColor="@color/darkTextColor"
+            app:layout_constraintEnd_toEndOf="@+id/group_textview"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/group_textview"
+            app:layout_constraintTop_toBottomOf="@+id/group_textview"
+            app:place_with_breakline="@{training.place}"
+            tools:text="placeholder3" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/divider_height"
+            android:layout_marginTop="@dimen/spacing_half"
+            android:layout_marginBottom="@dimen/spacing_half"
+            android:background="@color/darkTextColor"
+            app:layout_constraintTop_toBottomOf="@+id/place_textview" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
