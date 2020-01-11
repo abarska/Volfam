@@ -64,6 +64,7 @@ class ListFragment : Fragment() {
             // change filter icon depending on isFiltered boolean
             activity?.invalidateOptionsMenu()
 
+            // new comment
             list?.let { adapter.addHeaderAndSubmitList(it) }
         })
 
