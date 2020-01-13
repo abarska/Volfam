@@ -35,7 +35,7 @@ interface TrainingDao {
     ): LiveData<List<Training>>
 
     @Query("SELECT COUNT ($TRAINING_COLUMN_ID) FROM $TRAINING_TABLE_NAME")
-    fun getRows(): Int
+    fun getRows(): LiveData<Int>
 
     @Query("SELECT MAX ($TRAINING_COLUMN_PRICE) FROM $TRAINING_TABLE_NAME")
     fun getMaxPrice(): Int

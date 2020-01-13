@@ -16,7 +16,6 @@ import com.volfam.barska.data.VolfamDatabase
 import com.volfam.barska.databinding.FragmentListBinding
 import com.volfam.barska.viewmodels.ListViewModel
 import com.volfam.barska.viewmodels.ListViewModelFactory
-import timber.log.Timber
 
 class ListFragment : Fragment() {
 
@@ -66,6 +65,12 @@ class ListFragment : Fragment() {
 
             // new comment
             list?.let { adapter.addHeaderAndSubmitList(it) }
+        })
+
+        listViewModel.rowsInTable.observe(this, Observer { rows ->
+            rows.let {
+                listViewModel.updateIsFiltered(rows != (binding.trainingListRecycler.adapter as TrainingAdapter).itemCount)
+            }
         })
 
         listViewModel.navigateToDetailFragment.observe(this, Observer { trainingId ->

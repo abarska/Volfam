@@ -3,7 +3,6 @@ package com.volfam.barska.viewmodels
 import android.app.Application
 import android.view.View
 import androidx.lifecycle.*
-import com.volfam.barska.data.Training
 import com.volfam.barska.data.TrainingDao
 import kotlinx.coroutines.*
 import timber.log.Timber
@@ -20,38 +19,27 @@ class ListViewModel(
     private var viewModelJob = Job()
     private val uiScope = CoroutineScope(Dispatchers.Main + viewModelJob)
 
-    private var _trainings =
+    val trainings =
         if (groups != null && trainers != null && places != null) {
             trainingDao.getAllTrainingsWithArgs(groups, trainers, places)
         } else {
             trainingDao.getAllTrainings()
         }
-    val trainings: LiveData<List<Training>>
-        get() = _trainings
 
-    private var rows = 0
+    // the observer should check isFiltered boolean only when rows initialized
+    val rowsInTable = trainingDao.getRows()
+    var isFiltered = false
 
-    init {
-        uiScope.launch {
-            rows = getRowsInBackground()
-        }
+    fun updateIsFiltered(newValue: Boolean) {
+        Timber.i("isFiltered = $isFiltered")
+        isFiltered = newValue
     }
-
-    private suspend fun getRowsInBackground() =
-        withContext(Dispatchers.IO) { trainingDao.getRows() }
-
-    val isFiltered: Boolean
-        get() {
-            Timber.i("list size is ${_trainings.value?.size}")
-            Timber.i("rows number is $rows")
-            return rows == _trainings.value?.size
-        }
 
     fun clearFilters() {
-        _trainings = trainingDao.getAllTrainings()
+        // code here
     }
 
-    // don't change further code
+    // the error is somewhere above this code
     val listHasNoData: LiveData<Int> = Transformations.map(trainings) {
         it?.let { if (it.isEmpty()) View.VISIBLE else View.INVISIBLE }
     }

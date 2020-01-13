@@ -12,6 +12,7 @@ import androidx.room.util.DBUtil;
 import androidx.room.util.StringUtil;
 import androidx.sqlite.db.SupportSQLiteStatement;
 import java.lang.Exception;
+import java.lang.Integer;
 import java.lang.Override;
 import java.lang.String;
 import java.lang.StringBuilder;
@@ -344,23 +345,37 @@ public final class TrainingDao_Impl implements TrainingDao {
   }
 
   @Override
-  public int getRows() {
+  public LiveData<Integer> getRows() {
     final String _sql = "SELECT COUNT (volfam_training_column_id) FROM volfam_training_table";
     final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 0);
-    __db.assertNotSuspendingTransaction();
-    final Cursor _cursor = DBUtil.query(__db, _statement, false, null);
-    try {
-      final int _result;
-      if(_cursor.moveToFirst()) {
-        _result = _cursor.getInt(0);
-      } else {
-        _result = 0;
+    return __db.getInvalidationTracker().createLiveData(new String[]{"volfam_training_table"}, false, new Callable<Integer>() {
+      @Override
+      public Integer call() throws Exception {
+        final Cursor _cursor = DBUtil.query(__db, _statement, false, null);
+        try {
+          final Integer _result;
+          if(_cursor.moveToFirst()) {
+            final Integer _tmp;
+            if (_cursor.isNull(0)) {
+              _tmp = null;
+            } else {
+              _tmp = _cursor.getInt(0);
+            }
+            _result = _tmp;
+          } else {
+            _result = null;
+          }
+          return _result;
+        } finally {
+          _cursor.close();
+        }
       }
-      return _result;
-    } finally {
-      _cursor.close();
-      _statement.release();
-    }
+
+      @Override
+      protected void finalize() {
+        _statement.release();
+      }
+    });
   }
 
   @Override
