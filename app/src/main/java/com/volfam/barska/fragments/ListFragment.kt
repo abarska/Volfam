@@ -16,7 +16,6 @@ import com.volfam.barska.data.VolfamDatabase
 import com.volfam.barska.databinding.FragmentListBinding
 import com.volfam.barska.viewmodels.ListViewModel
 import com.volfam.barska.viewmodels.ListViewModelFactory
-import timber.log.Timber
 
 class ListFragment : Fragment() {
 
@@ -35,21 +34,7 @@ class ListFragment : Fragment() {
         binding.lifecycleOwner = this
 
         val app = requireNotNull(this.activity).application
-
-        val triple = arguments?.let {
-            initQueryParams(ListFragmentArgs.fromBundle(it))
-        }
-        val groups = triple?.component1()
-        val trainers = triple?.component2()
-        val places = triple?.component3()
-
-        val factory = ListViewModelFactory(
-            VolfamDatabase.getInstance(app).trainingDao,
-            app,
-            groups,
-            trainers,
-            places
-        )
+        val factory = ListViewModelFactory(VolfamDatabase.getInstance(app).trainingDao, app)
         listViewModel = ViewModelProviders.of(this, factory).get(ListViewModel::class.java)
         binding.viewModel = listViewModel
 
@@ -59,22 +44,22 @@ class ListFragment : Fragment() {
         binding.trainingListRecycler.adapter = adapter
 
         listViewModel.trainings.observe(this, Observer { list ->
-
-            // hide clear menu icon if the list is null or empty
-            // change filter icon depending on isFiltered boolean
             activity?.invalidateOptionsMenu()
-
-            list?.let { adapter.addHeaderAndSubmitList(it) }
-        })
-
-        listViewModel.navigateToDetailFragment.observe(this, Observer { trainingId ->
-            trainingId?.let {
-                findNavController().navigate(
-                    ListFragmentDirections.actionListFragmentToDetailFragment(it)
-                )
-                listViewModel.onTrainingDetailNavigated()
+            list?.let {
+                binding.welcomeTextView.visibility = if (list.isEmpty()) View.VISIBLE else View.GONE
+                adapter.addHeaderAndSubmitList(it)
             }
         })
+
+        listViewModel.navigateToDetailFragment.observe(this,
+            Observer { trainingId ->
+                trainingId?.let {
+                    findNavController().navigate(
+                        ListFragmentDirections.actionListFragmentToDetailFragment(it)
+                    )
+                    listViewModel.onTrainingDetailNavigated()
+                }
+            })
 
         listViewModel.navigateToFilterFragment.observe(this, Observer { maxPrice ->
             maxPrice?.let {
@@ -93,29 +78,6 @@ class ListFragment : Fragment() {
         return binding.root
     }
 
-    private fun initQueryParams(safeArgs: ListFragmentArgs): Triple<List<String>, List<String>, List<String>> {
-
-        val groups = resources.getStringArray(R.array.groups).toList()
-        val groupIndices = safeArgs.groupArray?.toList()
-        val selectedGroups =
-            if (groupIndices.isNullOrEmpty()) groups
-            else groupIndices.map { index -> groups[index] }
-
-        val trainers = resources.getStringArray(R.array.trainers).toList()
-        val trainerIndices = safeArgs.trainerArray?.toList()
-        val selectedTrainers =
-            if (trainerIndices.isNullOrEmpty()) trainers
-            else trainerIndices.map { index -> trainers[index] }
-
-        val places = resources.getStringArray(R.array.places).toList()
-        val placeIndices = safeArgs.placeArray?.toList()
-        val selectedPlaces =
-            if (placeIndices.isNullOrEmpty()) places
-            else placeIndices.map { index -> places[index] }
-
-        return Triple(selectedGroups, selectedTrainers, selectedPlaces)
-    }
-
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         inflater.inflate(R.menu.menu_list_fragment, menu)
         super.onCreateOptionsMenu(menu, inflater)
@@ -123,15 +85,10 @@ class ListFragment : Fragment() {
 
     override fun onPrepareOptionsMenu(menu: Menu) {
         super.onPrepareOptionsMenu(menu)
-
-        menu.findItem(R.id.action_clear).isVisible = !listViewModel.trainings.value.isNullOrEmpty()
-        menu.findItem(R.id.action_filter).isVisible = !listViewModel.trainings.value.isNullOrEmpty()
-
-        menu.findItem(R.id.action_filter).icon = if (listViewModel.isFiltered) {
-            resources.getDrawable(R.drawable.ic_antifilter_list_white_24dp, resources.newTheme())
-        } else {
-            resources.getDrawable(R.drawable.ic_filter_list_white_24dp, resources.newTheme())
-        }
+        menu.findItem(R.id.action_clear).isVisible =
+            !listViewModel.trainings.value.isNullOrEmpty()
+        menu.findItem(R.id.action_filter).isVisible =
+            !listViewModel.trainings.value.isNullOrEmpty()
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
@@ -141,8 +98,7 @@ class ListFragment : Fragment() {
                 return true
             }
             R.id.action_filter -> {
-                if (listViewModel.isFiltered) listViewModel.clearFilters()
-                else listViewModel.onFilterMenuItemClicked()
+                listViewModel.onFilterMenuItemClicked()
             }
         }
         return super.onOptionsItemSelected(item)

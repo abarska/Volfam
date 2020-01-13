@@ -1096,7 +1096,6 @@ drawable design_ic_visibility_off
 drawable design_password_eye
 drawable design_snackbar_background
 drawable ic_add_circle_outline_black_64dp
-drawable ic_antifilter_list_white_24dp
 drawable ic_delete_white_24dp
 drawable ic_edit_black_24dp
 drawable ic_fab_volleyball_white_48dp

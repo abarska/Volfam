@@ -3,55 +3,20 @@ package com.volfam.barska.viewmodels
 import android.app.Application
 import android.view.View
 import androidx.lifecycle.*
-import com.volfam.barska.data.Training
 import com.volfam.barska.data.TrainingDao
 import kotlinx.coroutines.*
-import timber.log.Timber
 
 class ListViewModel(
     private val trainingDao: TrainingDao,
-    val app: Application,
-    groups: List<String>?,
-    trainers: List<String>?,
-    places: List<String>?
+    val app: Application
 ) :
     AndroidViewModel(app) {
 
     private var viewModelJob = Job()
     private val uiScope = CoroutineScope(Dispatchers.Main + viewModelJob)
 
-    private var _trainings =
-        if (groups != null && trainers != null && places != null) {
-            trainingDao.getAllTrainingsWithArgs(groups, trainers, places)
-        } else {
-            trainingDao.getAllTrainings()
-        }
-    val trainings: LiveData<List<Training>>
-        get() = _trainings
+    val trainings = trainingDao.getAllTrainings()
 
-    private var rows = 0
-
-    init {
-        uiScope.launch {
-            rows = getRowsInBackground()
-        }
-    }
-
-    private suspend fun getRowsInBackground() =
-        withContext(Dispatchers.IO) { trainingDao.getRows() }
-
-    val isFiltered: Boolean
-        get() {
-            Timber.i("list size is ${_trainings.value?.size}")
-            Timber.i("rows number is $rows")
-            return rows == _trainings.value?.size
-        }
-
-    fun clearFilters() {
-        _trainings = trainingDao.getAllTrainings()
-    }
-
-    // don't change further code
     val listHasNoData: LiveData<Int> = Transformations.map(trainings) {
         it?.let { if (it.isEmpty()) View.VISIBLE else View.INVISIBLE }
     }
@@ -104,14 +69,11 @@ class ListViewModel(
 
 class ListViewModelFactory(
     private val trainingDao: TrainingDao,
-    private val application: Application,
-    private val groups: List<String>?,
-    private val trainers: List<String>?,
-    private val places: List<String>?
+    private val application: Application
 ) : ViewModelProvider.Factory {
     override fun <T : ViewModel?> create(modelClass: Class<T>): T {
         if (modelClass.isAssignableFrom(ListViewModel::class.java)) {
-            return ListViewModel(trainingDao, application, groups, trainers, places) as T
+            return ListViewModel(trainingDao, application) as T
         }
         throw IllegalArgumentException("Unknown ViewModel class")
     }
