@@ -6,11 +6,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
 import android.widget.ImageView;
+import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.databinding.Bindable;
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
+import com.edmodo.rangebar.RangeBar;
 import com.volfam.barska.R;
 import com.volfam.barska.viewmodels.FilterViewModel;
 import java.lang.Deprecated;
@@ -42,6 +44,12 @@ public abstract class FragmentFilterBinding extends ViewDataBinding {
   public final CheckBox peresypCheckbox;
 
   @NonNull
+  public final RangeBar priceRangeBar;
+
+  @NonNull
+  public final TextView priceRangeTextview;
+
+  @NonNull
   public final CheckBox smugiljovCheckbox;
 
   @NonNull
@@ -51,13 +59,14 @@ public abstract class FragmentFilterBinding extends ViewDataBinding {
   public final ImageView submitButton;
 
   @Bindable
-  protected FilterViewModel mViewModel;
+  protected FilterViewModel mFilterViewModel;
 
   protected FragmentFilterBinding(Object _bindingComponent, View _root, int _localFieldCount,
       CheckBox didrikhsonaCheckbox, CheckBox familyCheckbox, CheckBox girlsCheckbox,
       CheckBox kuznechnayaCheckbox, CheckBox lightCheckbok, CheckBox mediumCheckbox,
-      CheckBox noTrainerCheckbox, CheckBox peresypCheckbox, CheckBox smugiljovCheckbox,
-      CheckBox sokolovskayaCheckbox, ImageView submitButton) {
+      CheckBox noTrainerCheckbox, CheckBox peresypCheckbox, RangeBar priceRangeBar,
+      TextView priceRangeTextview, CheckBox smugiljovCheckbox, CheckBox sokolovskayaCheckbox,
+      ImageView submitButton) {
     super(_bindingComponent, _root, _localFieldCount);
     this.didrikhsonaCheckbox = didrikhsonaCheckbox;
     this.familyCheckbox = familyCheckbox;
@@ -67,16 +76,18 @@ public abstract class FragmentFilterBinding extends ViewDataBinding {
     this.mediumCheckbox = mediumCheckbox;
     this.noTrainerCheckbox = noTrainerCheckbox;
     this.peresypCheckbox = peresypCheckbox;
+    this.priceRangeBar = priceRangeBar;
+    this.priceRangeTextview = priceRangeTextview;
     this.smugiljovCheckbox = smugiljovCheckbox;
     this.sokolovskayaCheckbox = sokolovskayaCheckbox;
     this.submitButton = submitButton;
   }
 
-  public abstract void setViewModel(@Nullable FilterViewModel viewModel);
+  public abstract void setFilterViewModel(@Nullable FilterViewModel filterViewModel);
 
   @Nullable
-  public FilterViewModel getViewModel() {
-    return mViewModel;
+  public FilterViewModel getFilterViewModel() {
+    return mFilterViewModel;
   }
 
   @NonNull

@@ -7,6 +7,7 @@
     <string name="time_label">Время:</string>
     <string name="start_label">Начало:</string>
     <string name="price_label">Цена:</string>
+    <string name="price_range">Цена от %d до %d гривен</string>
 
     <string name="group_label">Группа:</string>
     <string name="group_label_light">Лайт</string>
@@ -28,7 +29,7 @@
     <string name="list_fragment_label">Список тренировок</string>
     <string name="create_fragment_label">Открыть плюсовалку</string>
     <string name="training_details">Детали тренировки</string>
-    <string name="filter_fragment_label">Настроить фильтры</string>
+    <string name="filter_fragment_label">Фильтры</string>
     <string name="filtered_list_fragment_label">Отфильтрованный список</string>
 
     <string name="share_intent_text">Плюсуемся!\nДата: %s\nВремя: %s\nГруппа: %s\n%s\nЗал: %s\nСтоимость: %s\n</string>

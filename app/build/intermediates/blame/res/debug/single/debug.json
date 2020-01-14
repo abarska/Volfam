@@ -428,12 +428,12 @@
         "source": "C:\\Users\\ATNuser\\.gradle\\caches\\transforms-2\\files-2.1\\fe2c484049959aa43361e7a80d89db70\\appcompat-1.1.0\\res\\drawable-mdpi-v4\\abc_btn_radio_to_on_mtrl_015.png"
     },
     {
-        "merged": "C:\\Users\\ATNuser\\AndroidStudioProjects\\Volfam10\\app\\build\\intermediates\\res\\merged\\debug\\color-v23_abc_tint_default.xml.flat",
-        "source": "C:\\Users\\ATNuser\\.gradle\\caches\\transforms-2\\files-2.1\\fe2c484049959aa43361e7a80d89db70\\appcompat-1.1.0\\res\\color-v23\\abc_tint_default.xml"
-    },
-    {
         "merged": "C:\\Users\\ATNuser\\AndroidStudioProjects\\Volfam10\\app\\build\\intermediates\\res\\merged\\debug\\anim_abc_tooltip_enter.xml.flat",
         "source": "C:\\Users\\ATNuser\\.gradle\\caches\\transforms-2\\files-2.1\\fe2c484049959aa43361e7a80d89db70\\appcompat-1.1.0\\res\\anim\\abc_tooltip_enter.xml"
+    },
+    {
+        "merged": "C:\\Users\\ATNuser\\AndroidStudioProjects\\Volfam10\\app\\build\\intermediates\\res\\merged\\debug\\color-v23_abc_tint_default.xml.flat",
+        "source": "C:\\Users\\ATNuser\\.gradle\\caches\\transforms-2\\files-2.1\\fe2c484049959aa43361e7a80d89db70\\appcompat-1.1.0\\res\\color-v23\\abc_tint_default.xml"
     },
     {
         "merged": "C:\\Users\\ATNuser\\AndroidStudioProjects\\Volfam10\\app\\build\\intermediates\\res\\merged\\debug\\color_mtrl_chip_text_color.xml.flat",
@@ -550,6 +550,10 @@
     {
         "merged": "C:\\Users\\ATNuser\\AndroidStudioProjects\\Volfam10\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_ic_menu_selectall_mtrl_alpha.png.flat",
         "source": "C:\\Users\\ATNuser\\.gradle\\caches\\transforms-2\\files-2.1\\fe2c484049959aa43361e7a80d89db70\\appcompat-1.1.0\\res\\drawable-xxhdpi-v4\\abc_ic_menu_selectall_mtrl_alpha.png"
+    },
+    {
+        "merged": "C:\\Users\\ATNuser\\AndroidStudioProjects\\Volfam10\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_seek_thumb_normal.png.flat",
+        "source": "C:\\Users\\ATNuser\\.gradle\\caches\\transforms-2\\files-2.1\\bf3203bde7a9030f815506e768a730a4\\rangebar-1.0.0\\res\\drawable-xhdpi-v4\\seek_thumb_normal.png"
     },
     {
         "merged": "C:\\Users\\ATNuser\\AndroidStudioProjects\\Volfam10\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4_abc_btn_switch_to_on_mtrl_00012.9.png.flat",
@@ -1810,6 +1814,10 @@
     {
         "merged": "C:\\Users\\ATNuser\\AndroidStudioProjects\\Volfam10\\app\\build\\intermediates\\res\\merged\\debug\\layout_notification_template_lines_media.xml.flat",
         "source": "C:\\Users\\ATNuser\\.gradle\\caches\\transforms-2\\files-2.1\\e22774fe9443f117e5a82a011a0f1d21\\media-1.0.0\\res\\layout\\notification_template_lines_media.xml"
+    },
+    {
+        "merged": "C:\\Users\\ATNuser\\AndroidStudioProjects\\Volfam10\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_seek_thumb_pressed.png.flat",
+        "source": "C:\\Users\\ATNuser\\.gradle\\caches\\transforms-2\\files-2.1\\bf3203bde7a9030f815506e768a730a4\\rangebar-1.0.0\\res\\drawable-xhdpi-v4\\seek_thumb_pressed.png"
     },
     {
         "merged": "C:\\Users\\ATNuser\\AndroidStudioProjects\\Volfam10\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_text_select_handle_left_mtrl_light.png.flat",

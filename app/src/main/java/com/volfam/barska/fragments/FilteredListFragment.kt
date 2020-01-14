@@ -16,6 +16,8 @@ import com.volfam.barska.databinding.FragmentListFilteredBinding
 import com.volfam.barska.showErrorSnackbar
 import com.volfam.barska.viewmodels.FilteredListViewModel
 import com.volfam.barska.viewmodels.FilteredListViewModelFactory
+import timber.log.Timber
+import kotlin.math.max
 
 class FilteredListFragment : Fragment() {
 
@@ -33,11 +35,17 @@ class FilteredListFragment : Fragment() {
         binding.lifecycleOwner = this
 
         val triple = arguments?.let {
-            initQueryParams(FilteredListFragmentArgs.fromBundle(it))
+            initStringArrayParams(FilteredListFragmentArgs.fromBundle(it))
         }
         val groups = triple?.component1()
         val trainers = triple?.component2()
         val places = triple?.component3()
+
+        val pair = arguments?.let { initPriceRangeParams(FilteredListFragmentArgs.fromBundle(it)) }
+        val minPrice = pair?.component1()
+        val maxPrice = pair?.component2()
+
+        Timber.i("${groups.toString()} \n ${trainers.toString()} \n ${places.toString()} \n $minPrice \n $maxPrice")
 
         val app = requireNotNull(this.activity).application
         val factory = FilteredListViewModelFactory(
@@ -45,7 +53,9 @@ class FilteredListFragment : Fragment() {
             app,
             groups,
             trainers,
-            places
+            places,
+            minPrice,
+            maxPrice
         )
         filteredListViewModel =
             ViewModelProviders.of(this, factory).get(FilteredListViewModel::class.java)
@@ -56,7 +66,10 @@ class FilteredListFragment : Fragment() {
         filteredListViewModel.selectedTrainings.observe(this, Observer { list ->
             list?.let {
                 if (it.isEmpty()) {
-                    showErrorSnackbar(binding.root, getString(R.string.no_results_matching_filter_error))
+                    showErrorSnackbar(
+                        binding.root,
+                        getString(R.string.no_results_matching_filter_error)
+                    )
                     fragmentManager?.popBackStack()
                 } else adapter.addHeaderAndSubmitList(it)
             }
@@ -65,7 +78,7 @@ class FilteredListFragment : Fragment() {
         return binding.root
     }
 
-    private fun initQueryParams(safeArgs: FilteredListFragmentArgs): Triple<List<String>, List<String>, List<String>> {
+    private fun initStringArrayParams(safeArgs: FilteredListFragmentArgs): Triple<List<String>, List<String>, List<String>> {
 
         val groups = resources.getStringArray(R.array.groups).toList()
         val groupIndices = safeArgs.groupArray?.toList()
@@ -87,4 +100,7 @@ class FilteredListFragment : Fragment() {
 
         return Triple(selectedGroups, selectedTrainers, selectedPlaces)
     }
+
+    private fun initPriceRangeParams(safeArgs: FilteredListFragmentArgs) =
+        Pair(safeArgs.minPrice, safeArgs.maxPrice)
 }

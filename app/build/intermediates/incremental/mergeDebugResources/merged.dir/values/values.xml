@@ -687,7 +687,7 @@
     <string name="date_label">Дата:</string>
     <string name="fab_transformation_scrim_behavior" translatable="false">com.google.android.material.transformation.FabTransformationScrimBehavior</string>
     <string name="fab_transformation_sheet_behavior" translatable="false">com.google.android.material.transformation.FabTransformationSheetBehavior</string>
-    <string name="filter_fragment_label">Настроить фильтры</string>
+    <string name="filter_fragment_label">Фильтры</string>
     <string name="filtered_list_fragment_label">Отфильтрованный список</string>
     <string name="free_of_charge_label">бесплатно</string>
     <string name="future_trainings_label">Запланированные</string>
@@ -729,6 +729,7 @@
     <string name="placeholder_text">placeholder</string>
     <string name="price_formatter">%d грн</string>
     <string name="price_label">Цена:</string>
+    <string name="price_range">Цена от %d до %d гривен</string>
     <string name="search_menu_title">Search</string>
     <string name="share_again_checkbox_label">Повторить плюсовалку</string>
     <string name="share_intent_text">Плюсуемся!\nДата: %s\nВремя: %s\nГруппа: %s\n%s\nЗал: %s\nСтоимость: %s\n</string>
@@ -752,6 +753,9 @@
     <item name="android:windowEnterAnimation">@anim/design_bottom_sheet_slide_in</item>
     <item name="android:windowExitAnimation">@anim/design_bottom_sheet_slide_out</item>
   </style>
+    <style name="AppBaseTheme" parent="android:Theme.Light">
+        
+    </style>
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         
         <item name="colorPrimary">@color/primaryColor</item>
@@ -4351,6 +4355,19 @@
     <declare-styleable name="PopupWindowBackgroundState">
         
         <attr format="boolean" name="state_above_anchor"/>
+    </declare-styleable>
+    <declare-styleable name="RangeBar">
+        <attr format="integer" name="tickCount"/>
+        <attr format="dimension" name="tickHeight"/>
+        <attr format="dimension" name="barWeight"/>
+        <attr format="reference|color" name="barColor"/>
+        <attr format="dimension" name="connectingLineWeight"/>
+        <attr format="reference|color" name="connectingLineColor"/>
+        <attr format="dimension" name="thumbRadius"/>
+        <attr format="reference" name="thumbImageNormal"/>
+        <attr format="reference" name="thumbImagePressed"/>
+        <attr format="reference|color" name="thumbColorNormal"/>
+        <attr format="reference|color" name="thumbColorPressed"/>
     </declare-styleable>
     <declare-styleable name="RecycleListView">
         

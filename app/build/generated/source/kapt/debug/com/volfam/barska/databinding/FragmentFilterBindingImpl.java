@@ -24,7 +24,9 @@ public class FragmentFilterBindingImpl extends FragmentFilterBinding  {
         sViewsWithIds.put(R.id.kuznechnaya_checkbox, 8);
         sViewsWithIds.put(R.id.didrikhsona_checkbox, 9);
         sViewsWithIds.put(R.id.peresyp_checkbox, 10);
-        sViewsWithIds.put(R.id.submit_button, 11);
+        sViewsWithIds.put(R.id.price_range_textview, 11);
+        sViewsWithIds.put(R.id.price_range_bar, 12);
+        sViewsWithIds.put(R.id.submit_button, 13);
     }
     // views
     @NonNull
@@ -35,7 +37,7 @@ public class FragmentFilterBindingImpl extends FragmentFilterBinding  {
     // Inverse Binding Event Handlers
 
     public FragmentFilterBindingImpl(@Nullable androidx.databinding.DataBindingComponent bindingComponent, @NonNull View root) {
-        this(bindingComponent, root, mapBindings(bindingComponent, root, 12, sIncludes, sViewsWithIds));
+        this(bindingComponent, root, mapBindings(bindingComponent, root, 14, sIncludes, sViewsWithIds));
     }
     private FragmentFilterBindingImpl(androidx.databinding.DataBindingComponent bindingComponent, View root, Object[] bindings) {
         super(bindingComponent, root, 0
@@ -47,9 +49,11 @@ public class FragmentFilterBindingImpl extends FragmentFilterBinding  {
             , (android.widget.CheckBox) bindings[5]
             , (android.widget.CheckBox) bindings[3]
             , (android.widget.CheckBox) bindings[10]
+            , (com.edmodo.rangebar.RangeBar) bindings[12]
+            , (android.widget.TextView) bindings[11]
             , (android.widget.CheckBox) bindings[1]
             , (android.widget.CheckBox) bindings[2]
-            , (android.widget.ImageView) bindings[11]
+            , (android.widget.ImageView) bindings[13]
             );
         this.mboundView0 = (android.widget.ScrollView) bindings[0];
         this.mboundView0.setTag(null);
@@ -79,8 +83,8 @@ public class FragmentFilterBindingImpl extends FragmentFilterBinding  {
     @Override
     public boolean setVariable(int variableId, @Nullable Object variable)  {
         boolean variableSet = true;
-        if (BR.viewModel == variableId) {
-            setViewModel((com.volfam.barska.viewmodels.FilterViewModel) variable);
+        if (BR.filterViewModel == variableId) {
+            setFilterViewModel((com.volfam.barska.viewmodels.FilterViewModel) variable);
         }
         else {
             variableSet = false;
@@ -88,8 +92,8 @@ public class FragmentFilterBindingImpl extends FragmentFilterBinding  {
             return variableSet;
     }
 
-    public void setViewModel(@Nullable com.volfam.barska.viewmodels.FilterViewModel ViewModel) {
-        this.mViewModel = ViewModel;
+    public void setFilterViewModel(@Nullable com.volfam.barska.viewmodels.FilterViewModel FilterViewModel) {
+        this.mFilterViewModel = FilterViewModel;
     }
 
     @Override
@@ -113,7 +117,7 @@ public class FragmentFilterBindingImpl extends FragmentFilterBinding  {
     // dirty flag
     private  long mDirtyFlags = 0xffffffffffffffffL;
     /* flag mapping
-        flag 0 (0x1L): viewModel
+        flag 0 (0x1L): filterViewModel
         flag 1 (0x2L): null
     flag mapping end*/
     //end

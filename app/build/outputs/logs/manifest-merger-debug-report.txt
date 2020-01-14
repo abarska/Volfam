@@ -19,6 +19,7 @@ MERGED from [android.arch.navigation:navigation-common-ktx:1.0.0] C:\Users\ATNus
 MERGED from [androidx.lifecycle:lifecycle-extensions:2.1.0] C:\Users\ATNuser\.gradle\caches\transforms-2\files-2.1\003da091ad1e69d79a2c75346dbeec54\lifecycle-extensions-2.1.0\AndroidManifest.xml:17:1-25:12
 MERGED from [androidx.room:room-runtime:2.2.2] C:\Users\ATNuser\.gradle\caches\transforms-2\files-2.1\fb0a7910f4d13a6f5297d19f22ac845e\room-runtime-2.2.2\AndroidManifest.xml:17:1-30:12
 MERGED from [com.jakewharton.timber:timber:4.7.1] C:\Users\ATNuser\.gradle\caches\transforms-2\files-2.1\8527d7fd562a80f730423ff4712c8b77\jetified-timber-4.7.1\AndroidManifest.xml:2:1-9:12
+MERGED from [com.edmodo:rangebar:1.0.0] C:\Users\ATNuser\.gradle\caches\transforms-2\files-2.1\bf3203bde7a9030f815506e768a730a4\rangebar-1.0.0\AndroidManifest.xml:2:1-11:12
 MERGED from [android.arch.navigation:navigation-fragment:1.0.0] C:\Users\ATNuser\.gradle\caches\transforms-2\files-2.1\f666a5ffd25db603a28cf1ea8415203e\jetified-navigation-fragment-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.fragment:fragment:1.1.0] C:\Users\ATNuser\.gradle\caches\transforms-2\files-2.1\1ae0575c04ec308d81b13002a2aff3bc\fragment-1.1.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.appcompat:appcompat-resources:1.1.0] C:\Users\ATNuser\.gradle\caches\transforms-2\files-2.1\4e07392d73bf6777fdb9eff1dd5ae216\appcompat-resources-1.1.0\AndroidManifest.xml:17:1-24:12
@@ -159,6 +160,8 @@ MERGED from [androidx.room:room-runtime:2.2.2] C:\Users\ATNuser\.gradle\caches\t
 MERGED from [androidx.room:room-runtime:2.2.2] C:\Users\ATNuser\.gradle\caches\transforms-2\files-2.1\fb0a7910f4d13a6f5297d19f22ac845e\room-runtime-2.2.2\AndroidManifest.xml:20:5-22:41
 MERGED from [com.jakewharton.timber:timber:4.7.1] C:\Users\ATNuser\.gradle\caches\transforms-2\files-2.1\8527d7fd562a80f730423ff4712c8b77\jetified-timber-4.7.1\AndroidManifest.xml:5:5-43
 MERGED from [com.jakewharton.timber:timber:4.7.1] C:\Users\ATNuser\.gradle\caches\transforms-2\files-2.1\8527d7fd562a80f730423ff4712c8b77\jetified-timber-4.7.1\AndroidManifest.xml:5:5-43
+MERGED from [com.edmodo:rangebar:1.0.0] C:\Users\ATNuser\.gradle\caches\transforms-2\files-2.1\bf3203bde7a9030f815506e768a730a4\rangebar-1.0.0\AndroidManifest.xml:7:5-9:41
+MERGED from [com.edmodo:rangebar:1.0.0] C:\Users\ATNuser\.gradle\caches\transforms-2\files-2.1\bf3203bde7a9030f815506e768a730a4\rangebar-1.0.0\AndroidManifest.xml:7:5-9:41
 MERGED from [android.arch.navigation:navigation-fragment:1.0.0] C:\Users\ATNuser\.gradle\caches\transforms-2\files-2.1\f666a5ffd25db603a28cf1ea8415203e\jetified-navigation-fragment-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [android.arch.navigation:navigation-fragment:1.0.0] C:\Users\ATNuser\.gradle\caches\transforms-2\files-2.1\f666a5ffd25db603a28cf1ea8415203e\jetified-navigation-fragment-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.fragment:fragment:1.1.0] C:\Users\ATNuser\.gradle\caches\transforms-2\files-2.1\1ae0575c04ec308d81b13002a2aff3bc\fragment-1.1.0\AndroidManifest.xml:20:5-22:41

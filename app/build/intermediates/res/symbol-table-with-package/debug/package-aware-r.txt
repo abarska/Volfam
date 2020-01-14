@@ -105,7 +105,9 @@ attr backgroundSplit
 attr backgroundStacked
 attr backgroundTint
 attr backgroundTintMode
+attr barColor
 attr barLength
+attr barWeight
 attr barrierAllowsGoneWidgets
 attr barrierDirection
 attr behavior_autoHide
@@ -199,6 +201,8 @@ attr colorPrimaryDark
 attr colorSecondary
 attr colorSwitchThumbNormal
 attr commitIcon
+attr connectingLineColor
+attr connectingLineWeight
 attr constraintSet
 attr constraint_referenced_ids
 attr content
@@ -572,9 +576,16 @@ attr textLocale
 attr textStartPadding
 attr theme
 attr thickness
+attr thumbColorNormal
+attr thumbColorPressed
+attr thumbImageNormal
+attr thumbImagePressed
+attr thumbRadius
 attr thumbTextPadding
 attr thumbTint
 attr thumbTintMode
+attr tickCount
+attr tickHeight
 attr tickMark
 attr tickMarkTint
 attr tickMarkTintMode
@@ -1124,6 +1135,8 @@ drawable notification_template_icon_bg
 drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
+drawable seek_thumb_normal
+drawable seek_thumb_pressed
 drawable smugiljov_cropped
 drawable sokolovskaya_cropped
 drawable tooltip_frame_dark
@@ -1327,6 +1340,8 @@ id place_radio_group
 id place_textview
 id plus_five_button
 id price_edittext
+id price_range_bar
+id price_range_textview
 id price_textview
 id progress_circular
 id progress_horizontal
@@ -1621,6 +1636,7 @@ string place_with_label
 string placeholder_text
 string price_formatter
 string price_label
+string price_range
 string search_menu_title
 string share_again_checkbox_label
 string share_intent_text
@@ -1641,6 +1657,7 @@ style Animation_AppCompat_Dialog
 style Animation_AppCompat_DropDownUp
 style Animation_AppCompat_Tooltip
 style Animation_Design_BottomSheetDialog
+style AppBaseTheme
 style AppTheme
 style AppTheme_AppBarOverlay
 style AppTheme_NoActionBar
@@ -2209,6 +2226,7 @@ styleable NavigationView android_background android_fitsSystemWindows android_ma
 styleable Navigator android_label android_id
 styleable PopupWindow android_popupBackground android_popupAnimationStyle overlapAnchor
 styleable PopupWindowBackgroundState state_above_anchor
+styleable RangeBar barColor barWeight connectingLineColor connectingLineWeight thumbColorNormal thumbColorPressed thumbImageNormal thumbImagePressed thumbRadius tickCount tickHeight
 styleable RecycleListView paddingBottomNoButtons paddingTopNoTitle
 styleable RecyclerView android_orientation android_descendantFocusability fastScrollEnabled fastScrollHorizontalThumbDrawable fastScrollHorizontalTrackDrawable fastScrollVerticalThumbDrawable fastScrollVerticalTrackDrawable layoutManager reverseLayout spanCount stackFromEnd
 styleable ScrimInsetsFrameLayout insetForeground

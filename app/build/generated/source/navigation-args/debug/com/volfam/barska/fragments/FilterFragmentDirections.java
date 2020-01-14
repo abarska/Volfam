@@ -16,14 +16,17 @@ public class FilterFragmentDirections {
   }
 
   @NonNull
-  public static ActionFilterFragmentToFilteredListFragment actionFilterFragmentToFilteredListFragment() {
-    return new ActionFilterFragmentToFilteredListFragment();
+  public static ActionFilterFragmentToFilteredListFragment actionFilterFragmentToFilteredListFragment(int minPrice,
+      int maxPrice) {
+    return new ActionFilterFragmentToFilteredListFragment(minPrice, maxPrice);
   }
 
   public static class ActionFilterFragmentToFilteredListFragment implements NavDirections {
     private final HashMap arguments = new HashMap();
 
-    private ActionFilterFragmentToFilteredListFragment() {
+    private ActionFilterFragmentToFilteredListFragment(int minPrice, int maxPrice) {
+      this.arguments.put("minPrice", minPrice);
+      this.arguments.put("maxPrice", maxPrice);
     }
 
     @NonNull
@@ -44,6 +47,18 @@ public class FilterFragmentDirections {
       return this;
     }
 
+    @NonNull
+    public ActionFilterFragmentToFilteredListFragment setMinPrice(int minPrice) {
+      this.arguments.put("minPrice", minPrice);
+      return this;
+    }
+
+    @NonNull
+    public ActionFilterFragmentToFilteredListFragment setMaxPrice(int maxPrice) {
+      this.arguments.put("maxPrice", maxPrice);
+      return this;
+    }
+
     @Override
     @SuppressWarnings("unchecked")
     @NonNull
@@ -60,6 +75,14 @@ public class FilterFragmentDirections {
       if (arguments.containsKey("placeArray")) {
         int[] placeArray = (int[]) arguments.get("placeArray");
         __result.putIntArray("placeArray", placeArray);
+      }
+      if (arguments.containsKey("minPrice")) {
+        int minPrice = (int) arguments.get("minPrice");
+        __result.putInt("minPrice", minPrice);
+      }
+      if (arguments.containsKey("maxPrice")) {
+        int maxPrice = (int) arguments.get("maxPrice");
+        __result.putInt("maxPrice", maxPrice);
       }
       return __result;
     }
@@ -85,6 +108,16 @@ public class FilterFragmentDirections {
     @Nullable
     public int[] getPlaceArray() {
       return (int[]) arguments.get("placeArray");
+    }
+
+    @SuppressWarnings("unchecked")
+    public int getMinPrice() {
+      return (int) arguments.get("minPrice");
+    }
+
+    @SuppressWarnings("unchecked")
+    public int getMaxPrice() {
+      return (int) arguments.get("maxPrice");
     }
 
     @Override
@@ -114,6 +147,18 @@ public class FilterFragmentDirections {
       if (getPlaceArray() != null ? !getPlaceArray().equals(that.getPlaceArray()) : that.getPlaceArray() != null) {
         return false;
       }
+      if (arguments.containsKey("minPrice") != that.arguments.containsKey("minPrice")) {
+        return false;
+      }
+      if (getMinPrice() != that.getMinPrice()) {
+        return false;
+      }
+      if (arguments.containsKey("maxPrice") != that.arguments.containsKey("maxPrice")) {
+        return false;
+      }
+      if (getMaxPrice() != that.getMaxPrice()) {
+        return false;
+      }
       if (getActionId() != that.getActionId()) {
         return false;
       }
@@ -126,6 +171,8 @@ public class FilterFragmentDirections {
       result = 31 * result + java.util.Arrays.hashCode(getGroupArray());
       result = 31 * result + java.util.Arrays.hashCode(getTrainerArray());
       result = 31 * result + java.util.Arrays.hashCode(getPlaceArray());
+      result = 31 * result + getMinPrice();
+      result = 31 * result + getMaxPrice();
       result = 31 * result + getActionId();
       return result;
     }
@@ -136,6 +183,8 @@ public class FilterFragmentDirections {
           + "groupArray=" + getGroupArray()
           + ", trainerArray=" + getTrainerArray()
           + ", placeArray=" + getPlaceArray()
+          + ", minPrice=" + getMinPrice()
+          + ", maxPrice=" + getMaxPrice()
           + "}";
     }
   }

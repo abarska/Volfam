@@ -256,8 +256,9 @@ public final class TrainingDao_Impl implements TrainingDao {
   }
 
   @Override
-  public LiveData<List<Training>> getAllTrainingsWithArgs(final List<String> groups,
-      final List<String> trainers, final List<String> places) {
+  public LiveData<List<Training>> getFilteredTrainings(final List<String> groups,
+      final List<String> trainers, final List<String> places, final int minPrice,
+      final int maxPrice) {
     StringBuilder _stringBuilder = StringUtil.newStringBuilder();
     _stringBuilder.append("SELECT ");
     _stringBuilder.append("*");
@@ -270,9 +271,13 @@ public final class TrainingDao_Impl implements TrainingDao {
     _stringBuilder.append(") AND volfam_training_column_place IN (");
     final int _inputSize_2 = places.size();
     StringUtil.appendPlaceholders(_stringBuilder, _inputSize_2);
-    _stringBuilder.append(") ORDER BY volfam_training_column_date DESC");
+    _stringBuilder.append(") AND volfam_training_column_price BETWEEN (");
+    _stringBuilder.append("?");
+    _stringBuilder.append(") AND (");
+    _stringBuilder.append("?");
+    _stringBuilder.append(")ORDER BY volfam_training_column_date DESC");
     final String _sql = _stringBuilder.toString();
-    final int _argCount = 0 + _inputSize + _inputSize_1 + _inputSize_2;
+    final int _argCount = 2 + _inputSize + _inputSize_1 + _inputSize_2;
     final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, _argCount);
     int _argIndex = 1;
     for (String _item : groups) {
@@ -301,6 +306,10 @@ public final class TrainingDao_Impl implements TrainingDao {
       }
       _argIndex ++;
     }
+    _argIndex = 1 + _inputSize + _inputSize_1 + _inputSize_2;
+    _statement.bindLong(_argIndex, minPrice);
+    _argIndex = 2 + _inputSize + _inputSize_1 + _inputSize_2;
+    _statement.bindLong(_argIndex, maxPrice);
     return __db.getInvalidationTracker().createLiveData(new String[]{"volfam_training_table"}, false, new Callable<List<Training>>() {
       @Override
       public List<Training> call() throws Exception {

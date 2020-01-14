@@ -1,9 +1,7 @@
 package com.volfam.barska.viewmodels
 
 import android.app.Application
-import androidx.lifecycle.AndroidViewModel
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.*
 import com.volfam.barska.R
 import timber.log.Timber
 
@@ -74,11 +72,24 @@ class FilterViewModel(val app: Application) :
         }
     }
 
-    override fun onCleared() {
-        super.onCleared()
-        Timber.i("$_setOfTrainers")
-        Timber.i("$_setOfGroups")
-        Timber.i("$_setOfPlaces")
+    var minPrice: Int = 0
+        private set(value) {
+            field = value
+        }
+
+    var maxPrice: Int = 0
+        private set(value) {
+            field = value
+        }
+
+    private val _priceRangeText = MutableLiveData<String>(app.getString(R.string.price_label))
+    val priceRangeText: LiveData<String>
+        get() = _priceRangeText
+
+    fun updatePrice(left: Int, right: Int) {
+        minPrice = left
+        maxPrice = right
+        _priceRangeText.value = app.getString(R.string.price_range, left, right)
     }
 }
 

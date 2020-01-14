@@ -161,8 +161,8 @@ public class DataBinderMapperImpl extends DataBinderMapper {
     static {
       sKeys.put(0, "_all");
       sKeys.put(1, "createViewModel");
-      sKeys.put(2, "header");
-      sKeys.put(3, "viewModel");
+      sKeys.put(2, "filterViewModel");
+      sKeys.put(3, "header");
       sKeys.put(4, "training");
       sKeys.put(5, "clickListener");
       sKeys.put(6, "detailViewModel");

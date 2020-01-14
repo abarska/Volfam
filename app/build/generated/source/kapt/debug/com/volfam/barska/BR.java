@@ -5,9 +5,9 @@ public class BR {
 
   public static final int createViewModel = 1;
 
-  public static final int header = 2;
+  public static final int filterViewModel = 2;
 
-  public static final int viewModel = 3;
+  public static final int header = 3;
 
   public static final int training = 4;
 

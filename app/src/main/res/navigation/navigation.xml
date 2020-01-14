@@ -65,7 +65,7 @@
             app:popEnterAnim="@anim/slide_in_anim"
             app:popExitAnim="@anim/slide_out_anim"
             app:popUpTo="@+id/listFragment"
-            app:popUpToInclusive="true">
+            app:popUpToInclusive="false">
             <argument
                 android:name="groupArray"
                 android:defaultValue="@null"
@@ -81,6 +81,12 @@
                 android:defaultValue="@null"
                 app:argType="integer[]"
                 app:nullable="true" />
+            <argument
+                android:name="minPrice"
+                app:argType="integer" />
+            <argument
+                android:name="maxPrice"
+                app:argType="integer" />
         </action>
         <argument
             android:name="maxPrice"
@@ -107,5 +113,11 @@
             android:defaultValue="@null"
             app:argType="integer[]"
             app:nullable="true" />
+        <argument
+            android:name="minPrice"
+            app:argType="integer" />
+        <argument
+            android:name="maxPrice"
+            app:argType="integer" />
     </fragment>
 </navigation>

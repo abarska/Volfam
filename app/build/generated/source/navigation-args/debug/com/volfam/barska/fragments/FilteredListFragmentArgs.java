@@ -4,6 +4,7 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.navigation.NavArgs;
+import java.lang.IllegalArgumentException;
 import java.lang.Object;
 import java.lang.Override;
 import java.lang.String;
@@ -40,6 +41,20 @@ public class FilteredListFragmentArgs implements NavArgs {
       placeArray = bundle.getIntArray("placeArray");
       __result.arguments.put("placeArray", placeArray);
     }
+    if (bundle.containsKey("minPrice")) {
+      int minPrice;
+      minPrice = bundle.getInt("minPrice");
+      __result.arguments.put("minPrice", minPrice);
+    } else {
+      throw new IllegalArgumentException("Required argument \"minPrice\" is missing and does not have an android:defaultValue");
+    }
+    if (bundle.containsKey("maxPrice")) {
+      int maxPrice;
+      maxPrice = bundle.getInt("maxPrice");
+      __result.arguments.put("maxPrice", maxPrice);
+    } else {
+      throw new IllegalArgumentException("Required argument \"maxPrice\" is missing and does not have an android:defaultValue");
+    }
     return __result;
   }
 
@@ -62,6 +77,16 @@ public class FilteredListFragmentArgs implements NavArgs {
   }
 
   @SuppressWarnings("unchecked")
+  public int getMinPrice() {
+    return (int) arguments.get("minPrice");
+  }
+
+  @SuppressWarnings("unchecked")
+  public int getMaxPrice() {
+    return (int) arguments.get("maxPrice");
+  }
+
+  @SuppressWarnings("unchecked")
   @NonNull
   public Bundle toBundle() {
     Bundle __result = new Bundle();
@@ -76,6 +101,14 @@ public class FilteredListFragmentArgs implements NavArgs {
     if (arguments.containsKey("placeArray")) {
       int[] placeArray = (int[]) arguments.get("placeArray");
       __result.putIntArray("placeArray", placeArray);
+    }
+    if (arguments.containsKey("minPrice")) {
+      int minPrice = (int) arguments.get("minPrice");
+      __result.putInt("minPrice", minPrice);
+    }
+    if (arguments.containsKey("maxPrice")) {
+      int maxPrice = (int) arguments.get("maxPrice");
+      __result.putInt("maxPrice", maxPrice);
     }
     return __result;
   }
@@ -107,6 +140,18 @@ public class FilteredListFragmentArgs implements NavArgs {
     if (getPlaceArray() != null ? !getPlaceArray().equals(that.getPlaceArray()) : that.getPlaceArray() != null) {
       return false;
     }
+    if (arguments.containsKey("minPrice") != that.arguments.containsKey("minPrice")) {
+      return false;
+    }
+    if (getMinPrice() != that.getMinPrice()) {
+      return false;
+    }
+    if (arguments.containsKey("maxPrice") != that.arguments.containsKey("maxPrice")) {
+      return false;
+    }
+    if (getMaxPrice() != that.getMaxPrice()) {
+      return false;
+    }
     return true;
   }
 
@@ -116,6 +161,8 @@ public class FilteredListFragmentArgs implements NavArgs {
     result = 31 * result + java.util.Arrays.hashCode(getGroupArray());
     result = 31 * result + java.util.Arrays.hashCode(getTrainerArray());
     result = 31 * result + java.util.Arrays.hashCode(getPlaceArray());
+    result = 31 * result + getMinPrice();
+    result = 31 * result + getMaxPrice();
     return result;
   }
 
@@ -125,6 +172,8 @@ public class FilteredListFragmentArgs implements NavArgs {
         + "groupArray=" + getGroupArray()
         + ", trainerArray=" + getTrainerArray()
         + ", placeArray=" + getPlaceArray()
+        + ", minPrice=" + getMinPrice()
+        + ", maxPrice=" + getMaxPrice()
         + "}";
   }
 
@@ -135,7 +184,9 @@ public class FilteredListFragmentArgs implements NavArgs {
       this.arguments.putAll(original.arguments);
     }
 
-    public Builder() {
+    public Builder(int minPrice, int maxPrice) {
+      this.arguments.put("minPrice", minPrice);
+      this.arguments.put("maxPrice", maxPrice);
     }
 
     @NonNull
@@ -162,6 +213,18 @@ public class FilteredListFragmentArgs implements NavArgs {
       return this;
     }
 
+    @NonNull
+    public Builder setMinPrice(int minPrice) {
+      this.arguments.put("minPrice", minPrice);
+      return this;
+    }
+
+    @NonNull
+    public Builder setMaxPrice(int maxPrice) {
+      this.arguments.put("maxPrice", maxPrice);
+      return this;
+    }
+
     @SuppressWarnings("unchecked")
     @Nullable
     public int[] getGroupArray() {
@@ -178,6 +241,16 @@ public class FilteredListFragmentArgs implements NavArgs {
     @Nullable
     public int[] getPlaceArray() {
       return (int[]) arguments.get("placeArray");
+    }
+
+    @SuppressWarnings("unchecked")
+    public int getMinPrice() {
+      return (int) arguments.get("minPrice");
+    }
+
+    @SuppressWarnings("unchecked")
+    public int getMaxPrice() {
+      return (int) arguments.get("maxPrice");
     }
   }
 }
