@@ -1182,7 +1182,7 @@ id action_container
 id action_context_bar
 id action_divider
 id action_filter
-id action_filterFragment_to_listFragment
+id action_filterFragment_to_filteredListFragment
 id action_image
 id action_listFragment_to_createFragment
 id action_listFragment_to_detailFragment
@@ -1256,6 +1256,7 @@ id fill_horizontal
 id fill_vertical
 id filled
 id filterFragment
+id filteredListFragment
 id fixed
 id forever
 id ghost_view
@@ -1503,6 +1504,7 @@ layout fragment_create
 layout fragment_detail
 layout fragment_filter
 layout fragment_list
+layout fragment_list_filtered
 layout layout_header
 layout list_item_view_training
 layout mtrl_layout_snackbar
@@ -1578,6 +1580,7 @@ string date_label
 string fab_transformation_scrim_behavior
 string fab_transformation_sheet_behavior
 string filter_fragment_label
+string filtered_list_fragment_label
 string free_of_charge_label
 string future_trainings_label
 string group_label
@@ -1601,6 +1604,7 @@ string nav_app_bar_open_drawer_description
 string negative_price_error
 string no_button
 string no_messenger_installed_error
+string no_results_matching_filter_error
 string no_trainer_label
 string password_toggle_content_description
 string past_date_error

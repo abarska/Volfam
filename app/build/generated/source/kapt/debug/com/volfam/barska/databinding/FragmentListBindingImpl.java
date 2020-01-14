@@ -45,7 +45,7 @@ public class FragmentListBindingImpl extends FragmentListBinding  {
     @Override
     public void invalidateAll() {
         synchronized(this) {
-                mDirtyFlags = 0x2L;
+                mDirtyFlags = 0x1L;
         }
         requestRebind();
     }
@@ -63,17 +63,7 @@ public class FragmentListBindingImpl extends FragmentListBinding  {
     @Override
     public boolean setVariable(int variableId, @Nullable Object variable)  {
         boolean variableSet = true;
-        if (BR.viewModel == variableId) {
-            setViewModel((com.volfam.barska.viewmodels.ListViewModel) variable);
-        }
-        else {
-            variableSet = false;
-        }
             return variableSet;
-    }
-
-    public void setViewModel(@Nullable com.volfam.barska.viewmodels.ListViewModel ViewModel) {
-        this.mViewModel = ViewModel;
     }
 
     @Override
@@ -97,8 +87,7 @@ public class FragmentListBindingImpl extends FragmentListBinding  {
     // dirty flag
     private  long mDirtyFlags = 0xffffffffffffffffL;
     /* flag mapping
-        flag 0 (0x1L): viewModel
-        flag 1 (0x2L): null
+        flag 0 (0x1L): null
     flag mapping end*/
     //end
 }

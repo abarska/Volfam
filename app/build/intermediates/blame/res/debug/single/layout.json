@@ -26,5 +26,9 @@
     {
         "merged": "C:\\Users\\ATNuser\\AndroidStudioProjects\\Volfam10\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\list_item_view_training.xml",
         "source": "C:\\Users\\ATNuser\\AndroidStudioProjects\\Volfam10\\app\\src\\main\\res\\layout\\list_item_view_training.xml"
+    },
+    {
+        "merged": "C:\\Users\\ATNuser\\AndroidStudioProjects\\Volfam10\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_list_filtered.xml",
+        "source": "C:\\Users\\ATNuser\\AndroidStudioProjects\\Volfam10\\app\\src\\main\\res\\layout\\fragment_list_filtered.xml"
     }
 ]

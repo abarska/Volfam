@@ -1,25 +1,17 @@
 package com.volfam.barska.viewmodels
 
 import android.app.Application
-import android.view.View
 import androidx.lifecycle.*
 import com.volfam.barska.data.TrainingDao
 import kotlinx.coroutines.*
 
-class ListViewModel(
-    private val trainingDao: TrainingDao,
-    val app: Application
-) :
+class ListViewModel(private val trainingDao: TrainingDao, val app: Application) :
     AndroidViewModel(app) {
 
     private var viewModelJob = Job()
     private val uiScope = CoroutineScope(Dispatchers.Main + viewModelJob)
 
     val trainings = trainingDao.getAllTrainings()
-
-    val listHasNoData: LiveData<Int> = Transformations.map(trainings) {
-        it?.let { if (it.isEmpty()) View.VISIBLE else View.INVISIBLE }
-    }
 
     private val _navigateToDetailFragment = MutableLiveData<Long>()
     val navigateToDetailFragment: LiveData<Long>

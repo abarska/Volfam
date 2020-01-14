@@ -11,6 +11,7 @@ import com.volfam.barska.databinding.FragmentCreateBindingImpl;
 import com.volfam.barska.databinding.FragmentDetailBindingImpl;
 import com.volfam.barska.databinding.FragmentFilterBindingImpl;
 import com.volfam.barska.databinding.FragmentListBindingImpl;
+import com.volfam.barska.databinding.FragmentListFilteredBindingImpl;
 import com.volfam.barska.databinding.LayoutHeaderBindingImpl;
 import com.volfam.barska.databinding.ListItemViewTrainingBindingImpl;
 import java.lang.IllegalArgumentException;
@@ -34,11 +35,13 @@ public class DataBinderMapperImpl extends DataBinderMapper {
 
   private static final int LAYOUT_FRAGMENTLIST = 5;
 
-  private static final int LAYOUT_LAYOUTHEADER = 6;
+  private static final int LAYOUT_FRAGMENTLISTFILTERED = 6;
 
-  private static final int LAYOUT_LISTITEMVIEWTRAINING = 7;
+  private static final int LAYOUT_LAYOUTHEADER = 7;
 
-  private static final SparseIntArray INTERNAL_LAYOUT_ID_LOOKUP = new SparseIntArray(7);
+  private static final int LAYOUT_LISTITEMVIEWTRAINING = 8;
+
+  private static final SparseIntArray INTERNAL_LAYOUT_ID_LOOKUP = new SparseIntArray(8);
 
   static {
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.volfam.barska.R.layout.activity_main, LAYOUT_ACTIVITYMAIN);
@@ -46,6 +49,7 @@ public class DataBinderMapperImpl extends DataBinderMapper {
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.volfam.barska.R.layout.fragment_detail, LAYOUT_FRAGMENTDETAIL);
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.volfam.barska.R.layout.fragment_filter, LAYOUT_FRAGMENTFILTER);
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.volfam.barska.R.layout.fragment_list, LAYOUT_FRAGMENTLIST);
+    INTERNAL_LAYOUT_ID_LOOKUP.put(com.volfam.barska.R.layout.fragment_list_filtered, LAYOUT_FRAGMENTLISTFILTERED);
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.volfam.barska.R.layout.layout_header, LAYOUT_LAYOUTHEADER);
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.volfam.barska.R.layout.list_item_view_training, LAYOUT_LISTITEMVIEWTRAINING);
   }
@@ -88,6 +92,12 @@ public class DataBinderMapperImpl extends DataBinderMapper {
             return new FragmentListBindingImpl(component, view);
           }
           throw new IllegalArgumentException("The tag for fragment_list is invalid. Received: " + tag);
+        }
+        case  LAYOUT_FRAGMENTLISTFILTERED: {
+          if ("layout/fragment_list_filtered_0".equals(tag)) {
+            return new FragmentListFilteredBindingImpl(component, view);
+          }
+          throw new IllegalArgumentException("The tag for fragment_list_filtered is invalid. Received: " + tag);
         }
         case  LAYOUT_LAYOUTHEADER: {
           if ("layout/layout_header_0".equals(tag)) {
@@ -160,7 +170,7 @@ public class DataBinderMapperImpl extends DataBinderMapper {
   }
 
   private static class InnerLayoutIdLookup {
-    static final HashMap<String, Integer> sKeys = new HashMap<String, Integer>(7);
+    static final HashMap<String, Integer> sKeys = new HashMap<String, Integer>(8);
 
     static {
       sKeys.put("layout/activity_main_0", com.volfam.barska.R.layout.activity_main);
@@ -168,6 +178,7 @@ public class DataBinderMapperImpl extends DataBinderMapper {
       sKeys.put("layout/fragment_detail_0", com.volfam.barska.R.layout.fragment_detail);
       sKeys.put("layout/fragment_filter_0", com.volfam.barska.R.layout.fragment_filter);
       sKeys.put("layout/fragment_list_0", com.volfam.barska.R.layout.fragment_list);
+      sKeys.put("layout/fragment_list_filtered_0", com.volfam.barska.R.layout.fragment_list_filtered);
       sKeys.put("layout/layout_header_0", com.volfam.barska.R.layout.layout_header);
       sKeys.put("layout/list_item_view_training_0", com.volfam.barska.R.layout.list_item_view_training);
     }

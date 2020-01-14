@@ -36,22 +36,6 @@
                 app:argType="integer" />
         </action>
 
-        <argument
-            android:name="groupArray"
-            android:defaultValue="@null"
-            app:argType="integer[]"
-            app:nullable="true" />
-        <argument
-            android:name="trainerArray"
-            android:defaultValue="@null"
-            app:argType="integer[]"
-            app:nullable="true" />
-        <argument
-            android:name="placeArray"
-            android:defaultValue="@null"
-            app:argType="integer[]"
-            app:nullable="true" />
-
     </fragment>
 
     <fragment
@@ -60,13 +44,22 @@
         android:label="@string/create_fragment_label" />
 
     <fragment
+        android:id="@+id/detailFragment"
+        android:name="com.volfam.barska.fragments.DetailFragment"
+        android:label="@string/training_details">
+        <argument
+            android:name="trainingId"
+            app:argType="long" />
+    </fragment>
+
+    <fragment
         android:id="@+id/filterFragment"
         android:name="com.volfam.barska.fragments.FilterFragment"
         android:label="@string/filter_fragment_label"
         tools:layout="@layout/fragment_filter">
         <action
-            android:id="@+id/action_filterFragment_to_listFragment"
-            app:destination="@id/listFragment"
+            android:id="@+id/action_filterFragment_to_filteredListFragment"
+            app:destination="@id/filteredListFragment"
             app:enterAnim="@anim/slide_in_anim"
             app:exitAnim="@anim/slide_out_anim"
             app:popEnterAnim="@anim/slide_in_anim"
@@ -95,11 +88,24 @@
     </fragment>
 
     <fragment
-        android:id="@+id/detailFragment"
-        android:name="com.volfam.barska.fragments.DetailFragment"
-        android:label="@string/training_details">
+        android:id="@+id/filteredListFragment"
+        android:name="com.volfam.barska.fragments.FilteredListFragment"
+        android:label="@string/filtered_list_fragment_label"
+        tools:layout="@layout/fragment_list_filtered">
         <argument
-            android:name="trainingId"
-            app:argType="long" />
+            android:name="groupArray"
+            android:defaultValue="@null"
+            app:argType="integer[]"
+            app:nullable="true" />
+        <argument
+            android:name="trainerArray"
+            android:defaultValue="@null"
+            app:argType="integer[]"
+            app:nullable="true" />
+        <argument
+            android:name="placeArray"
+            android:defaultValue="@null"
+            app:argType="integer[]"
+            app:nullable="true" />
     </fragment>
 </navigation>

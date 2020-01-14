@@ -28,5 +28,5 @@ fun shareTrainingInvitation(view: View, activity: FragmentActivity, training: Tr
 }
 
 fun showErrorSnackbar(view: View, message: String) {
-    Snackbar.make(view!!, message, Snackbar.LENGTH_SHORT).show()
+    Snackbar.make(view, message, Snackbar.LENGTH_SHORT).show()
 }

@@ -16,30 +16,30 @@ public class FilterFragmentDirections {
   }
 
   @NonNull
-  public static ActionFilterFragmentToListFragment actionFilterFragmentToListFragment() {
-    return new ActionFilterFragmentToListFragment();
+  public static ActionFilterFragmentToFilteredListFragment actionFilterFragmentToFilteredListFragment() {
+    return new ActionFilterFragmentToFilteredListFragment();
   }
 
-  public static class ActionFilterFragmentToListFragment implements NavDirections {
+  public static class ActionFilterFragmentToFilteredListFragment implements NavDirections {
     private final HashMap arguments = new HashMap();
 
-    private ActionFilterFragmentToListFragment() {
+    private ActionFilterFragmentToFilteredListFragment() {
     }
 
     @NonNull
-    public ActionFilterFragmentToListFragment setGroupArray(@Nullable int[] groupArray) {
+    public ActionFilterFragmentToFilteredListFragment setGroupArray(@Nullable int[] groupArray) {
       this.arguments.put("groupArray", groupArray);
       return this;
     }
 
     @NonNull
-    public ActionFilterFragmentToListFragment setTrainerArray(@Nullable int[] trainerArray) {
+    public ActionFilterFragmentToFilteredListFragment setTrainerArray(@Nullable int[] trainerArray) {
       this.arguments.put("trainerArray", trainerArray);
       return this;
     }
 
     @NonNull
-    public ActionFilterFragmentToListFragment setPlaceArray(@Nullable int[] placeArray) {
+    public ActionFilterFragmentToFilteredListFragment setPlaceArray(@Nullable int[] placeArray) {
       this.arguments.put("placeArray", placeArray);
       return this;
     }
@@ -66,7 +66,7 @@ public class FilterFragmentDirections {
 
     @Override
     public int getActionId() {
-      return R.id.action_filterFragment_to_listFragment;
+      return R.id.action_filterFragment_to_filteredListFragment;
     }
 
     @SuppressWarnings("unchecked")
@@ -95,7 +95,7 @@ public class FilterFragmentDirections {
       if (object == null || getClass() != object.getClass()) {
           return false;
       }
-      ActionFilterFragmentToListFragment that = (ActionFilterFragmentToListFragment) object;
+      ActionFilterFragmentToFilteredListFragment that = (ActionFilterFragmentToFilteredListFragment) object;
       if (arguments.containsKey("groupArray") != that.arguments.containsKey("groupArray")) {
         return false;
       }
@@ -132,7 +132,7 @@ public class FilterFragmentDirections {
 
     @Override
     public String toString() {
-      return "ActionFilterFragmentToListFragment(actionId=" + getActionId() + "){"
+      return "ActionFilterFragmentToFilteredListFragment(actionId=" + getActionId() + "){"
           + "groupArray=" + getGroupArray()
           + ", trainerArray=" + getTrainerArray()
           + ", placeArray=" + getPlaceArray()

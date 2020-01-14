@@ -29,6 +29,7 @@
     <string name="create_fragment_label">Открыть плюсовалку</string>
     <string name="training_details">Детали тренировки</string>
     <string name="filter_fragment_label">Настроить фильтры</string>
+    <string name="filtered_list_fragment_label">Отфильтрованный список</string>
 
     <string name="share_intent_text">Плюсуемся!\nДата: %s\nВремя: %s\nГруппа: %s\n%s\nЗал: %s\nСтоимость: %s\n</string>
     <string name="group_price_formatter">%s - %s</string>
@@ -49,6 +50,7 @@
     <string name="incorrect_price_error2">Стоимость тренировки не кратна 5</string>
     <string name="no_messenger_installed_error">Установите приложение для отправки текстовых сообщений</string>
     <string name="negative_price_error">Цена не может быть меньше нуля</string>
+    <string name="no_results_matching_filter_error">Нет тренировок, соответствующих выбранным фильтрам</string>
 
     <!-- warnings -->
     <string name="high_price_warning">Подозрительно высокая стоимость тренировки</string>

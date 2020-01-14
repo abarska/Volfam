@@ -42,7 +42,7 @@ class FilterFragment : Fragment() {
 
         binding.submitButton.setOnClickListener {
             it.findNavController().navigate(
-                FilterFragmentDirections.actionFilterFragmentToListFragment()
+                FilterFragmentDirections.actionFilterFragmentToFilteredListFragment()
                     .setGroupArray(filterViewModel.arrayOfGroups)
                     .setTrainerArray(filterViewModel.arrayOfTrainers)
                     .setPlaceArray(filterViewModel.arrayOfPlaces)

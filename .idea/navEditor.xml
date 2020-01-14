@@ -43,12 +43,24 @@
                         </option>
                         <option name="myPositions">
                           <map>
-                            <entry key="action_filterFragment_to_listFragment">
+                            <entry key="action_filterFragment_to_filteredListFragment">
                               <value>
                                 <LayoutPositions />
                               </value>
                             </entry>
                           </map>
+                        </option>
+                      </LayoutPositions>
+                    </value>
+                  </entry>
+                  <entry key="filteredListFragment">
+                    <value>
+                      <LayoutPositions>
+                        <option name="myPosition">
+                          <Point>
+                            <option name="x" value="235" />
+                            <option name="y" value="608" />
+                          </Point>
                         </option>
                       </LayoutPositions>
                     </value>

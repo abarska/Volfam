@@ -92,12 +92,12 @@
         "source": "C:\\Users\\ATNuser\\AndroidStudioProjects\\Volfam10\\app\\src\\main\\res\\drawable\\smugiljov_cropped.png"
     },
     {
-        "merged": "C:\\Users\\ATNuser\\AndroidStudioProjects\\Volfam10\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4_abc_btn_check_to_on_mtrl_015.png.flat",
-        "source": "C:\\Users\\ATNuser\\.gradle\\caches\\transforms-2\\files-2.1\\fe2c484049959aa43361e7a80d89db70\\appcompat-1.1.0\\res\\drawable-xxxhdpi-v4\\abc_btn_check_to_on_mtrl_015.png"
-    },
-    {
         "merged": "C:\\Users\\ATNuser\\AndroidStudioProjects\\Volfam10\\app\\build\\intermediates\\res\\merged\\debug\\layout-watch-v20_abc_alert_dialog_button_bar_material.xml.flat",
         "source": "C:\\Users\\ATNuser\\.gradle\\caches\\transforms-2\\files-2.1\\fe2c484049959aa43361e7a80d89db70\\appcompat-1.1.0\\res\\layout-watch-v20\\abc_alert_dialog_button_bar_material.xml"
+    },
+    {
+        "merged": "C:\\Users\\ATNuser\\AndroidStudioProjects\\Volfam10\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4_abc_btn_check_to_on_mtrl_015.png.flat",
+        "source": "C:\\Users\\ATNuser\\.gradle\\caches\\transforms-2\\files-2.1\\fe2c484049959aa43361e7a80d89db70\\appcompat-1.1.0\\res\\drawable-xxxhdpi-v4\\abc_btn_check_to_on_mtrl_015.png"
     },
     {
         "merged": "C:\\Users\\ATNuser\\AndroidStudioProjects\\Volfam10\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_list_focused_holo.9.png.flat",
@@ -270,6 +270,10 @@
     {
         "merged": "C:\\Users\\ATNuser\\AndroidStudioProjects\\Volfam10\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_textfield_activated_mtrl_alpha.9.png.flat",
         "source": "C:\\Users\\ATNuser\\.gradle\\caches\\transforms-2\\files-2.1\\fe2c484049959aa43361e7a80d89db70\\appcompat-1.1.0\\res\\drawable-hdpi-v4\\abc_textfield_activated_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "C:\\Users\\ATNuser\\AndroidStudioProjects\\Volfam10\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_list_filtered.xml.flat",
+        "source": "C:\\Users\\ATNuser\\AndroidStudioProjects\\Volfam10\\app\\src\\main\\res\\layout\\fragment_list_filtered.xml"
     },
     {
         "merged": "C:\\Users\\ATNuser\\AndroidStudioProjects\\Volfam10\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_textfield_default_mtrl_alpha.9.png.flat",

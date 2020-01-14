@@ -10,21 +10,21 @@ import java.lang.String;
 import java.lang.SuppressWarnings;
 import java.util.HashMap;
 
-public class ListFragmentArgs implements NavArgs {
+public class FilteredListFragmentArgs implements NavArgs {
   private final HashMap arguments = new HashMap();
 
-  private ListFragmentArgs() {
+  private FilteredListFragmentArgs() {
   }
 
-  private ListFragmentArgs(HashMap argumentsMap) {
+  private FilteredListFragmentArgs(HashMap argumentsMap) {
     this.arguments.putAll(argumentsMap);
   }
 
   @NonNull
   @SuppressWarnings("unchecked")
-  public static ListFragmentArgs fromBundle(@NonNull Bundle bundle) {
-    ListFragmentArgs __result = new ListFragmentArgs();
-    bundle.setClassLoader(ListFragmentArgs.class.getClassLoader());
+  public static FilteredListFragmentArgs fromBundle(@NonNull Bundle bundle) {
+    FilteredListFragmentArgs __result = new FilteredListFragmentArgs();
+    bundle.setClassLoader(FilteredListFragmentArgs.class.getClassLoader());
     if (bundle.containsKey("groupArray")) {
       int[] groupArray;
       groupArray = bundle.getIntArray("groupArray");
@@ -88,7 +88,7 @@ public class ListFragmentArgs implements NavArgs {
     if (object == null || getClass() != object.getClass()) {
         return false;
     }
-    ListFragmentArgs that = (ListFragmentArgs) object;
+    FilteredListFragmentArgs that = (FilteredListFragmentArgs) object;
     if (arguments.containsKey("groupArray") != that.arguments.containsKey("groupArray")) {
       return false;
     }
@@ -121,7 +121,7 @@ public class ListFragmentArgs implements NavArgs {
 
   @Override
   public String toString() {
-    return "ListFragmentArgs{"
+    return "FilteredListFragmentArgs{"
         + "groupArray=" + getGroupArray()
         + ", trainerArray=" + getTrainerArray()
         + ", placeArray=" + getPlaceArray()
@@ -131,7 +131,7 @@ public class ListFragmentArgs implements NavArgs {
   public static class Builder {
     private final HashMap arguments = new HashMap();
 
-    public Builder(ListFragmentArgs original) {
+    public Builder(FilteredListFragmentArgs original) {
       this.arguments.putAll(original.arguments);
     }
 
@@ -139,8 +139,8 @@ public class ListFragmentArgs implements NavArgs {
     }
 
     @NonNull
-    public ListFragmentArgs build() {
-      ListFragmentArgs result = new ListFragmentArgs(arguments);
+    public FilteredListFragmentArgs build() {
+      FilteredListFragmentArgs result = new FilteredListFragmentArgs(arguments);
       return result;
     }
 

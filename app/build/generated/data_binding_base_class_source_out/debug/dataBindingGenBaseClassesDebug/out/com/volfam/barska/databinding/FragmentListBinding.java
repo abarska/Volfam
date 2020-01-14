@@ -7,13 +7,11 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.databinding.Bindable;
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
 import androidx.recyclerview.widget.RecyclerView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.volfam.barska.R;
-import com.volfam.barska.viewmodels.ListViewModel;
 import java.lang.Deprecated;
 import java.lang.Object;
 
@@ -27,9 +25,6 @@ public abstract class FragmentListBinding extends ViewDataBinding {
   @NonNull
   public final TextView welcomeTextView;
 
-  @Bindable
-  protected ListViewModel mViewModel;
-
   protected FragmentListBinding(Object _bindingComponent, View _root, int _localFieldCount,
       FloatingActionButton addTrainingFab, RecyclerView trainingListRecycler,
       TextView welcomeTextView) {
@@ -37,13 +32,6 @@ public abstract class FragmentListBinding extends ViewDataBinding {
     this.addTrainingFab = addTrainingFab;
     this.trainingListRecycler = trainingListRecycler;
     this.welcomeTextView = welcomeTextView;
-  }
-
-  public abstract void setViewModel(@Nullable ListViewModel viewModel);
-
-  @Nullable
-  public ListViewModel getViewModel() {
-    return mViewModel;
   }
 
   @NonNull
