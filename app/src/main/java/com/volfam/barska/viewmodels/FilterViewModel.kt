@@ -3,7 +3,7 @@ package com.volfam.barska.viewmodels
 import android.app.Application
 import androidx.lifecycle.*
 import com.volfam.barska.R
-import timber.log.Timber
+import java.util.*
 
 const val ACTION_ADD = 100
 const val ACTION_REMOVE = 200
@@ -72,26 +72,41 @@ class FilterViewModel(val app: Application) :
         }
     }
 
-    var minPrice: Int = 0
-        private set(value) {
-            field = value
-        }
-
-    var maxPrice: Int = 0
-        private set(value) {
-            field = value
-        }
+    private val prices = mutableListOf(Int.MIN_VALUE, Int.MAX_VALUE)
+    fun getPrices() = Pair(prices[0], prices[1])
 
     private val _priceRangeText = MutableLiveData<String>(app.getString(R.string.price_label))
     val priceRangeText: LiveData<String>
         get() = _priceRangeText
 
     fun updatePrice(left: Int, right: Int) {
-        minPrice = left
-        maxPrice = right
         _priceRangeText.value = app.getString(R.string.price_range, left, right)
+        prices[0] = left
+        prices[1] = right
+    }
+
+    private val dates = mutableListOf<Long>()
+
+    fun addDate(millis: Long) = dates.add(millis)
+    fun removeDate(millis: Long) = dates.remove(millis)
+
+    fun getDates(): Pair<Long, Long> {
+        return when (dates.size) {
+            2 -> Pair(dates.min()!!, getEndOfDay(dates.max()!!))
+            1 -> Pair(dates[0], getEndOfDay(dates[0]))
+            else -> Pair(Long.MIN_VALUE, Long.MAX_VALUE)
+        }
+    }
+
+    private fun getEndOfDay(millis: Long): Long {
+        val calendar = Calendar.getInstance()
+        calendar.timeInMillis = millis
+        val nextDay = calendar.get(Calendar.DATE) + 1
+        calendar.set(Calendar.DATE, nextDay)
+        return calendar.timeInMillis - 1
     }
 }
+
 
 class FilterViewModelFactory(private val application: Application) : ViewModelProvider.Factory {
 

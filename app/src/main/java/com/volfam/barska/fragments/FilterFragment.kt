@@ -10,12 +10,16 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.findNavController
+import com.savvi.rangedatepicker.CalendarPickerView
 import com.volfam.barska.R
 import com.volfam.barska.databinding.FragmentFilterBinding
 import com.volfam.barska.viewmodels.ACTION_ADD
 import com.volfam.barska.viewmodels.ACTION_REMOVE
 import com.volfam.barska.viewmodels.FilterViewModel
 import com.volfam.barska.viewmodels.FilterViewModelFactory
+import timber.log.Timber
+import java.text.SimpleDateFormat
+import java.util.*
 
 const val PRICE_RANGE_BAR_TICK_VALUE = 5
 
@@ -39,7 +43,9 @@ class FilterFragment : Fragment() {
         initCheckboxListeners()
 
         arguments?.let {
-            initPriceRangebar(FilterFragmentArgs.fromBundle(it).maxPrice)
+            val args = FilterFragmentArgs.fromBundle(it)
+            initPriceRangebar(args.maxPrice)
+            initDatePickerDialog(args.minDate, args.maxDate)
         }
 
         filterViewModel.priceRangeText.observe(this, Observer { price ->
@@ -47,10 +53,16 @@ class FilterFragment : Fragment() {
         })
 
         binding.submitButton.setOnClickListener {
+
+            val prices = filterViewModel.getPrices()
+            val dates = filterViewModel.getDates()
+
             it.findNavController().navigate(
                 FilterFragmentDirections.actionFilterFragmentToFilteredListFragment(
-                    filterViewModel.minPrice,
-                    filterViewModel.maxPrice
+                    prices.component1(),
+                    prices.component2(),
+                    dates.component1(),
+                    dates.component2()
                 )
                     .setGroupArray(filterViewModel.arrayOfGroups)
                     .setTrainerArray(filterViewModel.arrayOfTrainers)
@@ -59,7 +71,6 @@ class FilterFragment : Fragment() {
         }
         return binding.root
     }
-
 
     private fun initCheckboxListeners() {
         val onCheckedListener = { view: View ->
@@ -104,4 +115,23 @@ class FilterFragment : Fragment() {
             )
         }
     }
+
+    private fun initDatePickerDialog(minDate: Long, maxDate: Long) {
+
+        binding.dateRangePicker.init(Date(minDate), Date(maxDate))
+            .inMode(CalendarPickerView.SelectionMode.RANGE)
+
+        binding.dateRangePicker.setOnDateSelectedListener(object :
+            CalendarPickerView.OnDateSelectedListener {
+
+            override fun onDateSelected(date: Date?) {
+                date?.let { filterViewModel.addDate(it.time) }
+            }
+
+            override fun onDateUnselected(date: Date?) {
+                date?.let { filterViewModel.removeDate(it.time) }
+            }
+        })
+    }
+
 }

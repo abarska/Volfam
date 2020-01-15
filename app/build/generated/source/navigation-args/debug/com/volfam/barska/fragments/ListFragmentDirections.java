@@ -26,8 +26,9 @@ public class ListFragmentDirections {
   }
 
   @NonNull
-  public static ActionListFragmentToFilterFragment actionListFragmentToFilterFragment(int maxPrice) {
-    return new ActionListFragmentToFilterFragment(maxPrice);
+  public static ActionListFragmentToFilterFragment actionListFragmentToFilterFragment(int maxPrice,
+      long minDate, long maxDate) {
+    return new ActionListFragmentToFilterFragment(maxPrice, minDate, maxDate);
   }
 
   public static class ActionListFragmentToDetailFragment implements NavDirections {
@@ -105,13 +106,27 @@ public class ListFragmentDirections {
   public static class ActionListFragmentToFilterFragment implements NavDirections {
     private final HashMap arguments = new HashMap();
 
-    private ActionListFragmentToFilterFragment(int maxPrice) {
+    private ActionListFragmentToFilterFragment(int maxPrice, long minDate, long maxDate) {
       this.arguments.put("maxPrice", maxPrice);
+      this.arguments.put("minDate", minDate);
+      this.arguments.put("maxDate", maxDate);
     }
 
     @NonNull
     public ActionListFragmentToFilterFragment setMaxPrice(int maxPrice) {
       this.arguments.put("maxPrice", maxPrice);
+      return this;
+    }
+
+    @NonNull
+    public ActionListFragmentToFilterFragment setMinDate(long minDate) {
+      this.arguments.put("minDate", minDate);
+      return this;
+    }
+
+    @NonNull
+    public ActionListFragmentToFilterFragment setMaxDate(long maxDate) {
+      this.arguments.put("maxDate", maxDate);
       return this;
     }
 
@@ -124,6 +139,14 @@ public class ListFragmentDirections {
         int maxPrice = (int) arguments.get("maxPrice");
         __result.putInt("maxPrice", maxPrice);
       }
+      if (arguments.containsKey("minDate")) {
+        long minDate = (long) arguments.get("minDate");
+        __result.putLong("minDate", minDate);
+      }
+      if (arguments.containsKey("maxDate")) {
+        long maxDate = (long) arguments.get("maxDate");
+        __result.putLong("maxDate", maxDate);
+      }
       return __result;
     }
 
@@ -135,6 +158,16 @@ public class ListFragmentDirections {
     @SuppressWarnings("unchecked")
     public int getMaxPrice() {
       return (int) arguments.get("maxPrice");
+    }
+
+    @SuppressWarnings("unchecked")
+    public long getMinDate() {
+      return (long) arguments.get("minDate");
+    }
+
+    @SuppressWarnings("unchecked")
+    public long getMaxDate() {
+      return (long) arguments.get("maxDate");
     }
 
     @Override
@@ -152,6 +185,18 @@ public class ListFragmentDirections {
       if (getMaxPrice() != that.getMaxPrice()) {
         return false;
       }
+      if (arguments.containsKey("minDate") != that.arguments.containsKey("minDate")) {
+        return false;
+      }
+      if (getMinDate() != that.getMinDate()) {
+        return false;
+      }
+      if (arguments.containsKey("maxDate") != that.arguments.containsKey("maxDate")) {
+        return false;
+      }
+      if (getMaxDate() != that.getMaxDate()) {
+        return false;
+      }
       if (getActionId() != that.getActionId()) {
         return false;
       }
@@ -162,6 +207,8 @@ public class ListFragmentDirections {
     public int hashCode() {
       int result = 1;
       result = 31 * result + getMaxPrice();
+      result = 31 * result + (int)(getMinDate() ^ (getMinDate() >>> 32));
+      result = 31 * result + (int)(getMaxDate() ^ (getMaxDate() >>> 32));
       result = 31 * result + getActionId();
       return result;
     }
@@ -170,6 +217,8 @@ public class ListFragmentDirections {
     public String toString() {
       return "ActionListFragmentToFilterFragment(actionId=" + getActionId() + "){"
           + "maxPrice=" + getMaxPrice()
+          + ", minDate=" + getMinDate()
+          + ", maxDate=" + getMaxDate()
           + "}";
     }
   }

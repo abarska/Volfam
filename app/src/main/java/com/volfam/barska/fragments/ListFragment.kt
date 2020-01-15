@@ -16,6 +16,7 @@ import com.volfam.barska.data.VolfamDatabase
 import com.volfam.barska.databinding.FragmentListBinding
 import com.volfam.barska.viewmodels.ListViewModel
 import com.volfam.barska.viewmodels.ListViewModelFactory
+import java.util.*
 
 class ListFragment : Fragment() {
 
@@ -62,8 +63,14 @@ class ListFragment : Fragment() {
 
         listViewModel.navigateToFilterFragment.observe(this, Observer { maxPrice ->
             maxPrice?.let {
+                val minDate = listViewModel.trainings.value?.minBy { it.date }?.date ?: Long.MIN_VALUE
+                val maxDate = listViewModel.trainings.value?.maxBy { it.date }?.date ?: Long.MAX_VALUE
                 findNavController().navigate(
-                    ListFragmentDirections.actionListFragmentToFilterFragment(maxPrice)
+                    ListFragmentDirections.actionListFragmentToFilterFragment(
+                        maxPrice,
+                        minDate,
+                        maxDate
+                    )
                 )
                 listViewModel.onFilterFragmentNavigated()
             }

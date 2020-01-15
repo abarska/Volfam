@@ -27,6 +27,7 @@ interface TrainingDao {
                 "AND $TRAINING_COLUMN_TRAINER IN (:trainers) " +
                 "AND $TRAINING_COLUMN_PLACE IN (:places) " +
                 "AND $TRAINING_COLUMN_PRICE BETWEEN (:minPrice) AND (:maxPrice)" +
+                "AND $TRAINING_COLUMN_DATE BETWEEN (:startDate) AND (:endDate)" +
                 "ORDER BY $TRAINING_COLUMN_DATE DESC"
     )
     fun getFilteredTrainings(
@@ -34,7 +35,9 @@ interface TrainingDao {
         trainers: List<String>,
         places: List<String>,
         minPrice: Int,
-        maxPrice: Int
+        maxPrice: Int,
+        startDate: Long,
+        endDate: Long
     ): LiveData<List<Training>>
 
     @Query("SELECT COUNT ($TRAINING_COLUMN_ID) FROM $TRAINING_TABLE_NAME")

@@ -34,6 +34,12 @@
             <argument
                 android:name="maxPrice"
                 app:argType="integer" />
+            <argument
+                android:name="minDate"
+                app:argType="long" />
+            <argument
+                android:name="maxDate"
+                app:argType="long" />
         </action>
 
     </fragment>
@@ -87,10 +93,22 @@
             <argument
                 android:name="maxPrice"
                 app:argType="integer" />
+            <argument
+                android:name="startDate"
+                app:argType="long" />
+            <argument
+                android:name="endDate"
+                app:argType="long" />
         </action>
         <argument
             android:name="maxPrice"
             app:argType="integer" />
+        <argument
+            android:name="minDate"
+            app:argType="long" />
+        <argument
+            android:name="maxDate"
+            app:argType="long" />
     </fragment>
 
     <fragment
@@ -119,5 +137,11 @@
         <argument
             android:name="maxPrice"
             app:argType="integer" />
+        <argument
+            android:name="startDate"
+            app:argType="long" />
+        <argument
+            android:name="endDate"
+            app:argType="long" />
     </fragment>
 </navigation>

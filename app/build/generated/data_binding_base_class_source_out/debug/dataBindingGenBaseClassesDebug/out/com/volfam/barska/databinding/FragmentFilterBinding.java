@@ -13,12 +13,16 @@ import androidx.databinding.Bindable;
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
 import com.edmodo.rangebar.RangeBar;
+import com.savvi.rangedatepicker.CalendarPickerView;
 import com.volfam.barska.R;
 import com.volfam.barska.viewmodels.FilterViewModel;
 import java.lang.Deprecated;
 import java.lang.Object;
 
 public abstract class FragmentFilterBinding extends ViewDataBinding {
+  @NonNull
+  public final CalendarPickerView dateRangePicker;
+
   @NonNull
   public final CheckBox didrikhsonaCheckbox;
 
@@ -62,12 +66,13 @@ public abstract class FragmentFilterBinding extends ViewDataBinding {
   protected FilterViewModel mFilterViewModel;
 
   protected FragmentFilterBinding(Object _bindingComponent, View _root, int _localFieldCount,
-      CheckBox didrikhsonaCheckbox, CheckBox familyCheckbox, CheckBox girlsCheckbox,
-      CheckBox kuznechnayaCheckbox, CheckBox lightCheckbok, CheckBox mediumCheckbox,
-      CheckBox noTrainerCheckbox, CheckBox peresypCheckbox, RangeBar priceRangeBar,
-      TextView priceRangeTextview, CheckBox smugiljovCheckbox, CheckBox sokolovskayaCheckbox,
-      ImageView submitButton) {
+      CalendarPickerView dateRangePicker, CheckBox didrikhsonaCheckbox, CheckBox familyCheckbox,
+      CheckBox girlsCheckbox, CheckBox kuznechnayaCheckbox, CheckBox lightCheckbok,
+      CheckBox mediumCheckbox, CheckBox noTrainerCheckbox, CheckBox peresypCheckbox,
+      RangeBar priceRangeBar, TextView priceRangeTextview, CheckBox smugiljovCheckbox,
+      CheckBox sokolovskayaCheckbox, ImageView submitButton) {
     super(_bindingComponent, _root, _localFieldCount);
+    this.dateRangePicker = dateRangePicker;
     this.didrikhsonaCheckbox = didrikhsonaCheckbox;
     this.familyCheckbox = familyCheckbox;
     this.girlsCheckbox = girlsCheckbox;

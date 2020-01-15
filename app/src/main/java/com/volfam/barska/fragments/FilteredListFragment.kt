@@ -17,6 +17,7 @@ import com.volfam.barska.showErrorSnackbar
 import com.volfam.barska.viewmodels.FilteredListViewModel
 import com.volfam.barska.viewmodels.FilteredListViewModelFactory
 import timber.log.Timber
+import java.text.SimpleDateFormat
 import kotlin.math.max
 
 class FilteredListFragment : Fragment() {
@@ -37,15 +38,19 @@ class FilteredListFragment : Fragment() {
         val triple = arguments?.let {
             initStringArrayParams(FilteredListFragmentArgs.fromBundle(it))
         }
+
         val groups = triple?.component1()
         val trainers = triple?.component2()
         val places = triple?.component3()
 
-        val pair = arguments?.let { initPriceRangeParams(FilteredListFragmentArgs.fromBundle(it)) }
-        val minPrice = pair?.component1()
-        val maxPrice = pair?.component2()
-
-        Timber.i("${groups.toString()} \n ${trainers.toString()} \n ${places.toString()} \n $minPrice \n $maxPrice")
+        val minPrice =
+            arguments?.let { FilteredListFragmentArgs.fromBundle(it).minPrice } ?: Int.MIN_VALUE
+        val maxPrice =
+            arguments?.let { FilteredListFragmentArgs.fromBundle(it).maxPrice } ?: Int.MAX_VALUE
+        val startDate =
+            arguments?.let { FilteredListFragmentArgs.fromBundle(it).startDate } ?: Long.MIN_VALUE
+        val endDate =
+            arguments?.let { FilteredListFragmentArgs.fromBundle(it).endDate } ?: Long.MAX_VALUE
 
         val app = requireNotNull(this.activity).application
         val factory = FilteredListViewModelFactory(
@@ -55,7 +60,9 @@ class FilteredListFragment : Fragment() {
             trainers,
             places,
             minPrice,
-            maxPrice
+            maxPrice,
+            startDate,
+            endDate
         )
         filteredListViewModel =
             ViewModelProviders.of(this, factory).get(FilteredListViewModel::class.java)
@@ -100,7 +107,4 @@ class FilteredListFragment : Fragment() {
 
         return Triple(selectedGroups, selectedTrainers, selectedPlaces)
     }
-
-    private fun initPriceRangeParams(safeArgs: FilteredListFragmentArgs) =
-        Pair(safeArgs.minPrice, safeArgs.maxPrice)
 }

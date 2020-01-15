@@ -258,7 +258,7 @@ public final class TrainingDao_Impl implements TrainingDao {
   @Override
   public LiveData<List<Training>> getFilteredTrainings(final List<String> groups,
       final List<String> trainers, final List<String> places, final int minPrice,
-      final int maxPrice) {
+      final int maxPrice, final long startDate, final long endDate) {
     StringBuilder _stringBuilder = StringUtil.newStringBuilder();
     _stringBuilder.append("SELECT ");
     _stringBuilder.append("*");
@@ -275,9 +275,13 @@ public final class TrainingDao_Impl implements TrainingDao {
     _stringBuilder.append("?");
     _stringBuilder.append(") AND (");
     _stringBuilder.append("?");
+    _stringBuilder.append(")AND volfam_training_column_date BETWEEN (");
+    _stringBuilder.append("?");
+    _stringBuilder.append(") AND (");
+    _stringBuilder.append("?");
     _stringBuilder.append(")ORDER BY volfam_training_column_date DESC");
     final String _sql = _stringBuilder.toString();
-    final int _argCount = 2 + _inputSize + _inputSize_1 + _inputSize_2;
+    final int _argCount = 4 + _inputSize + _inputSize_1 + _inputSize_2;
     final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, _argCount);
     int _argIndex = 1;
     for (String _item : groups) {
@@ -310,6 +314,10 @@ public final class TrainingDao_Impl implements TrainingDao {
     _statement.bindLong(_argIndex, minPrice);
     _argIndex = 2 + _inputSize + _inputSize_1 + _inputSize_2;
     _statement.bindLong(_argIndex, maxPrice);
+    _argIndex = 3 + _inputSize + _inputSize_1 + _inputSize_2;
+    _statement.bindLong(_argIndex, startDate);
+    _argIndex = 4 + _inputSize + _inputSize_1 + _inputSize_2;
+    _statement.bindLong(_argIndex, endDate);
     return __db.getInvalidationTracker().createLiveData(new String[]{"volfam_training_table"}, false, new Callable<List<Training>>() {
       @Override
       public List<Training> call() throws Exception {

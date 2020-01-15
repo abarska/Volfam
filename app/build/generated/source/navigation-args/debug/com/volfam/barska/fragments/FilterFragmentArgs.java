@@ -32,6 +32,20 @@ public class FilterFragmentArgs implements NavArgs {
     } else {
       throw new IllegalArgumentException("Required argument \"maxPrice\" is missing and does not have an android:defaultValue");
     }
+    if (bundle.containsKey("minDate")) {
+      long minDate;
+      minDate = bundle.getLong("minDate");
+      __result.arguments.put("minDate", minDate);
+    } else {
+      throw new IllegalArgumentException("Required argument \"minDate\" is missing and does not have an android:defaultValue");
+    }
+    if (bundle.containsKey("maxDate")) {
+      long maxDate;
+      maxDate = bundle.getLong("maxDate");
+      __result.arguments.put("maxDate", maxDate);
+    } else {
+      throw new IllegalArgumentException("Required argument \"maxDate\" is missing and does not have an android:defaultValue");
+    }
     return __result;
   }
 
@@ -41,12 +55,30 @@ public class FilterFragmentArgs implements NavArgs {
   }
 
   @SuppressWarnings("unchecked")
+  public long getMinDate() {
+    return (long) arguments.get("minDate");
+  }
+
+  @SuppressWarnings("unchecked")
+  public long getMaxDate() {
+    return (long) arguments.get("maxDate");
+  }
+
+  @SuppressWarnings("unchecked")
   @NonNull
   public Bundle toBundle() {
     Bundle __result = new Bundle();
     if (arguments.containsKey("maxPrice")) {
       int maxPrice = (int) arguments.get("maxPrice");
       __result.putInt("maxPrice", maxPrice);
+    }
+    if (arguments.containsKey("minDate")) {
+      long minDate = (long) arguments.get("minDate");
+      __result.putLong("minDate", minDate);
+    }
+    if (arguments.containsKey("maxDate")) {
+      long maxDate = (long) arguments.get("maxDate");
+      __result.putLong("maxDate", maxDate);
     }
     return __result;
   }
@@ -66,6 +98,18 @@ public class FilterFragmentArgs implements NavArgs {
     if (getMaxPrice() != that.getMaxPrice()) {
       return false;
     }
+    if (arguments.containsKey("minDate") != that.arguments.containsKey("minDate")) {
+      return false;
+    }
+    if (getMinDate() != that.getMinDate()) {
+      return false;
+    }
+    if (arguments.containsKey("maxDate") != that.arguments.containsKey("maxDate")) {
+      return false;
+    }
+    if (getMaxDate() != that.getMaxDate()) {
+      return false;
+    }
     return true;
   }
 
@@ -73,6 +117,8 @@ public class FilterFragmentArgs implements NavArgs {
   public int hashCode() {
     int result = 1;
     result = 31 * result + getMaxPrice();
+    result = 31 * result + (int)(getMinDate() ^ (getMinDate() >>> 32));
+    result = 31 * result + (int)(getMaxDate() ^ (getMaxDate() >>> 32));
     return result;
   }
 
@@ -80,6 +126,8 @@ public class FilterFragmentArgs implements NavArgs {
   public String toString() {
     return "FilterFragmentArgs{"
         + "maxPrice=" + getMaxPrice()
+        + ", minDate=" + getMinDate()
+        + ", maxDate=" + getMaxDate()
         + "}";
   }
 
@@ -90,8 +138,10 @@ public class FilterFragmentArgs implements NavArgs {
       this.arguments.putAll(original.arguments);
     }
 
-    public Builder(int maxPrice) {
+    public Builder(int maxPrice, long minDate, long maxDate) {
       this.arguments.put("maxPrice", maxPrice);
+      this.arguments.put("minDate", minDate);
+      this.arguments.put("maxDate", maxDate);
     }
 
     @NonNull
@@ -106,9 +156,31 @@ public class FilterFragmentArgs implements NavArgs {
       return this;
     }
 
+    @NonNull
+    public Builder setMinDate(long minDate) {
+      this.arguments.put("minDate", minDate);
+      return this;
+    }
+
+    @NonNull
+    public Builder setMaxDate(long maxDate) {
+      this.arguments.put("maxDate", maxDate);
+      return this;
+    }
+
     @SuppressWarnings("unchecked")
     public int getMaxPrice() {
       return (int) arguments.get("maxPrice");
+    }
+
+    @SuppressWarnings("unchecked")
+    public long getMinDate() {
+      return (long) arguments.get("minDate");
+    }
+
+    @SuppressWarnings("unchecked")
+    public long getMaxDate() {
+      return (long) arguments.get("maxDate");
     }
   }
 }

@@ -8,6 +8,7 @@
     <string name="start_label">Начало:</string>
     <string name="price_label">Цена:</string>
     <string name="price_range">Цена от %d до %d гривен</string>
+    <string name="date_range_label">Выбрать период</string>
 
     <string name="group_label">Группа:</string>
     <string name="group_label_light">Лайт</string>

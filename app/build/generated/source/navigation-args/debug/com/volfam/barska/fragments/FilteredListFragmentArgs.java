@@ -55,6 +55,20 @@ public class FilteredListFragmentArgs implements NavArgs {
     } else {
       throw new IllegalArgumentException("Required argument \"maxPrice\" is missing and does not have an android:defaultValue");
     }
+    if (bundle.containsKey("startDate")) {
+      long startDate;
+      startDate = bundle.getLong("startDate");
+      __result.arguments.put("startDate", startDate);
+    } else {
+      throw new IllegalArgumentException("Required argument \"startDate\" is missing and does not have an android:defaultValue");
+    }
+    if (bundle.containsKey("endDate")) {
+      long endDate;
+      endDate = bundle.getLong("endDate");
+      __result.arguments.put("endDate", endDate);
+    } else {
+      throw new IllegalArgumentException("Required argument \"endDate\" is missing and does not have an android:defaultValue");
+    }
     return __result;
   }
 
@@ -87,6 +101,16 @@ public class FilteredListFragmentArgs implements NavArgs {
   }
 
   @SuppressWarnings("unchecked")
+  public long getStartDate() {
+    return (long) arguments.get("startDate");
+  }
+
+  @SuppressWarnings("unchecked")
+  public long getEndDate() {
+    return (long) arguments.get("endDate");
+  }
+
+  @SuppressWarnings("unchecked")
   @NonNull
   public Bundle toBundle() {
     Bundle __result = new Bundle();
@@ -109,6 +133,14 @@ public class FilteredListFragmentArgs implements NavArgs {
     if (arguments.containsKey("maxPrice")) {
       int maxPrice = (int) arguments.get("maxPrice");
       __result.putInt("maxPrice", maxPrice);
+    }
+    if (arguments.containsKey("startDate")) {
+      long startDate = (long) arguments.get("startDate");
+      __result.putLong("startDate", startDate);
+    }
+    if (arguments.containsKey("endDate")) {
+      long endDate = (long) arguments.get("endDate");
+      __result.putLong("endDate", endDate);
     }
     return __result;
   }
@@ -152,6 +184,18 @@ public class FilteredListFragmentArgs implements NavArgs {
     if (getMaxPrice() != that.getMaxPrice()) {
       return false;
     }
+    if (arguments.containsKey("startDate") != that.arguments.containsKey("startDate")) {
+      return false;
+    }
+    if (getStartDate() != that.getStartDate()) {
+      return false;
+    }
+    if (arguments.containsKey("endDate") != that.arguments.containsKey("endDate")) {
+      return false;
+    }
+    if (getEndDate() != that.getEndDate()) {
+      return false;
+    }
     return true;
   }
 
@@ -163,6 +207,8 @@ public class FilteredListFragmentArgs implements NavArgs {
     result = 31 * result + java.util.Arrays.hashCode(getPlaceArray());
     result = 31 * result + getMinPrice();
     result = 31 * result + getMaxPrice();
+    result = 31 * result + (int)(getStartDate() ^ (getStartDate() >>> 32));
+    result = 31 * result + (int)(getEndDate() ^ (getEndDate() >>> 32));
     return result;
   }
 
@@ -174,6 +220,8 @@ public class FilteredListFragmentArgs implements NavArgs {
         + ", placeArray=" + getPlaceArray()
         + ", minPrice=" + getMinPrice()
         + ", maxPrice=" + getMaxPrice()
+        + ", startDate=" + getStartDate()
+        + ", endDate=" + getEndDate()
         + "}";
   }
 
@@ -184,9 +232,11 @@ public class FilteredListFragmentArgs implements NavArgs {
       this.arguments.putAll(original.arguments);
     }
 
-    public Builder(int minPrice, int maxPrice) {
+    public Builder(int minPrice, int maxPrice, long startDate, long endDate) {
       this.arguments.put("minPrice", minPrice);
       this.arguments.put("maxPrice", maxPrice);
+      this.arguments.put("startDate", startDate);
+      this.arguments.put("endDate", endDate);
     }
 
     @NonNull
@@ -225,6 +275,18 @@ public class FilteredListFragmentArgs implements NavArgs {
       return this;
     }
 
+    @NonNull
+    public Builder setStartDate(long startDate) {
+      this.arguments.put("startDate", startDate);
+      return this;
+    }
+
+    @NonNull
+    public Builder setEndDate(long endDate) {
+      this.arguments.put("endDate", endDate);
+      return this;
+    }
+
     @SuppressWarnings("unchecked")
     @Nullable
     public int[] getGroupArray() {
@@ -251,6 +313,16 @@ public class FilteredListFragmentArgs implements NavArgs {
     @SuppressWarnings("unchecked")
     public int getMaxPrice() {
       return (int) arguments.get("maxPrice");
+    }
+
+    @SuppressWarnings("unchecked")
+    public long getStartDate() {
+      return (long) arguments.get("startDate");
+    }
+
+    @SuppressWarnings("unchecked")
+    public long getEndDate() {
+      return (long) arguments.get("endDate");
     }
   }
 }

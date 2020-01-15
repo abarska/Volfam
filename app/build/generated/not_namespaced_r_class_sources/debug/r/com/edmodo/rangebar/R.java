@@ -27,8 +27,8 @@ public final class R {
     public static final class drawable {
         private drawable() {}
 
-        public static final int seek_thumb_normal = 0x7f08008b;
-        public static final int seek_thumb_pressed = 0x7f08008c;
+        public static final int seek_thumb_normal = 0x7f08008e;
+        public static final int seek_thumb_pressed = 0x7f08008f;
     }
     public static final class string {
         private string() {}

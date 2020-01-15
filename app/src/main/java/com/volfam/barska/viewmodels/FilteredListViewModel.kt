@@ -12,13 +12,23 @@ class FilteredListViewModel(
     groups: List<String>?,
     trainers: List<String>?,
     places: List<String>?,
-    minPrice: Int?,
-    maxPrice: Int?
+    minPrice: Int,
+    maxPrice: Int,
+    startDate: Long,
+    endDate: Long
 ) : AndroidViewModel(app) {
 
     val selectedTrainings =
-        if (groups != null && trainers != null && places != null && minPrice != null && maxPrice != null)
-            trainingDao.getFilteredTrainings(groups, trainers, places, minPrice, maxPrice)
+        if (groups != null && trainers != null && places != null)
+            trainingDao.getFilteredTrainings(
+                groups,
+                trainers,
+                places,
+                minPrice,
+                maxPrice,
+                startDate,
+                endDate
+            )
         else trainingDao.getAllTrainings()
 }
 
@@ -28,8 +38,11 @@ class FilteredListViewModelFactory(
     private val groups: List<String>?,
     private val trainers: List<String>?,
     private val places: List<String>?,
-    private val minPrice: Int?,
-    private val maxPrice: Int?
+    private val minPrice: Int,
+    private val maxPrice: Int,
+    private val startDate: Long,
+    private val endDate: Long
+
 ) : ViewModelProvider.Factory {
     override fun <T : ViewModel?> create(modelClass: Class<T>): T {
         if (modelClass.isAssignableFrom(FilteredListViewModel::class.java)) {
@@ -40,7 +53,9 @@ class FilteredListViewModelFactory(
                 trainers,
                 places,
                 minPrice,
-                maxPrice
+                maxPrice,
+                startDate,
+                endDate
             ) as T
         }
         throw IllegalArgumentException("Unknown ViewModel class")

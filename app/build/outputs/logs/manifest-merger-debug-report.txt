@@ -9,6 +9,7 @@ MERGED from [androidx.databinding:databinding-runtime:3.5.3] C:\Users\ATNuser\.g
 MERGED from [android.arch.navigation:navigation-ui-ktx:1.0.0] C:\Users\ATNuser\.gradle\caches\transforms-2\files-2.1\47d8fef359aad65f6f5ffe583cea1852\jetified-navigation-ui-ktx-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [android.arch.navigation:navigation-ui:1.0.0] C:\Users\ATNuser\.gradle\caches\transforms-2\files-2.1\116d3b9fee7580df9832e718da487144\jetified-navigation-ui-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [com.google.android.material:material:1.0.0] C:\Users\ATNuser\.gradle\caches\transforms-2\files-2.1\61efd2dfefda14dec6388c1d13f196d7\material-1.0.0\AndroidManifest.xml:17:1-24:12
+MERGED from [com.savvi.datepicker:rangepicker:1.3.0] C:\Users\ATNuser\.gradle\caches\transforms-2\files-2.1\27d1ec3c4d65fcd1097502582123597f\rangepicker-1.3.0\AndroidManifest.xml:2:1-11:12
 MERGED from [androidx.appcompat:appcompat:1.1.0] C:\Users\ATNuser\.gradle\caches\transforms-2\files-2.1\fe2c484049959aa43361e7a80d89db70\appcompat-1.1.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.core:core-ktx:1.1.0] C:\Users\ATNuser\.gradle\caches\transforms-2\files-2.1\9971e9cf5b05423df82066c4b21de884\core-ktx-1.1.0\AndroidManifest.xml:2:1-9:12
 MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] C:\Users\ATNuser\.gradle\caches\transforms-2\files-2.1\f00b86f8bcaa183b42a7f1e5e6a855b4\constraintlayout-1.1.3\AndroidManifest.xml:2:1-11:12
@@ -140,6 +141,8 @@ MERGED from [android.arch.navigation:navigation-ui:1.0.0] C:\Users\ATNuser\.grad
 MERGED from [android.arch.navigation:navigation-ui:1.0.0] C:\Users\ATNuser\.gradle\caches\transforms-2\files-2.1\116d3b9fee7580df9832e718da487144\jetified-navigation-ui-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [com.google.android.material:material:1.0.0] C:\Users\ATNuser\.gradle\caches\transforms-2\files-2.1\61efd2dfefda14dec6388c1d13f196d7\material-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [com.google.android.material:material:1.0.0] C:\Users\ATNuser\.gradle\caches\transforms-2\files-2.1\61efd2dfefda14dec6388c1d13f196d7\material-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.savvi.datepicker:rangepicker:1.3.0] C:\Users\ATNuser\.gradle\caches\transforms-2\files-2.1\27d1ec3c4d65fcd1097502582123597f\rangepicker-1.3.0\AndroidManifest.xml:7:5-9:41
+MERGED from [com.savvi.datepicker:rangepicker:1.3.0] C:\Users\ATNuser\.gradle\caches\transforms-2\files-2.1\27d1ec3c4d65fcd1097502582123597f\rangepicker-1.3.0\AndroidManifest.xml:7:5-9:41
 MERGED from [androidx.appcompat:appcompat:1.1.0] C:\Users\ATNuser\.gradle\caches\transforms-2\files-2.1\fe2c484049959aa43361e7a80d89db70\appcompat-1.1.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.appcompat:appcompat:1.1.0] C:\Users\ATNuser\.gradle\caches\transforms-2\files-2.1\fe2c484049959aa43361e7a80d89db70\appcompat-1.1.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.core:core-ktx:1.1.0] C:\Users\ATNuser\.gradle\caches\transforms-2\files-2.1\9971e9cf5b05423df82066c4b21de884\core-ktx-1.1.0\AndroidManifest.xml:5:5-7:41

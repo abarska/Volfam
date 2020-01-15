@@ -26,7 +26,8 @@ public class FragmentFilterBindingImpl extends FragmentFilterBinding  {
         sViewsWithIds.put(R.id.peresyp_checkbox, 10);
         sViewsWithIds.put(R.id.price_range_textview, 11);
         sViewsWithIds.put(R.id.price_range_bar, 12);
-        sViewsWithIds.put(R.id.submit_button, 13);
+        sViewsWithIds.put(R.id.date_range_picker, 13);
+        sViewsWithIds.put(R.id.submit_button, 14);
     }
     // views
     @NonNull
@@ -37,10 +38,11 @@ public class FragmentFilterBindingImpl extends FragmentFilterBinding  {
     // Inverse Binding Event Handlers
 
     public FragmentFilterBindingImpl(@Nullable androidx.databinding.DataBindingComponent bindingComponent, @NonNull View root) {
-        this(bindingComponent, root, mapBindings(bindingComponent, root, 14, sIncludes, sViewsWithIds));
+        this(bindingComponent, root, mapBindings(bindingComponent, root, 15, sIncludes, sViewsWithIds));
     }
     private FragmentFilterBindingImpl(androidx.databinding.DataBindingComponent bindingComponent, View root, Object[] bindings) {
         super(bindingComponent, root, 0
+            , (com.savvi.rangedatepicker.CalendarPickerView) bindings[13]
             , (android.widget.CheckBox) bindings[9]
             , (android.widget.CheckBox) bindings[7]
             , (android.widget.CheckBox) bindings[6]
@@ -53,7 +55,7 @@ public class FragmentFilterBindingImpl extends FragmentFilterBinding  {
             , (android.widget.TextView) bindings[11]
             , (android.widget.CheckBox) bindings[1]
             , (android.widget.CheckBox) bindings[2]
-            , (android.widget.ImageView) bindings[13]
+            , (android.widget.ImageView) bindings[14]
             );
         this.mboundView0 = (android.widget.ScrollView) bindings[0];
         this.mboundView0.setTag(null);

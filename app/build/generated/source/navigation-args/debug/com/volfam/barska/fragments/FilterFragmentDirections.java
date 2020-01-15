@@ -17,16 +17,19 @@ public class FilterFragmentDirections {
 
   @NonNull
   public static ActionFilterFragmentToFilteredListFragment actionFilterFragmentToFilteredListFragment(int minPrice,
-      int maxPrice) {
-    return new ActionFilterFragmentToFilteredListFragment(minPrice, maxPrice);
+      int maxPrice, long startDate, long endDate) {
+    return new ActionFilterFragmentToFilteredListFragment(minPrice, maxPrice, startDate, endDate);
   }
 
   public static class ActionFilterFragmentToFilteredListFragment implements NavDirections {
     private final HashMap arguments = new HashMap();
 
-    private ActionFilterFragmentToFilteredListFragment(int minPrice, int maxPrice) {
+    private ActionFilterFragmentToFilteredListFragment(int minPrice, int maxPrice, long startDate,
+        long endDate) {
       this.arguments.put("minPrice", minPrice);
       this.arguments.put("maxPrice", maxPrice);
+      this.arguments.put("startDate", startDate);
+      this.arguments.put("endDate", endDate);
     }
 
     @NonNull
@@ -59,6 +62,18 @@ public class FilterFragmentDirections {
       return this;
     }
 
+    @NonNull
+    public ActionFilterFragmentToFilteredListFragment setStartDate(long startDate) {
+      this.arguments.put("startDate", startDate);
+      return this;
+    }
+
+    @NonNull
+    public ActionFilterFragmentToFilteredListFragment setEndDate(long endDate) {
+      this.arguments.put("endDate", endDate);
+      return this;
+    }
+
     @Override
     @SuppressWarnings("unchecked")
     @NonNull
@@ -83,6 +98,14 @@ public class FilterFragmentDirections {
       if (arguments.containsKey("maxPrice")) {
         int maxPrice = (int) arguments.get("maxPrice");
         __result.putInt("maxPrice", maxPrice);
+      }
+      if (arguments.containsKey("startDate")) {
+        long startDate = (long) arguments.get("startDate");
+        __result.putLong("startDate", startDate);
+      }
+      if (arguments.containsKey("endDate")) {
+        long endDate = (long) arguments.get("endDate");
+        __result.putLong("endDate", endDate);
       }
       return __result;
     }
@@ -118,6 +141,16 @@ public class FilterFragmentDirections {
     @SuppressWarnings("unchecked")
     public int getMaxPrice() {
       return (int) arguments.get("maxPrice");
+    }
+
+    @SuppressWarnings("unchecked")
+    public long getStartDate() {
+      return (long) arguments.get("startDate");
+    }
+
+    @SuppressWarnings("unchecked")
+    public long getEndDate() {
+      return (long) arguments.get("endDate");
     }
 
     @Override
@@ -159,6 +192,18 @@ public class FilterFragmentDirections {
       if (getMaxPrice() != that.getMaxPrice()) {
         return false;
       }
+      if (arguments.containsKey("startDate") != that.arguments.containsKey("startDate")) {
+        return false;
+      }
+      if (getStartDate() != that.getStartDate()) {
+        return false;
+      }
+      if (arguments.containsKey("endDate") != that.arguments.containsKey("endDate")) {
+        return false;
+      }
+      if (getEndDate() != that.getEndDate()) {
+        return false;
+      }
       if (getActionId() != that.getActionId()) {
         return false;
       }
@@ -173,6 +218,8 @@ public class FilterFragmentDirections {
       result = 31 * result + java.util.Arrays.hashCode(getPlaceArray());
       result = 31 * result + getMinPrice();
       result = 31 * result + getMaxPrice();
+      result = 31 * result + (int)(getStartDate() ^ (getStartDate() >>> 32));
+      result = 31 * result + (int)(getEndDate() ^ (getEndDate() >>> 32));
       result = 31 * result + getActionId();
       return result;
     }
@@ -185,6 +232,8 @@ public class FilterFragmentDirections {
           + ", placeArray=" + getPlaceArray()
           + ", minPrice=" + getMinPrice()
           + ", maxPrice=" + getMaxPrice()
+          + ", startDate=" + getStartDate()
+          + ", endDate=" + getEndDate()
           + "}";
     }
   }
