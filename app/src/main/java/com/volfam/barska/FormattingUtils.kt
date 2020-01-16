@@ -62,6 +62,15 @@ fun String.shortenPlaceString(): String {
     return shortString ?: this
 }
 
+fun String.firstLinePlaceString(): String {
+    val pattern = "\\d+\\s".toRegex()
+    val index = pattern.find(this)?.range?.last
+    val first = index?.let {
+        substring(0, it)
+    }
+    return first ?: this
+}
+
 fun String.breaklinePlaceString(): String {
     val pattern = "\\d+\\s".toRegex()
     val index = pattern.find(this)?.range?.last

@@ -62,12 +62,12 @@ fun TextView.setFormattedGroupPrice(training: Training?) {
 
 @BindingAdapter("place_shortened_with_label")
 fun TextView.setShortenedPlaceWithLabel(place: String?) {
-    text = context.getString(R.string.place_with_label, place?.shortenPlaceString() ?: "")
+    text = context.getString(R.string.place_with_label, place?.firstLinePlaceString() ?: "")
 }
 
 @BindingAdapter("shortened_place")
 fun TextView.setShortenedPlace(place: String?) {
-    text = place?.shortenPlaceString() ?: ""
+    text = place?.firstLinePlaceString() ?: ""
 }
 
 @BindingAdapter("place_with_breakline")

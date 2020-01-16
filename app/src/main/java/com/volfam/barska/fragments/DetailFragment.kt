@@ -81,7 +81,7 @@ class DetailFragment : Fragment() {
         detailViewModel.trainingPlace.observe(this, Observer { newPlace ->
             newPlace?.let {
                 binding.placeTextview.text =
-                    getString(R.string.place_with_label, it.shortenPlaceString())
+                    getString(R.string.place_with_label, it.firstLinePlaceString())
             }
         })
         detailViewModel.trainingPrice.observe(this, Observer { newPrice ->
@@ -206,7 +206,7 @@ class DetailFragment : Fragment() {
     private fun showPlacePickerDialog(training: Training) {
 
         val places = resources.getStringArray(R.array.places)
-        val shortenedPlaces = places.map { address -> address.shortenPlaceString() }.toTypedArray()
+        val shortenedPlaces = places.map { address -> address.firstLinePlaceString() }.toTypedArray()
         val index = places.indexOf(training.place)
         val builder = AlertDialog.Builder(context)
         val dialog = builder.apply {
