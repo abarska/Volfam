@@ -8,24 +8,13 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
-import androidx.drawerlayout.widget.DrawerLayout;
-import com.google.android.material.navigation.NavigationView;
 import com.volfam.barska.R;
 import java.lang.Deprecated;
 import java.lang.Object;
 
 public abstract class ActivityMainBinding extends ViewDataBinding {
-  @NonNull
-  public final DrawerLayout drawerLayout;
-
-  @NonNull
-  public final NavigationView navigationView;
-
-  protected ActivityMainBinding(Object _bindingComponent, View _root, int _localFieldCount,
-      DrawerLayout drawerLayout, NavigationView navigationView) {
+  protected ActivityMainBinding(Object _bindingComponent, View _root, int _localFieldCount) {
     super(_bindingComponent, _root, _localFieldCount);
-    this.drawerLayout = drawerLayout;
-    this.navigationView = navigationView;
   }
 
   @NonNull

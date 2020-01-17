@@ -13,24 +13,24 @@ public class ActivityMainBindingImpl extends ActivityMainBinding  {
     private static final android.util.SparseIntArray sViewsWithIds;
     static {
         sIncludes = null;
-        sViewsWithIds = new android.util.SparseIntArray();
-        sViewsWithIds.put(R.id.navigation_view, 1);
+        sViewsWithIds = null;
     }
     // views
+    @NonNull
+    private final android.widget.FrameLayout mboundView0;
     // variables
     // values
     // listeners
     // Inverse Binding Event Handlers
 
     public ActivityMainBindingImpl(@Nullable androidx.databinding.DataBindingComponent bindingComponent, @NonNull View root) {
-        this(bindingComponent, root, mapBindings(bindingComponent, root, 2, sIncludes, sViewsWithIds));
+        this(bindingComponent, root, mapBindings(bindingComponent, root, 1, sIncludes, sViewsWithIds));
     }
     private ActivityMainBindingImpl(androidx.databinding.DataBindingComponent bindingComponent, View root, Object[] bindings) {
         super(bindingComponent, root, 0
-            , (androidx.drawerlayout.widget.DrawerLayout) bindings[0]
-            , (com.google.android.material.navigation.NavigationView) bindings[1]
             );
-        this.drawerLayout.setTag(null);
+        this.mboundView0 = (android.widget.FrameLayout) bindings[0];
+        this.mboundView0.setTag(null);
         setRootTag(root);
         // listeners
         invalidateAll();

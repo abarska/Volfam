@@ -688,10 +688,6 @@
         "source": "C:\\Users\\ATNuser\\.gradle\\caches\\transforms-2\\files-2.1\\4e07392d73bf6777fdb9eff1dd5ae216\\appcompat-resources-1.1.0\\res\\drawable\\abc_vector_test.xml"
     },
     {
-        "merged": "C:\\Users\\ATNuser\\AndroidStudioProjects\\Volfam10\\app\\build\\intermediates\\res\\merged\\debug\\layout_nav_drawer_header.xml.flat",
-        "source": "C:\\Users\\ATNuser\\AndroidStudioProjects\\Volfam10\\app\\src\\main\\res\\layout\\nav_drawer_header.xml"
-    },
-    {
         "merged": "C:\\Users\\ATNuser\\AndroidStudioProjects\\Volfam10\\app\\build\\intermediates\\res\\merged\\debug\\layout_abc_activity_chooser_view.xml.flat",
         "source": "C:\\Users\\ATNuser\\.gradle\\caches\\transforms-2\\files-2.1\\fe2c484049959aa43361e7a80d89db70\\appcompat-1.1.0\\res\\layout\\abc_activity_chooser_view.xml"
     },
@@ -1790,10 +1786,6 @@
     {
         "merged": "C:\\Users\\ATNuser\\AndroidStudioProjects\\Volfam10\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_btn_check_to_on_mtrl_000.png.flat",
         "source": "C:\\Users\\ATNuser\\.gradle\\caches\\transforms-2\\files-2.1\\fe2c484049959aa43361e7a80d89db70\\appcompat-1.1.0\\res\\drawable-xxhdpi-v4\\abc_btn_check_to_on_mtrl_000.png"
-    },
-    {
-        "merged": "C:\\Users\\ATNuser\\AndroidStudioProjects\\Volfam10\\app\\build\\intermediates\\res\\merged\\debug\\menu_nav_drawer_menu.xml.flat",
-        "source": "C:\\Users\\ATNuser\\AndroidStudioProjects\\Volfam10\\app\\src\\main\\res\\menu\\nav_drawer_menu.xml"
     },
     {
         "merged": "C:\\Users\\ATNuser\\AndroidStudioProjects\\Volfam10\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_btn_check_to_on_mtrl_015.png.flat",

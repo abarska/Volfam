@@ -1313,7 +1313,6 @@ id didrikhsona_checkbox
 id dimensions
 id direct
 id disableHome
-id drawer_layout
 id edit_query
 id end
 id end_padder
@@ -1369,12 +1368,10 @@ id minus_five_button
 id mtrl_child_content_container
 id mtrl_internal_children_alpha_tag
 id multiply
-id navHeaderImage
 id navHostFragment
 id nav_controller_view_tag
 id navigation_xml
 id navigation_header_container
-id navigation_view
 id never
 id no_trainer_checkbox
 id none
@@ -1584,7 +1581,6 @@ layout list_item_view_training
 layout month
 layout mtrl_layout_snackbar
 layout mtrl_layout_snackbar_include
-layout nav_drawer_header
 layout notification_action
 layout notification_action_tombstone
 layout notification_media_action
@@ -1607,7 +1603,6 @@ layout support_simple_spinner_dropdown_item
 layout week
 menu menu_detail_fragment
 menu menu_list_fragment
-menu nav_drawer_menu
 mipmap ic_launcher
 mipmap ic_launcher_round
 navigation navigation

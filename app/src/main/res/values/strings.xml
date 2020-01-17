@@ -28,7 +28,7 @@
 
     <!-- fragment labels -->
     <string name="list_fragment_label">Список тренировок</string>
-    <string name="create_fragment_label">Открыть плюсовалку</string>
+    <string name="create_fragment_label">Создать тренировку</string>
     <string name="training_details">Детали тренировки</string>
     <string name="filter_fragment_label">Фильтры</string>
     <string name="filtered_list_fragment_label">Отфильтрованный список</string>
