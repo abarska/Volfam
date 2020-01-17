@@ -32,7 +32,7 @@ public class FragmentDetailBindingImpl extends FragmentDetailBinding  {
         this(bindingComponent, root, mapBindings(bindingComponent, root, 11, sIncludes, sViewsWithIds));
     }
     private FragmentDetailBindingImpl(androidx.databinding.DataBindingComponent bindingComponent, View root, Object[] bindings) {
-        super(bindingComponent, root, 0
+        super(bindingComponent, root, 4
             , (android.widget.ImageView) bindings[10]
             , (android.widget.TextView) bindings[1]
             , (android.widget.TextView) bindings[3]
@@ -59,7 +59,7 @@ public class FragmentDetailBindingImpl extends FragmentDetailBinding  {
     @Override
     public void invalidateAll() {
         synchronized(this) {
-                mDirtyFlags = 0x4L;
+                mDirtyFlags = 0x20L;
         }
         requestRebind();
     }
@@ -77,10 +77,7 @@ public class FragmentDetailBindingImpl extends FragmentDetailBinding  {
     @Override
     public boolean setVariable(int variableId, @Nullable Object variable)  {
         boolean variableSet = true;
-        if (BR.training == variableId) {
-            setTraining((com.volfam.barska.data.Training) variable);
-        }
-        else if (BR.detailViewModel == variableId) {
+        if (BR.detailViewModel == variableId) {
             setDetailViewModel((com.volfam.barska.viewmodels.DetailViewModel) variable);
         }
         else {
@@ -89,21 +86,62 @@ public class FragmentDetailBindingImpl extends FragmentDetailBinding  {
             return variableSet;
     }
 
-    public void setTraining(@Nullable com.volfam.barska.data.Training Training) {
-        this.mTraining = Training;
-        synchronized(this) {
-            mDirtyFlags |= 0x1L;
-        }
-        notifyPropertyChanged(BR.training);
-        super.requestRebind();
-    }
     public void setDetailViewModel(@Nullable com.volfam.barska.viewmodels.DetailViewModel DetailViewModel) {
         this.mDetailViewModel = DetailViewModel;
+        synchronized(this) {
+            mDirtyFlags |= 0x10L;
+        }
+        notifyPropertyChanged(BR.detailViewModel);
+        super.requestRebind();
     }
 
     @Override
     protected boolean onFieldChange(int localFieldId, Object object, int fieldId) {
         switch (localFieldId) {
+            case 0 :
+                return onChangeDetailViewModelTrainingGroup((androidx.lifecycle.LiveData<java.lang.String>) object, fieldId);
+            case 1 :
+                return onChangeDetailViewModelTrainingPlace((androidx.lifecycle.LiveData<java.lang.String>) object, fieldId);
+            case 2 :
+                return onChangeDetailViewModelTrainingTrainer((androidx.lifecycle.LiveData<java.lang.String>) object, fieldId);
+            case 3 :
+                return onChangeDetailViewModelTrainingDateTime((androidx.lifecycle.LiveData<java.lang.Long>) object, fieldId);
+        }
+        return false;
+    }
+    private boolean onChangeDetailViewModelTrainingGroup(androidx.lifecycle.LiveData<java.lang.String> DetailViewModelTrainingGroup, int fieldId) {
+        if (fieldId == BR._all) {
+            synchronized(this) {
+                    mDirtyFlags |= 0x1L;
+            }
+            return true;
+        }
+        return false;
+    }
+    private boolean onChangeDetailViewModelTrainingPlace(androidx.lifecycle.LiveData<java.lang.String> DetailViewModelTrainingPlace, int fieldId) {
+        if (fieldId == BR._all) {
+            synchronized(this) {
+                    mDirtyFlags |= 0x2L;
+            }
+            return true;
+        }
+        return false;
+    }
+    private boolean onChangeDetailViewModelTrainingTrainer(androidx.lifecycle.LiveData<java.lang.String> DetailViewModelTrainingTrainer, int fieldId) {
+        if (fieldId == BR._all) {
+            synchronized(this) {
+                    mDirtyFlags |= 0x4L;
+            }
+            return true;
+        }
+        return false;
+    }
+    private boolean onChangeDetailViewModelTrainingDateTime(androidx.lifecycle.LiveData<java.lang.Long> DetailViewModelTrainingDateTime, int fieldId) {
+        if (fieldId == BR._all) {
+            synchronized(this) {
+                    mDirtyFlags |= 0x8L;
+            }
+            return true;
         }
         return false;
     }
@@ -115,36 +153,97 @@ public class FragmentDetailBindingImpl extends FragmentDetailBinding  {
             dirtyFlags = mDirtyFlags;
             mDirtyFlags = 0;
         }
-        java.lang.String trainingTrainer = null;
-        com.volfam.barska.data.Training training = mTraining;
-        java.lang.String trainingPlace = null;
-        java.lang.String trainingGroup = null;
-        long trainingDate = 0;
+        androidx.lifecycle.LiveData<java.lang.String> detailViewModelTrainingGroup = null;
+        java.lang.String detailViewModelTrainingGroupGetValue = null;
+        java.lang.Long detailViewModelTrainingDateTimeGetValue = null;
+        androidx.lifecycle.LiveData<java.lang.String> detailViewModelTrainingPlace = null;
+        androidx.lifecycle.LiveData<java.lang.String> detailViewModelTrainingTrainer = null;
+        androidx.lifecycle.LiveData<java.lang.Long> detailViewModelTrainingDateTime = null;
+        com.volfam.barska.viewmodels.DetailViewModel detailViewModel = mDetailViewModel;
+        java.lang.String detailViewModelTrainingTrainerGetValue = null;
+        java.lang.String detailViewModelTrainingPlaceGetValue = null;
 
-        if ((dirtyFlags & 0x5L) != 0) {
+        if ((dirtyFlags & 0x3fL) != 0) {
 
 
+            if ((dirtyFlags & 0x31L) != 0) {
 
-                if (training != null) {
-                    // read training.trainer
-                    trainingTrainer = training.getTrainer();
-                    // read training.place
-                    trainingPlace = training.getPlace();
-                    // read training.group
-                    trainingGroup = training.getGroup();
-                    // read training.date
-                    trainingDate = training.getDate();
-                }
+                    if (detailViewModel != null) {
+                        // read detailViewModel.trainingGroup
+                        detailViewModelTrainingGroup = detailViewModel.getTrainingGroup();
+                    }
+                    updateLiveDataRegistration(0, detailViewModelTrainingGroup);
+
+
+                    if (detailViewModelTrainingGroup != null) {
+                        // read detailViewModel.trainingGroup.getValue()
+                        detailViewModelTrainingGroupGetValue = detailViewModelTrainingGroup.getValue();
+                    }
+            }
+            if ((dirtyFlags & 0x32L) != 0) {
+
+                    if (detailViewModel != null) {
+                        // read detailViewModel.trainingPlace
+                        detailViewModelTrainingPlace = detailViewModel.getTrainingPlace();
+                    }
+                    updateLiveDataRegistration(1, detailViewModelTrainingPlace);
+
+
+                    if (detailViewModelTrainingPlace != null) {
+                        // read detailViewModel.trainingPlace.getValue()
+                        detailViewModelTrainingPlaceGetValue = detailViewModelTrainingPlace.getValue();
+                    }
+            }
+            if ((dirtyFlags & 0x34L) != 0) {
+
+                    if (detailViewModel != null) {
+                        // read detailViewModel.trainingTrainer
+                        detailViewModelTrainingTrainer = detailViewModel.getTrainingTrainer();
+                    }
+                    updateLiveDataRegistration(2, detailViewModelTrainingTrainer);
+
+
+                    if (detailViewModelTrainingTrainer != null) {
+                        // read detailViewModel.trainingTrainer.getValue()
+                        detailViewModelTrainingTrainerGetValue = detailViewModelTrainingTrainer.getValue();
+                    }
+            }
+            if ((dirtyFlags & 0x38L) != 0) {
+
+                    if (detailViewModel != null) {
+                        // read detailViewModel.trainingDateTime
+                        detailViewModelTrainingDateTime = detailViewModel.getTrainingDateTime();
+                    }
+                    updateLiveDataRegistration(3, detailViewModelTrainingDateTime);
+
+
+                    if (detailViewModelTrainingDateTime != null) {
+                        // read detailViewModel.trainingDateTime.getValue()
+                        detailViewModelTrainingDateTimeGetValue = detailViewModelTrainingDateTime.getValue();
+                    }
+            }
         }
         // batch finished
-        if ((dirtyFlags & 0x5L) != 0) {
+        if ((dirtyFlags & 0x38L) != 0) {
             // api target 1
 
-            com.volfam.barska.BindingUtilsKt.setFormattedDate(this.dateTextview, trainingDate);
-            com.volfam.barska.BindingUtilsKt.setGroupWithLabel(this.groupTextview, trainingGroup);
-            com.volfam.barska.BindingUtilsKt.setShortenedPlaceWithLabel(this.placeTextview, trainingPlace);
-            com.volfam.barska.BindingUtilsKt.setFormattedStartTime(this.timeTextview, trainingDate);
-            com.volfam.barska.BindingUtilsKt.setTrainerShortenedWithLabel(this.trainerTextview, trainingTrainer);
+            com.volfam.barska.BindingUtilsKt.setFormattedDate(this.dateTextview, detailViewModelTrainingDateTimeGetValue);
+            com.volfam.barska.BindingUtilsKt.setFormattedStartTime(this.timeTextview, detailViewModelTrainingDateTimeGetValue);
+        }
+        if ((dirtyFlags & 0x31L) != 0) {
+            // api target 1
+
+            com.volfam.barska.BindingUtilsKt.setGroupWithLabel(this.groupTextview, detailViewModelTrainingGroupGetValue);
+        }
+        if ((dirtyFlags & 0x32L) != 0) {
+            // api target 1
+
+            com.volfam.barska.BindingUtilsKt.setShortenedPlaceWithLabel(this.placeTextview, detailViewModelTrainingPlaceGetValue);
+        }
+        if ((dirtyFlags & 0x34L) != 0) {
+            // api target 1
+
+            com.volfam.barska.BindingUtilsKt.setTrainerShortenedWithLabel(this.trainerTextview, detailViewModelTrainingTrainerGetValue);
         }
     }
     // Listener Stub Implementations
@@ -152,9 +251,12 @@ public class FragmentDetailBindingImpl extends FragmentDetailBinding  {
     // dirty flag
     private  long mDirtyFlags = 0xffffffffffffffffL;
     /* flag mapping
-        flag 0 (0x1L): training
-        flag 1 (0x2L): detailViewModel
-        flag 2 (0x3L): null
+        flag 0 (0x1L): detailViewModel.trainingGroup
+        flag 1 (0x2L): detailViewModel.trainingPlace
+        flag 2 (0x3L): detailViewModel.trainingTrainer
+        flag 3 (0x4L): detailViewModel.trainingDateTime
+        flag 4 (0x5L): detailViewModel
+        flag 5 (0x6L): null
     flag mapping end*/
     //end
 }

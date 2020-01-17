@@ -5,8 +5,8 @@ import androidx.lifecycle.*
 import com.volfam.barska.data.Training
 import com.volfam.barska.data.TrainingDao
 import kotlinx.coroutines.*
+import timber.log.Timber
 
-//Use AndroidViewModel to pass Application context that lives as long as the application does
 class DetailViewModel(
     private val trainingDao: TrainingDao,
     app: Application,
@@ -14,7 +14,7 @@ class DetailViewModel(
 ) :
     AndroidViewModel(app) {
 
-    val trainingDetails: LiveData<Training> = trainingDao.getTraining(key)
+    val training: LiveData<Training> = trainingDao.getTraining(key)
 
     private var viewModelJob = Job()
     private val uiScope = CoroutineScope(Dispatchers.Main + viewModelJob)
@@ -39,12 +39,12 @@ class DetailViewModel(
     val trainingPrice: LiveData<Int>
         get() = _trainingPrice
 
-    fun initObservables(training: Training) {
-        _trainingDateTime.value = training.date
-        _trainingGroup.value = training.group
-        _trainingTrainer.value = training.trainer
-        _trainingPlace.value = training.place
-        _trainingPrice.value = training.price
+    fun initObservableValues() {
+        if (_trainingDateTime.value == null) _trainingDateTime.value = training.value?.date
+        if (_trainingGroup.value == null) _trainingGroup.value = training.value?.group
+        if (_trainingTrainer.value == null) _trainingTrainer.value = training.value?.trainer
+        if (_trainingPlace.value == null) _trainingPlace.value = training.value?.place
+        if (_trainingPrice.value == null) _trainingPrice.value = training.value?.price
     }
 
     fun updateTrainingTime(timeInMillis: Long) {

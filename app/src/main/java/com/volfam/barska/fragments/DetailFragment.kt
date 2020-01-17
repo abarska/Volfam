@@ -32,15 +32,21 @@ class DetailFragment : Fragment() {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_detail, container, false)
         binding.lifecycleOwner = this
 
+        val app = requireNotNull(this.activity).application
+        val trainingDao = VolfamDatabase.getInstance(app).trainingDao
         val factory = DetailViewModelFactory(
-            VolfamDatabase.getInstance(activity!!.application).trainingDao,
-            activity!!.application,
-            DetailFragmentArgs.fromBundle(arguments!!).trainingId
+            trainingDao, app, DetailFragmentArgs.fromBundle(arguments!!).trainingId
         )
         detailViewModel = ViewModelProviders.of(this, factory).get(DetailViewModel::class.java)
         binding.detailViewModel = detailViewModel
 
-        initObservers()
+        detailViewModel.training.observe(this, Observer { training ->
+            training?.let {
+                detailViewModel.initObservableValues()
+                initOnClickListeners()
+                initPriceObserver()
+            }
+        })
 
         binding.changeButton.setOnClickListener { view ->
             val updated = detailViewModel.updateTraining()
@@ -53,37 +59,64 @@ class DetailFragment : Fragment() {
         return binding.root
     }
 
-    private fun initObservers() {
-        detailViewModel.trainingDetails.observe(this, Observer { training ->
-            training?.let { it ->
-                detailViewModel.initObservables(it)
-                initOnClickListeners()
-                binding.training = it
+    private fun initOnClickListeners() {
+
+        if (!binding.timeTextview.hasOnClickListeners()) {
+            binding.timeTextview.setOnClickListener {
+                showTimePickerDialog(detailViewModel.trainingDateTime.value!!)
             }
-        })
-        detailViewModel.trainingDateTime.observe(this, Observer { newTime ->
-            newTime?.let {
-                binding.dateTextview.text = formatDate(context!!, it)
-                binding.timeTextview.text = formatStartTime(context!!, it)
+        }
+        if (!binding.dateTextview.hasOnClickListeners()) {
+            binding.dateTextview.setOnClickListener {
+                showDatePickerDialog(detailViewModel.trainingDateTime.value!!)
             }
-        })
-        detailViewModel.trainingGroup.observe(this, Observer { newGroup ->
-            newGroup?.let {
-                binding.groupTextview.text = getString(R.string.group_with_label, it)
+        }
+
+        if (!binding.timeTextview.hasOnClickListeners()) {
+            binding.timeTextview.setOnClickListener {
+                showTimePickerDialog(detailViewModel.trainingDateTime.value!!)
             }
-        })
-        detailViewModel.trainingTrainer.observe(this, Observer { newTrainer ->
-            newTrainer?.let {
-                val shortened = it.shortenTrainerName(context!!)
-                binding.trainerTextview.text = getString(R.string.trainer_with_label, shortened)
+        }
+
+        if (!binding.dateTextview.hasOnClickListeners()) {
+            binding.dateTextview.setOnClickListener {
+                showDatePickerDialog(detailViewModel.trainingDateTime.value!!)
             }
-        })
-        detailViewModel.trainingPlace.observe(this, Observer { newPlace ->
-            newPlace?.let {
-                binding.placeTextview.text =
-                    getString(R.string.place_with_label, it.firstLinePlaceString())
+        }
+
+        if (!binding.groupTextview.hasOnClickListeners()) {
+            binding.groupTextview.setOnClickListener {
+                showGroupPickerDialog(detailViewModel.training.value!!)
             }
-        })
+        }
+
+        if (!binding.trainerTextview.hasOnClickListeners()) {
+            binding.trainerTextview.setOnClickListener {
+                showTrainerPickerDialog(detailViewModel.training.value!!)
+            }
+        }
+
+        if (!binding.placeTextview.hasOnClickListeners()) {
+            binding.placeTextview.setOnClickListener {
+                showPlacePickerDialog(detailViewModel.training.value!!)
+            }
+        }
+
+        if (!binding.plusFiveButton.hasOnClickListeners()) {
+            binding.plusFiveButton.setOnClickListener {
+                detailViewModel.addFiveToPrice()
+            }
+        }
+
+        if (!binding.minusFiveButton.hasOnClickListeners()) {
+            binding.minusFiveButton.setOnClickListener {
+                detailViewModel.substractFiveFromPrice()
+            }
+        }
+    }
+
+    private fun initPriceObserver() {
+
         detailViewModel.trainingPrice.observe(this, Observer { newPrice ->
             newPrice?.let { it ->
                 binding.priceTextview.text = getString(R.string.price_formatter, it)
@@ -110,51 +143,6 @@ class DetailFragment : Fragment() {
                 }
             }
         })
-    }
-
-    private fun initOnClickListeners() {
-
-        if (!binding.timeTextview.hasOnClickListeners()) {
-            binding.timeTextview.setOnClickListener {
-                showTimePickerDialog(detailViewModel.trainingDateTime.value!!)
-            }
-        }
-
-        if (!binding.dateTextview.hasOnClickListeners()) {
-            binding.dateTextview.setOnClickListener {
-                showDatePickerDialog(detailViewModel.trainingDateTime.value!!)
-            }
-        }
-
-        if (!binding.groupTextview.hasOnClickListeners()) {
-            binding.groupTextview.setOnClickListener {
-                showGroupPickerDialog(binding.training!!)
-            }
-        }
-
-        if (!binding.trainerTextview.hasOnClickListeners()) {
-            binding.trainerTextview.setOnClickListener {
-                showTrainerPickerDialog(binding.training!!)
-            }
-        }
-
-        if (!binding.placeTextview.hasOnClickListeners()) {
-            binding.placeTextview.setOnClickListener {
-                showPlacePickerDialog(binding.training!!)
-            }
-        }
-
-        if (!binding.plusFiveButton.hasOnClickListeners()) {
-            binding.plusFiveButton.setOnClickListener {
-                detailViewModel.addFiveToPrice()
-            }
-        }
-
-        if (!binding.minusFiveButton.hasOnClickListeners()) {
-            binding.minusFiveButton.setOnClickListener {
-                detailViewModel.substractFiveFromPrice()
-            }
-        }
     }
 
     private fun showTimePickerDialog(millis: Long) {
@@ -206,7 +194,8 @@ class DetailFragment : Fragment() {
     private fun showPlacePickerDialog(training: Training) {
 
         val places = resources.getStringArray(R.array.places)
-        val shortenedPlaces = places.map { address -> address.firstLinePlaceString() }.toTypedArray()
+        val shortenedPlaces =
+            places.map { address -> address.firstLinePlaceString() }.toTypedArray()
         val index = places.indexOf(training.place)
         val builder = AlertDialog.Builder(context)
         val dialog = builder.apply {

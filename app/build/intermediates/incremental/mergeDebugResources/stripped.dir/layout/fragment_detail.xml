@@ -10,10 +10,6 @@
                  
                                   
                                                                   
-
-                 
-                           
-                                                     
            
 
     <ScrollView
@@ -37,7 +33,7 @@
                 android:gravity="center"
                 android:textColor="@color/darkTextColor"
                 android:textSize="@dimen/large_text_size"
-                android:tag="binding_1"              
+                android:tag="binding_1"                                 
                 tools:text="@string/placeholder_text" />
 
             <View
@@ -56,7 +52,7 @@
                 android:gravity="center"
                 android:textColor="@color/darkTextColor"
                 android:textSize="@dimen/large_text_size"
-                android:tag="binding_2"                    
+                android:tag="binding_2"                                       
                 tools:text="@string/placeholder_text" />
 
 
@@ -76,7 +72,7 @@
                 android:gravity="center"
                 android:textColor="@color/darkTextColor"
                 android:textSize="@dimen/large_text_size"
-                android:tag="binding_3"                 
+                android:tag="binding_3"                                
                 tools:text="@string/placeholder_text" />
 
             <View
@@ -95,7 +91,7 @@
                 android:gravity="center"
                 android:textColor="@color/darkTextColor"
                 android:textSize="@dimen/large_text_size"
-                android:tag="binding_4"                               
+                android:tag="binding_4"                                              
                 tools:text="@string/placeholder_text" />
 
             <View
@@ -114,7 +110,7 @@
                 android:gravity="center"
                 android:textColor="@color/darkTextColor"
                 android:textSize="@dimen/large_text_size"
-                android:tag="binding_5"                           
+                android:tag="binding_5"                                          
                 tools:text="@string/placeholder_text" />
 
             <View

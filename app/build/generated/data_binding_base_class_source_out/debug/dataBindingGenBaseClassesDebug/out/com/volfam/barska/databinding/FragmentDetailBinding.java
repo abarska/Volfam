@@ -13,7 +13,6 @@ import androidx.databinding.Bindable;
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
 import com.volfam.barska.R;
-import com.volfam.barska.data.Training;
 import com.volfam.barska.viewmodels.DetailViewModel;
 import java.lang.Deprecated;
 import java.lang.Object;
@@ -52,9 +51,6 @@ public abstract class FragmentDetailBinding extends ViewDataBinding {
   @Bindable
   protected DetailViewModel mDetailViewModel;
 
-  @Bindable
-  protected Training mTraining;
-
   protected FragmentDetailBinding(Object _bindingComponent, View _root, int _localFieldCount,
       ImageView changeButton, TextView dateTextview, TextView groupTextview,
       ImageView minusFiveButton, TextView placeTextview, ImageView plusFiveButton,
@@ -78,13 +74,6 @@ public abstract class FragmentDetailBinding extends ViewDataBinding {
   @Nullable
   public DetailViewModel getDetailViewModel() {
     return mDetailViewModel;
-  }
-
-  public abstract void setTraining(@Nullable Training training);
-
-  @Nullable
-  public Training getTraining() {
-    return mTraining;
   }
 
   @NonNull

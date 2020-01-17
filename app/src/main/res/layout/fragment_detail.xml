@@ -10,10 +10,6 @@
         <variable
             name="detailViewModel"
             type="com.volfam.barska.viewmodels.DetailViewModel" />
-
-        <variable
-            name="training"
-            type="com.volfam.barska.data.Training" />
     </data>
 
     <ScrollView
@@ -37,7 +33,7 @@
                 android:gravity="center"
                 android:textColor="@color/darkTextColor"
                 android:textSize="@dimen/large_text_size"
-                app:formatted_date="@{training.date}"
+                app:formatted_date="@{detailViewModel.trainingDateTime}"
                 tools:text="@string/placeholder_text" />
 
             <View
@@ -56,7 +52,7 @@
                 android:gravity="center"
                 android:textColor="@color/darkTextColor"
                 android:textSize="@dimen/large_text_size"
-                app:formatted_start_time="@{training.date}"
+                app:formatted_start_time="@{detailViewModel.trainingDateTime}"
                 tools:text="@string/placeholder_text" />
 
 
@@ -76,7 +72,7 @@
                 android:gravity="center"
                 android:textColor="@color/darkTextColor"
                 android:textSize="@dimen/large_text_size"
-                app:group_with_label="@{training.group}"
+                app:group_with_label="@{detailViewModel.trainingGroup}"
                 tools:text="@string/placeholder_text" />
 
             <View
@@ -95,7 +91,7 @@
                 android:gravity="center"
                 android:textColor="@color/darkTextColor"
                 android:textSize="@dimen/large_text_size"
-                app:trainer_shortened_with_label="@{training.trainer}"
+                app:trainer_shortened_with_label="@{detailViewModel.trainingTrainer}"
                 tools:text="@string/placeholder_text" />
 
             <View
@@ -114,7 +110,7 @@
                 android:gravity="center"
                 android:textColor="@color/darkTextColor"
                 android:textSize="@dimen/large_text_size"
-                app:place_shortened_with_label="@{training.place}"
+                app:place_shortened_with_label="@{detailViewModel.trainingPlace}"
                 tools:text="@string/placeholder_text" />
 
             <View
