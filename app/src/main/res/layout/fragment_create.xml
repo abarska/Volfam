@@ -57,6 +57,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/group_textview">
 
                 <RadioButton
+                    android:id="@+id/light_radio_button"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:onClick="@{() -> createViewModel.updateGroup(@string/group_label_light)}"
@@ -64,6 +65,7 @@
                     android:textSize="@dimen/normal_text_size" />
 
                 <RadioButton
+                    android:id="@+id/medium_radio_button"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/spacing_half"
@@ -72,6 +74,7 @@
                     android:textSize="@dimen/normal_text_size" />
 
                 <RadioButton
+                    android:id="@+id/girls_radio_button"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/spacing_half"
@@ -80,6 +83,7 @@
                     android:textSize="@dimen/normal_text_size" />
 
                 <RadioButton
+                    android:id="@+id/family_radio_button"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/spacing_half"
@@ -112,6 +116,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/trainer_textview">
 
                 <RadioButton
+                    android:id="@+id/smugiljov_radio_button"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:onClick="@{() -> createViewModel.updateTrainer(@string/trainer_label_smugilev)}"
@@ -119,6 +124,7 @@
                     android:textSize="@dimen/normal_text_size" />
 
                 <RadioButton
+                    android:id="@+id/sokolovskaya_radio_button"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/spacing_half"
@@ -127,6 +133,7 @@
                     android:textSize="@dimen/normal_text_size" />
 
                 <RadioButton
+                    android:id="@+id/no_trainer_radio_button"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/spacing_half"
@@ -159,6 +166,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/place_textview">
 
                 <RadioButton
+                    android:id="@+id/kuznechnaya_radio_button"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:onClick="@{() -> createViewModel.updatePlace(@string/place_label_kuznechnaya)}"
@@ -166,6 +174,7 @@
                     app:shortened_place="@{@string/place_label_kuznechnaya}" />
 
                 <RadioButton
+                    android:id="@+id/didrikhsona_radio_button"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/spacing_half"
@@ -174,6 +183,7 @@
                     app:shortened_place="@{@string/place_label_didrikhsona}" />
 
                 <RadioButton
+                    android:id="@+id/peresyp_radio_button"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/spacing_half"

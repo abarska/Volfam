@@ -28,26 +28,6 @@ public class FragmentCreateBindingImpl extends FragmentCreateBinding implements 
     // views
     @NonNull
     private final android.widget.ScrollView mboundView0;
-    @NonNull
-    private final android.widget.RadioButton mboundView1;
-    @NonNull
-    private final android.widget.RadioButton mboundView10;
-    @NonNull
-    private final android.widget.RadioButton mboundView2;
-    @NonNull
-    private final android.widget.RadioButton mboundView3;
-    @NonNull
-    private final android.widget.RadioButton mboundView4;
-    @NonNull
-    private final android.widget.RadioButton mboundView5;
-    @NonNull
-    private final android.widget.RadioButton mboundView6;
-    @NonNull
-    private final android.widget.RadioButton mboundView7;
-    @NonNull
-    private final android.widget.RadioButton mboundView8;
-    @NonNull
-    private final android.widget.RadioButton mboundView9;
     // variables
     @Nullable
     private final android.view.View.OnClickListener mCallback8;
@@ -78,39 +58,39 @@ public class FragmentCreateBindingImpl extends FragmentCreateBinding implements 
     }
     private FragmentCreateBindingImpl(androidx.databinding.DataBindingComponent bindingComponent, View root, Object[] bindings) {
         super(bindingComponent, root, 0
+            , (android.widget.RadioButton) bindings[9]
+            , (android.widget.RadioButton) bindings[4]
+            , (android.widget.RadioButton) bindings[3]
             , (android.widget.RadioGroup) bindings[13]
             , (android.widget.TextView) bindings[12]
+            , (android.widget.RadioButton) bindings[8]
+            , (android.widget.RadioButton) bindings[1]
+            , (android.widget.RadioButton) bindings[2]
+            , (android.widget.RadioButton) bindings[7]
+            , (android.widget.RadioButton) bindings[10]
             , (android.widget.RadioGroup) bindings[17]
             , (android.widget.TextView) bindings[16]
             , (android.widget.EditText) bindings[19]
+            , (android.widget.RadioButton) bindings[5]
+            , (android.widget.RadioButton) bindings[6]
             , (android.widget.ImageView) bindings[20]
             , (android.widget.RadioGroup) bindings[15]
             , (android.widget.TextView) bindings[14]
             , (android.widget.DatePicker) bindings[11]
             , (android.widget.TimePicker) bindings[18]
             );
+        this.didrikhsonaRadioButton.setTag(null);
+        this.familyRadioButton.setTag(null);
+        this.girlsRadioButton.setTag(null);
+        this.kuznechnayaRadioButton.setTag(null);
+        this.lightRadioButton.setTag(null);
         this.mboundView0 = (android.widget.ScrollView) bindings[0];
         this.mboundView0.setTag(null);
-        this.mboundView1 = (android.widget.RadioButton) bindings[1];
-        this.mboundView1.setTag(null);
-        this.mboundView10 = (android.widget.RadioButton) bindings[10];
-        this.mboundView10.setTag(null);
-        this.mboundView2 = (android.widget.RadioButton) bindings[2];
-        this.mboundView2.setTag(null);
-        this.mboundView3 = (android.widget.RadioButton) bindings[3];
-        this.mboundView3.setTag(null);
-        this.mboundView4 = (android.widget.RadioButton) bindings[4];
-        this.mboundView4.setTag(null);
-        this.mboundView5 = (android.widget.RadioButton) bindings[5];
-        this.mboundView5.setTag(null);
-        this.mboundView6 = (android.widget.RadioButton) bindings[6];
-        this.mboundView6.setTag(null);
-        this.mboundView7 = (android.widget.RadioButton) bindings[7];
-        this.mboundView7.setTag(null);
-        this.mboundView8 = (android.widget.RadioButton) bindings[8];
-        this.mboundView8.setTag(null);
-        this.mboundView9 = (android.widget.RadioButton) bindings[9];
-        this.mboundView9.setTag(null);
+        this.mediumRadioButton.setTag(null);
+        this.noTrainerRadioButton.setTag(null);
+        this.peresypRadioButton.setTag(null);
+        this.smugiljovRadioButton.setTag(null);
+        this.sokolovskayaRadioButton.setTag(null);
         setRootTag(root);
         // listeners
         mCallback8 = new com.volfam.barska.generated.callback.OnClickListener(this, 8);
@@ -184,19 +164,19 @@ public class FragmentCreateBindingImpl extends FragmentCreateBinding implements 
         if ((dirtyFlags & 0x2L) != 0) {
             // api target 1
 
-            this.mboundView1.setOnClickListener(mCallback1);
-            this.mboundView10.setOnClickListener(mCallback10);
-            com.volfam.barska.BindingUtilsKt.setShortenedPlace(this.mboundView10, mboundView10.getResources().getString(R.string.place_label_peresyp));
-            this.mboundView2.setOnClickListener(mCallback2);
-            this.mboundView3.setOnClickListener(mCallback3);
-            this.mboundView4.setOnClickListener(mCallback4);
-            this.mboundView5.setOnClickListener(mCallback5);
-            this.mboundView6.setOnClickListener(mCallback6);
-            this.mboundView7.setOnClickListener(mCallback7);
-            this.mboundView8.setOnClickListener(mCallback8);
-            com.volfam.barska.BindingUtilsKt.setShortenedPlace(this.mboundView8, mboundView8.getResources().getString(R.string.place_label_kuznechnaya));
-            this.mboundView9.setOnClickListener(mCallback9);
-            com.volfam.barska.BindingUtilsKt.setShortenedPlace(this.mboundView9, mboundView9.getResources().getString(R.string.place_label_didrikhsona));
+            this.didrikhsonaRadioButton.setOnClickListener(mCallback9);
+            com.volfam.barska.BindingUtilsKt.setShortenedPlace(this.didrikhsonaRadioButton, didrikhsonaRadioButton.getResources().getString(R.string.place_label_didrikhsona));
+            this.familyRadioButton.setOnClickListener(mCallback4);
+            this.girlsRadioButton.setOnClickListener(mCallback3);
+            this.kuznechnayaRadioButton.setOnClickListener(mCallback8);
+            com.volfam.barska.BindingUtilsKt.setShortenedPlace(this.kuznechnayaRadioButton, kuznechnayaRadioButton.getResources().getString(R.string.place_label_kuznechnaya));
+            this.lightRadioButton.setOnClickListener(mCallback1);
+            this.mediumRadioButton.setOnClickListener(mCallback2);
+            this.noTrainerRadioButton.setOnClickListener(mCallback7);
+            this.peresypRadioButton.setOnClickListener(mCallback10);
+            com.volfam.barska.BindingUtilsKt.setShortenedPlace(this.peresypRadioButton, peresypRadioButton.getResources().getString(R.string.place_label_peresyp));
+            this.smugiljovRadioButton.setOnClickListener(mCallback5);
+            this.sokolovskayaRadioButton.setOnClickListener(mCallback6);
         }
     }
     // Listener Stub Implementations
@@ -217,7 +197,7 @@ public class FragmentCreateBindingImpl extends FragmentCreateBinding implements 
 
 
 
-                    createViewModel.updatePlace(mboundView8.getResources().getString(R.string.place_label_kuznechnaya));
+                    createViewModel.updatePlace(kuznechnayaRadioButton.getResources().getString(R.string.place_label_kuznechnaya));
                 }
                 break;
             }
@@ -235,7 +215,7 @@ public class FragmentCreateBindingImpl extends FragmentCreateBinding implements 
 
 
 
-                    createViewModel.updateTrainer(mboundView6.getResources().getString(R.string.trainer_label_sokolovskaya));
+                    createViewModel.updateTrainer(sokolovskayaRadioButton.getResources().getString(R.string.trainer_label_sokolovskaya));
                 }
                 break;
             }
@@ -253,7 +233,7 @@ public class FragmentCreateBindingImpl extends FragmentCreateBinding implements 
 
 
 
-                    createViewModel.updateGroup(mboundView4.getResources().getString(R.string.group_label_family));
+                    createViewModel.updateGroup(familyRadioButton.getResources().getString(R.string.group_label_family));
                 }
                 break;
             }
@@ -271,7 +251,7 @@ public class FragmentCreateBindingImpl extends FragmentCreateBinding implements 
 
 
 
-                    createViewModel.updateGroup(mboundView2.getResources().getString(R.string.group_label_medium));
+                    createViewModel.updateGroup(mediumRadioButton.getResources().getString(R.string.group_label_medium));
                 }
                 break;
             }
@@ -289,7 +269,7 @@ public class FragmentCreateBindingImpl extends FragmentCreateBinding implements 
 
 
 
-                    createViewModel.updatePlace(mboundView10.getResources().getString(R.string.place_label_peresyp));
+                    createViewModel.updatePlace(peresypRadioButton.getResources().getString(R.string.place_label_peresyp));
                 }
                 break;
             }
@@ -307,7 +287,7 @@ public class FragmentCreateBindingImpl extends FragmentCreateBinding implements 
 
 
 
-                    createViewModel.updatePlace(mboundView9.getResources().getString(R.string.place_label_didrikhsona));
+                    createViewModel.updatePlace(didrikhsonaRadioButton.getResources().getString(R.string.place_label_didrikhsona));
                 }
                 break;
             }
@@ -325,7 +305,7 @@ public class FragmentCreateBindingImpl extends FragmentCreateBinding implements 
 
 
 
-                    createViewModel.updateTrainer(mboundView7.getResources().getString(R.string.no_trainer_label));
+                    createViewModel.updateTrainer(noTrainerRadioButton.getResources().getString(R.string.no_trainer_label));
                 }
                 break;
             }
@@ -343,7 +323,7 @@ public class FragmentCreateBindingImpl extends FragmentCreateBinding implements 
 
 
 
-                    createViewModel.updateTrainer(mboundView5.getResources().getString(R.string.trainer_label_smugilev));
+                    createViewModel.updateTrainer(smugiljovRadioButton.getResources().getString(R.string.trainer_label_smugilev));
                 }
                 break;
             }
@@ -361,7 +341,7 @@ public class FragmentCreateBindingImpl extends FragmentCreateBinding implements 
 
 
 
-                    createViewModel.updateGroup(mboundView3.getResources().getString(R.string.group_label_girls));
+                    createViewModel.updateGroup(girlsRadioButton.getResources().getString(R.string.group_label_girls));
                 }
                 break;
             }
@@ -379,7 +359,7 @@ public class FragmentCreateBindingImpl extends FragmentCreateBinding implements 
 
 
 
-                    createViewModel.updateGroup(mboundView1.getResources().getString(R.string.group_label_light));
+                    createViewModel.updateGroup(lightRadioButton.getResources().getString(R.string.group_label_light));
                 }
                 break;
             }

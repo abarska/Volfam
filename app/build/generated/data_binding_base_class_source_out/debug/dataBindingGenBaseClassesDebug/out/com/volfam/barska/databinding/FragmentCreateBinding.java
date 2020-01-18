@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.TimePicker;
@@ -22,10 +23,34 @@ import java.lang.Object;
 
 public abstract class FragmentCreateBinding extends ViewDataBinding {
   @NonNull
+  public final RadioButton didrikhsonaRadioButton;
+
+  @NonNull
+  public final RadioButton familyRadioButton;
+
+  @NonNull
+  public final RadioButton girlsRadioButton;
+
+  @NonNull
   public final RadioGroup groupRadioGroup;
 
   @NonNull
   public final TextView groupTextview;
+
+  @NonNull
+  public final RadioButton kuznechnayaRadioButton;
+
+  @NonNull
+  public final RadioButton lightRadioButton;
+
+  @NonNull
+  public final RadioButton mediumRadioButton;
+
+  @NonNull
+  public final RadioButton noTrainerRadioButton;
+
+  @NonNull
+  public final RadioButton peresypRadioButton;
 
   @NonNull
   public final RadioGroup placeRadioGroup;
@@ -35,6 +60,12 @@ public abstract class FragmentCreateBinding extends ViewDataBinding {
 
   @NonNull
   public final EditText priceEdittext;
+
+  @NonNull
+  public final RadioButton smugiljovRadioButton;
+
+  @NonNull
+  public final RadioButton sokolovskayaRadioButton;
 
   @NonNull
   public final ImageView submitButton;
@@ -55,16 +86,30 @@ public abstract class FragmentCreateBinding extends ViewDataBinding {
   protected CreateViewModel mCreateViewModel;
 
   protected FragmentCreateBinding(Object _bindingComponent, View _root, int _localFieldCount,
-      RadioGroup groupRadioGroup, TextView groupTextview, RadioGroup placeRadioGroup,
-      TextView placeTextview, EditText priceEdittext, ImageView submitButton,
-      RadioGroup trainerRadioGroup, TextView trainerTextview, DatePicker trainingDatePicker,
-      TimePicker trainingStartTimePicker) {
+      RadioButton didrikhsonaRadioButton, RadioButton familyRadioButton,
+      RadioButton girlsRadioButton, RadioGroup groupRadioGroup, TextView groupTextview,
+      RadioButton kuznechnayaRadioButton, RadioButton lightRadioButton,
+      RadioButton mediumRadioButton, RadioButton noTrainerRadioButton,
+      RadioButton peresypRadioButton, RadioGroup placeRadioGroup, TextView placeTextview,
+      EditText priceEdittext, RadioButton smugiljovRadioButton, RadioButton sokolovskayaRadioButton,
+      ImageView submitButton, RadioGroup trainerRadioGroup, TextView trainerTextview,
+      DatePicker trainingDatePicker, TimePicker trainingStartTimePicker) {
     super(_bindingComponent, _root, _localFieldCount);
+    this.didrikhsonaRadioButton = didrikhsonaRadioButton;
+    this.familyRadioButton = familyRadioButton;
+    this.girlsRadioButton = girlsRadioButton;
     this.groupRadioGroup = groupRadioGroup;
     this.groupTextview = groupTextview;
+    this.kuznechnayaRadioButton = kuznechnayaRadioButton;
+    this.lightRadioButton = lightRadioButton;
+    this.mediumRadioButton = mediumRadioButton;
+    this.noTrainerRadioButton = noTrainerRadioButton;
+    this.peresypRadioButton = peresypRadioButton;
     this.placeRadioGroup = placeRadioGroup;
     this.placeTextview = placeTextview;
     this.priceEdittext = priceEdittext;
+    this.smugiljovRadioButton = smugiljovRadioButton;
+    this.sokolovskayaRadioButton = sokolovskayaRadioButton;
     this.submitButton = submitButton;
     this.trainerRadioGroup = trainerRadioGroup;
     this.trainerTextview = trainerTextview;

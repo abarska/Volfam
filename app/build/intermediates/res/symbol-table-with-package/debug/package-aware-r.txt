@@ -1310,6 +1310,7 @@ id design_navigation_view
 id detailFragment
 id dialog_button
 id didrikhsona_checkbox
+id didrikhsona_radio_button
 id dimensions
 id direct
 id disableHome
@@ -1322,6 +1323,7 @@ id exitUntilCollapsed
 id expand_activities_button
 id expanded_menu
 id family_checkbox
+id family_radio_button
 id fill
 id fill_horizontal
 id fill_vertical
@@ -1332,6 +1334,7 @@ id fixed
 id forever
 id ghost_view
 id girls_checkbox
+id girls_radio_button
 id gone
 id group_divider
 id group_radio_group
@@ -1349,10 +1352,12 @@ id invisible
 id italic
 id item_touch_helper_previous_elevation
 id kuznechnaya_checkbox
+id kuznechnaya_radio_button
 id labeled
 id largeLabel
 id left
 id light_checkbok
+id light_radio_button
 id line1
 id line3
 id listFragment
@@ -1361,6 +1366,7 @@ id list_item
 id masked
 id media_actions
 id medium_checkbox
+id medium_radio_button
 id message
 id middle
 id mini
@@ -1374,6 +1380,7 @@ id navigation_xml
 id navigation_header_container
 id never
 id no_trainer_checkbox
+id no_trainer_radio_button
 id none
 id normal
 id notification_background
@@ -1391,6 +1398,7 @@ id parentPanel
 id parent_matrix
 id percent
 id peresyp_checkbox
+id peresyp_radio_button
 id pin
 id place_radio_group
 id place_textview
@@ -1433,11 +1441,13 @@ id showHome
 id showTitle
 id smallLabel
 id smugiljov_checkbox
+id smugiljov_radio_button
 id snackbar_action
 id snackbar_text
 id snap
 id snapMargins
 id sokolovskaya_checkbox
+id sokolovskaya_radio_button
 id spacer
 id split_action_bar
 id spread
