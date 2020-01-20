@@ -6,65 +6,65 @@
 6
 7    <uses-sdk
 8        android:minSdkVersion="23"
-8-->D:\AndroidStudioProjects\Volfam\app\src\main\AndroidManifest.xml
+8-->C:\Users\ATNuser\AndroidStudioProjects\Volfam\app\src\main\AndroidManifest.xml
 9        android:targetSdkVersion="29" />
-9-->D:\AndroidStudioProjects\Volfam\app\src\main\AndroidManifest.xml
+9-->C:\Users\ATNuser\AndroidStudioProjects\Volfam\app\src\main\AndroidManifest.xml
 10
 11    <application
-11-->D:\AndroidStudioProjects\Volfam\app\src\main\AndroidManifest.xml:5:5-22:19
+11-->C:\Users\ATNuser\AndroidStudioProjects\Volfam\app\src\main\AndroidManifest.xml:5:5-22:19
 12        android:name="com.volfam.barska.VolfamApplication"
-12-->D:\AndroidStudioProjects\Volfam\app\src\main\AndroidManifest.xml:6:9-42
+12-->C:\Users\ATNuser\AndroidStudioProjects\Volfam\app\src\main\AndroidManifest.xml:6:9-42
 13        android:allowBackup="true"
-13-->D:\AndroidStudioProjects\Volfam\app\src\main\AndroidManifest.xml:7:9-35
+13-->C:\Users\ATNuser\AndroidStudioProjects\Volfam\app\src\main\AndroidManifest.xml:7:9-35
 14        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-14-->[androidx.core:core:1.1.0] C:\Users\User\.gradle\caches\transforms-2\files-2.1\34b5fbb7a0535d6079bdb43cc887d81a\core-1.1.0\AndroidManifest.xml:24:18-86
+14-->[androidx.core:core:1.1.0] C:\Users\ATNuser\.gradle\caches\transforms-2\files-2.1\34b5fbb7a0535d6079bdb43cc887d81a\core-1.1.0\AndroidManifest.xml:24:18-86
 15        android:debuggable="true"
 16        android:icon="@drawable/logo_icon"
-16-->D:\AndroidStudioProjects\Volfam\app\src\main\AndroidManifest.xml:8:9-43
+16-->C:\Users\ATNuser\AndroidStudioProjects\Volfam\app\src\main\AndroidManifest.xml:8:9-43
 17        android:label="@string/app_name"
-17-->D:\AndroidStudioProjects\Volfam\app\src\main\AndroidManifest.xml:9:9-41
+17-->C:\Users\ATNuser\AndroidStudioProjects\Volfam\app\src\main\AndroidManifest.xml:9:9-41
 18        android:roundIcon="@drawable/logo_icon"
-18-->D:\AndroidStudioProjects\Volfam\app\src\main\AndroidManifest.xml:10:9-48
+18-->C:\Users\ATNuser\AndroidStudioProjects\Volfam\app\src\main\AndroidManifest.xml:10:9-48
 19        android:supportsRtl="true"
-19-->D:\AndroidStudioProjects\Volfam\app\src\main\AndroidManifest.xml:11:9-35
+19-->C:\Users\ATNuser\AndroidStudioProjects\Volfam\app\src\main\AndroidManifest.xml:11:9-35
 20        android:testOnly="true"
 21        android:theme="@style/AppTheme" >
-21-->D:\AndroidStudioProjects\Volfam\app\src\main\AndroidManifest.xml:12:9-40
+21-->C:\Users\ATNuser\AndroidStudioProjects\Volfam\app\src\main\AndroidManifest.xml:12:9-40
 22        <activity
-22-->D:\AndroidStudioProjects\Volfam\app\src\main\AndroidManifest.xml:13:9-21:20
+22-->C:\Users\ATNuser\AndroidStudioProjects\Volfam\app\src\main\AndroidManifest.xml:13:9-21:20
 23            android:name="com.volfam.barska.MainActivity"
-23-->D:\AndroidStudioProjects\Volfam\app\src\main\AndroidManifest.xml:14:13-41
+23-->C:\Users\ATNuser\AndroidStudioProjects\Volfam\app\src\main\AndroidManifest.xml:14:13-41
 24            android:label="@string/app_name" >
-24-->D:\AndroidStudioProjects\Volfam\app\src\main\AndroidManifest.xml:15:13-45
+24-->C:\Users\ATNuser\AndroidStudioProjects\Volfam\app\src\main\AndroidManifest.xml:15:13-45
 25            <intent-filter>
-25-->D:\AndroidStudioProjects\Volfam\app\src\main\AndroidManifest.xml:16:13-20:29
+25-->C:\Users\ATNuser\AndroidStudioProjects\Volfam\app\src\main\AndroidManifest.xml:16:13-20:29
 26                <action android:name="android.intent.action.MAIN" />
-26-->D:\AndroidStudioProjects\Volfam\app\src\main\AndroidManifest.xml:17:17-69
-26-->D:\AndroidStudioProjects\Volfam\app\src\main\AndroidManifest.xml:17:25-66
+26-->C:\Users\ATNuser\AndroidStudioProjects\Volfam\app\src\main\AndroidManifest.xml:17:17-69
+26-->C:\Users\ATNuser\AndroidStudioProjects\Volfam\app\src\main\AndroidManifest.xml:17:25-66
 27
 28                <category android:name="android.intent.category.LAUNCHER" />
-28-->D:\AndroidStudioProjects\Volfam\app\src\main\AndroidManifest.xml:19:17-77
-28-->D:\AndroidStudioProjects\Volfam\app\src\main\AndroidManifest.xml:19:27-74
+28-->C:\Users\ATNuser\AndroidStudioProjects\Volfam\app\src\main\AndroidManifest.xml:19:17-77
+28-->C:\Users\ATNuser\AndroidStudioProjects\Volfam\app\src\main\AndroidManifest.xml:19:27-74
 29            </intent-filter>
 30        </activity>
 31
 32        <service
-32-->[androidx.room:room-runtime:2.2.2] C:\Users\User\.gradle\caches\transforms-2\files-2.1\fb0a7910f4d13a6f5297d19f22ac845e\room-runtime-2.2.2\AndroidManifest.xml:25:9-27:40
+32-->[androidx.room:room-runtime:2.2.2] C:\Users\ATNuser\.gradle\caches\transforms-2\files-2.1\fb0a7910f4d13a6f5297d19f22ac845e\room-runtime-2.2.2\AndroidManifest.xml:25:9-27:40
 33            android:name="androidx.room.MultiInstanceInvalidationService"
-33-->[androidx.room:room-runtime:2.2.2] C:\Users\User\.gradle\caches\transforms-2\files-2.1\fb0a7910f4d13a6f5297d19f22ac845e\room-runtime-2.2.2\AndroidManifest.xml:26:13-74
+33-->[androidx.room:room-runtime:2.2.2] C:\Users\ATNuser\.gradle\caches\transforms-2\files-2.1\fb0a7910f4d13a6f5297d19f22ac845e\room-runtime-2.2.2\AndroidManifest.xml:26:13-74
 34            android:exported="false" />
-34-->[androidx.room:room-runtime:2.2.2] C:\Users\User\.gradle\caches\transforms-2\files-2.1\fb0a7910f4d13a6f5297d19f22ac845e\room-runtime-2.2.2\AndroidManifest.xml:27:13-37
+34-->[androidx.room:room-runtime:2.2.2] C:\Users\ATNuser\.gradle\caches\transforms-2\files-2.1\fb0a7910f4d13a6f5297d19f22ac845e\room-runtime-2.2.2\AndroidManifest.xml:27:13-37
 35
 36        <provider
-36-->[androidx.lifecycle:lifecycle-process:2.1.0] C:\Users\User\.gradle\caches\transforms-2\files-2.1\2b875cf6d94d901dca5b027f51d471a8\lifecycle-process-2.1.0\AndroidManifest.xml:23:9-27:43
+36-->[androidx.lifecycle:lifecycle-process:2.1.0] C:\Users\ATNuser\.gradle\caches\transforms-2\files-2.1\2b875cf6d94d901dca5b027f51d471a8\lifecycle-process-2.1.0\AndroidManifest.xml:23:9-27:43
 37            android:name="androidx.lifecycle.ProcessLifecycleOwnerInitializer"
-37-->[androidx.lifecycle:lifecycle-process:2.1.0] C:\Users\User\.gradle\caches\transforms-2\files-2.1\2b875cf6d94d901dca5b027f51d471a8\lifecycle-process-2.1.0\AndroidManifest.xml:24:13-79
+37-->[androidx.lifecycle:lifecycle-process:2.1.0] C:\Users\ATNuser\.gradle\caches\transforms-2\files-2.1\2b875cf6d94d901dca5b027f51d471a8\lifecycle-process-2.1.0\AndroidManifest.xml:24:13-79
 38            android:authorities="com.volfam.barska.lifecycle-process"
-38-->[androidx.lifecycle:lifecycle-process:2.1.0] C:\Users\User\.gradle\caches\transforms-2\files-2.1\2b875cf6d94d901dca5b027f51d471a8\lifecycle-process-2.1.0\AndroidManifest.xml:25:13-69
+38-->[androidx.lifecycle:lifecycle-process:2.1.0] C:\Users\ATNuser\.gradle\caches\transforms-2\files-2.1\2b875cf6d94d901dca5b027f51d471a8\lifecycle-process-2.1.0\AndroidManifest.xml:25:13-69
 39            android:exported="false"
-39-->[androidx.lifecycle:lifecycle-process:2.1.0] C:\Users\User\.gradle\caches\transforms-2\files-2.1\2b875cf6d94d901dca5b027f51d471a8\lifecycle-process-2.1.0\AndroidManifest.xml:26:13-37
+39-->[androidx.lifecycle:lifecycle-process:2.1.0] C:\Users\ATNuser\.gradle\caches\transforms-2\files-2.1\2b875cf6d94d901dca5b027f51d471a8\lifecycle-process-2.1.0\AndroidManifest.xml:26:13-37
 40            android:multiprocess="true" />
-40-->[androidx.lifecycle:lifecycle-process:2.1.0] C:\Users\User\.gradle\caches\transforms-2\files-2.1\2b875cf6d94d901dca5b027f51d471a8\lifecycle-process-2.1.0\AndroidManifest.xml:27:13-40
+40-->[androidx.lifecycle:lifecycle-process:2.1.0] C:\Users\ATNuser\.gradle\caches\transforms-2\files-2.1\2b875cf6d94d901dca5b027f51d471a8\lifecycle-process-2.1.0\AndroidManifest.xml:27:13-40
 41    </application>
 42
 43</manifest>

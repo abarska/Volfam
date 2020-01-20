@@ -5,6 +5,8 @@ import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.volfam.barska.data.TrainingDao
+import timber.log.Timber
+import java.text.SimpleDateFormat
 
 class FilteredListViewModel(
     trainingDao: TrainingDao,

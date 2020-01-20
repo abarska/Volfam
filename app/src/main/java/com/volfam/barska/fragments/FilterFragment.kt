@@ -45,6 +45,11 @@ class FilterFragment : Fragment() {
         arguments?.let {
             val args = FilterFragmentArgs.fromBundle(it)
             initPriceRangebar(args.maxPrice)
+
+            val sdf = SimpleDateFormat("dd:MM:yyyy HH:mm")
+            Timber.i("start date is ${sdf.format(args.minDate)}")
+            Timber.i("end date is ${sdf.format(args.maxDate)}")
+
             initDatePickerDialog(args.minDate, args.maxDate)
         }
 
@@ -103,6 +108,13 @@ class FilterFragment : Fragment() {
     }
 
     private fun initPriceRangebar(maxPrice: Int) {
+
+        if (maxPrice == 0) {
+            binding.priceRangeTextview.visibility = View.GONE
+            binding.priceRangeBar.visibility = View.GONE
+            return
+        }
+
         binding.priceRangeBar.left = 0
         binding.priceRangeBar.right = maxPrice
         filterViewModel.updatePrice(binding.priceRangeBar.left, binding.priceRangeBar.right)
@@ -118,7 +130,12 @@ class FilterFragment : Fragment() {
 
     private fun initDatePickerDialog(minDate: Long, maxDate: Long) {
 
-        binding.dateRangePicker.init(Date(minDate), Date(maxDate))
+        val oneDayInMillis = 1000 * 60 * 60 * 24
+
+        binding.dateRangePicker.init(
+            Date(minDate),
+            Date(maxDate + oneDayInMillis)
+        )
             .inMode(CalendarPickerView.SelectionMode.RANGE)
 
         binding.dateRangePicker.setOnDateSelectedListener(object :

@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+                                                                   
+
+    
+
+                 
+                                  
+                                                                  
+           
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" android:tag="layout/fragment_filter_0" xmlns:android="http://schemas.android.com/apk/res/android">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="@dimen/spacing_normal"
+                android:layout_marginTop="@dimen/spacing_normal"
+                android:layout_marginEnd="@dimen/spacing_normal"
+                android:text="@string/trainer_label"
+                android:textSize="@dimen/large_text_size" />
+
+            <CheckBox
+                android:id="@+id/smugiljov_checkbox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/spacing_normal"
+                android:layout_marginTop="@dimen/spacing_half"
+                android:tag="@string/trainer_label"
+                android:text="@string/trainer_label_smugilev"
+                android:textSize="@dimen/normal_text_size" />
+
+            <CheckBox
+                android:id="@+id/sokolovskaya_checkbox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/spacing_normal"
+                android:layout_marginTop="@dimen/spacing_half"
+                android:tag="@string/trainer_label"
+                android:text="@string/trainer_label_sokolovskaya"
+                android:textSize="@dimen/normal_text_size" />
+
+            <CheckBox
+                android:id="@+id/no_trainer_checkbox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/spacing_normal"
+                android:layout_marginTop="@dimen/spacing_half"
+                android:tag="@string/trainer_label"
+                android:text="@string/no_trainer_label"
+                android:textSize="@dimen/normal_text_size" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="@dimen/spacing_normal"
+                android:layout_marginTop="@dimen/spacing_normal"
+                android:layout_marginEnd="@dimen/spacing_normal"
+                android:text="@string/group_label"
+                android:textSize="@dimen/large_text_size" />
+
+            <CheckBox
+                android:id="@+id/light_checkbok"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/spacing_normal"
+                android:layout_marginTop="@dimen/spacing_half"
+                android:tag="@string/group_label"
+                android:text="@string/group_label_light"
+                android:textSize="@dimen/normal_text_size" />
+
+            <CheckBox
+                android:id="@+id/medium_checkbox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/spacing_normal"
+                android:layout_marginTop="@dimen/spacing_half"
+                android:tag="@string/group_label"
+                android:text="@string/group_label_medium"
+                android:textSize="@dimen/normal_text_size" />
+
+            <CheckBox
+                android:id="@+id/girls_checkbox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/spacing_normal"
+                android:layout_marginTop="@dimen/spacing_half"
+                android:tag="@string/group_label"
+                android:text="@string/group_label_girls"
+                android:textSize="@dimen/normal_text_size" />
+
+            <CheckBox
+                android:id="@+id/family_checkbox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/spacing_normal"
+                android:layout_marginTop="@dimen/spacing_half"
+                android:tag="@string/group_label"
+                android:text="@string/group_label_family"
+                android:textSize="@dimen/normal_text_size" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="@dimen/spacing_normal"
+                android:layout_marginTop="@dimen/spacing_normal"
+                android:layout_marginEnd="@dimen/spacing_normal"
+                android:text="@string/place_label"
+                android:textSize="@dimen/large_text_size" />
+
+            <CheckBox
+                android:id="@+id/kuznechnaya_checkbox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/spacing_normal"
+                android:layout_marginTop="@dimen/spacing_half"
+                android:tag="@string/place_label"
+                android:text="@string/place_label_kuznechnaya"
+                android:textSize="@dimen/normal_text_size" />
+
+            <CheckBox
+                android:id="@+id/didrikhsona_checkbox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/spacing_normal"
+                android:layout_marginTop="@dimen/spacing_half"
+                android:tag="@string/place_label"
+                android:text="@string/place_label_didrikhsona"
+                android:textSize="@dimen/normal_text_size" />
+
+            <CheckBox
+                android:id="@+id/peresyp_checkbox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/spacing_normal"
+                android:layout_marginTop="@dimen/spacing_half"
+                android:tag="@string/place_label"
+                android:text="@string/place_label_peresyp"
+                android:textSize="@dimen/normal_text_size" />
+
+            <TextView
+                android:id="@+id/price_range_textview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="@dimen/spacing_normal"
+                android:layout_marginTop="@dimen/spacing_normal"
+                android:layout_marginEnd="@dimen/spacing_normal"
+                android:textSize="@dimen/large_text_size" />
+
+            <com.edmodo.rangebar.RangeBar
+                android:id="@+id/price_range_bar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="@dimen/spacing_double"
+                android:layout_marginTop="@dimen/spacing_normal"
+                android:layout_marginEnd="@dimen/spacing_double" />
+
+            <com.savvi.rangedatepicker.CalendarPickerView
+                android:id="@+id/date_range_picker"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/spacing_normal"
+                android:layout_marginTop="@dimen/spacing_normal"
+                android:layout_marginEnd="@dimen/spacing_normal"
+                android:clipToPadding="false"
+                android:scrollbarStyle="outsideOverlay" />
+
+            <ImageView
+                android:id="@+id/submit_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/spacing_normal"
+                android:layout_marginBottom="@dimen/spacing_normal"
+                android:src="@drawable/layer_list_confirm"
+                android:tag="@string/trainer_label"
+                android:textSize="@dimen/normal_text_size" />
+
+        </LinearLayout>
+    </ScrollView>
+         

@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+                                                       
+                                                  
+                                                               
+
+    
+
+                 
+                                  
+                                                                  
+           
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" android:tag="layout/fragment_detail_0" xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools" tools:context="com.volfam.barska.fragments.DetailFragment">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing_normal"
+            android:layout_marginTop="@dimen/spacing_half"
+            android:layout_marginEnd="@dimen/spacing_normal"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/date_textview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableEnd="@drawable/ic_edit_black_24dp"
+                android:drawablePadding="@dimen/spacing_normal"
+                android:gravity="center"
+                android:textColor="@color/darkTextColor"
+                android:textSize="@dimen/large_text_size"
+                android:tag="binding_1"                                 
+                tools:text="@string/placeholder_text" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="@dimen/spacing_half"
+                android:layout_marginBottom="@dimen/spacing_half"
+                android:background="@android:color/darker_gray" />
+
+            <TextView
+                android:id="@+id/time_textview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableEnd="@drawable/ic_edit_black_24dp"
+                android:drawablePadding="@dimen/spacing_normal"
+                android:gravity="center"
+                android:textColor="@color/darkTextColor"
+                android:textSize="@dimen/large_text_size"
+                android:tag="binding_2"                                       
+                tools:text="@string/placeholder_text" />
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="@dimen/spacing_half"
+                android:layout_marginBottom="@dimen/spacing_half"
+                android:background="@android:color/darker_gray" />
+
+            <TextView
+                android:id="@+id/group_textview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableEnd="@drawable/ic_edit_black_24dp"
+                android:drawablePadding="@dimen/spacing_normal"
+                android:gravity="center"
+                android:textColor="@color/darkTextColor"
+                android:textSize="@dimen/large_text_size"
+                android:tag="binding_3"                                
+                tools:text="@string/placeholder_text" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="@dimen/spacing_half"
+                android:layout_marginBottom="@dimen/spacing_half"
+                android:background="@android:color/darker_gray" />
+
+            <TextView
+                android:id="@+id/trainer_textview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableEnd="@drawable/ic_edit_black_24dp"
+                android:drawablePadding="@dimen/spacing_normal"
+                android:gravity="center"
+                android:textColor="@color/darkTextColor"
+                android:textSize="@dimen/large_text_size"
+                android:tag="binding_4"                                              
+                tools:text="@string/placeholder_text" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="@dimen/spacing_half"
+                android:layout_marginBottom="@dimen/spacing_half"
+                android:background="@android:color/darker_gray" />
+
+            <TextView
+                android:id="@+id/place_textview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableEnd="@drawable/ic_edit_black_24dp"
+                android:drawablePadding="@dimen/spacing_normal"
+                android:gravity="center"
+                android:textColor="@color/darkTextColor"
+                android:textSize="@dimen/large_text_size"
+                android:tag="binding_5"                                          
+                tools:text="@string/placeholder_text" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="@dimen/spacing_half"
+                android:layout_marginBottom="@dimen/spacing_half"
+                android:background="@android:color/darker_gray" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/spacing_normal"
+                android:layout_marginRight="@dimen/spacing_normal"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/minus_five_button"
+                    android:layout_width="@dimen/fab_button"
+                    android:layout_height="@dimen/fab_button"
+                    android:src="@drawable/ic_remove_circle_outline_black_24dp" />
+
+                <TextView
+                    android:id="@+id/price_textview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="@dimen/spacing_double"
+                    android:layout_marginRight="@dimen/spacing_double"
+                    android:textColor="@color/darkTextColor"
+                    android:textSize="@dimen/header_text_size" />
+
+                <ImageView
+                    android:id="@+id/plus_five_button"
+                    android:layout_width="@dimen/fab_button"
+                    android:layout_height="@dimen/fab_button"
+                    android:src="@drawable/ic_add_circle_outline_black_64dp" />
+
+            </LinearLayout>
+
+            <CheckBox
+                android:id="@+id/share_again_checkbox_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/spacing_normal"
+                android:layout_marginBottom="@dimen/spacing_normal"
+                android:text="@string/share_again_checkbox_label" />
+
+            <ImageView
+                android:id="@+id/change_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/spacing_normal"
+                android:layout_marginBottom="@dimen/spacing_double"
+                android:src="@drawable/layer_list_confirm" />
+
+        </LinearLayout>
+    </ScrollView>
+         
