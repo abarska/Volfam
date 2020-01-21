@@ -14,21 +14,23 @@ public class FragmentCreateBindingImpl extends FragmentCreateBinding implements 
     static {
         sIncludes = null;
         sViewsWithIds = new android.util.SparseIntArray();
-        sViewsWithIds.put(R.id.training_date_picker, 11);
-        sViewsWithIds.put(R.id.group_textview, 12);
-        sViewsWithIds.put(R.id.group_radio_group, 13);
-        sViewsWithIds.put(R.id.trainer_textview, 14);
-        sViewsWithIds.put(R.id.trainer_radio_group, 15);
-        sViewsWithIds.put(R.id.place_textview, 16);
-        sViewsWithIds.put(R.id.place_radio_group, 17);
-        sViewsWithIds.put(R.id.training_start_time_picker, 18);
-        sViewsWithIds.put(R.id.price_edittext, 19);
-        sViewsWithIds.put(R.id.submit_button, 20);
+        sViewsWithIds.put(R.id.training_date_picker, 12);
+        sViewsWithIds.put(R.id.group_textview, 13);
+        sViewsWithIds.put(R.id.group_radio_group, 14);
+        sViewsWithIds.put(R.id.trainer_textview, 15);
+        sViewsWithIds.put(R.id.trainer_radio_group, 16);
+        sViewsWithIds.put(R.id.place_textview, 17);
+        sViewsWithIds.put(R.id.place_radio_group, 18);
+        sViewsWithIds.put(R.id.training_start_time_picker, 19);
+        sViewsWithIds.put(R.id.price_edittext, 20);
+        sViewsWithIds.put(R.id.submit_button, 21);
     }
     // views
     @NonNull
     private final android.widget.ScrollView mboundView0;
     // variables
+    @Nullable
+    private final android.view.View.OnClickListener mCallback11;
     @Nullable
     private final android.view.View.OnClickListener mCallback8;
     @Nullable
@@ -54,30 +56,31 @@ public class FragmentCreateBindingImpl extends FragmentCreateBinding implements 
     // Inverse Binding Event Handlers
 
     public FragmentCreateBindingImpl(@Nullable androidx.databinding.DataBindingComponent bindingComponent, @NonNull View root) {
-        this(bindingComponent, root, mapBindings(bindingComponent, root, 21, sIncludes, sViewsWithIds));
+        this(bindingComponent, root, mapBindings(bindingComponent, root, 22, sIncludes, sViewsWithIds));
     }
     private FragmentCreateBindingImpl(androidx.databinding.DataBindingComponent bindingComponent, View root, Object[] bindings) {
         super(bindingComponent, root, 0
             , (android.widget.RadioButton) bindings[9]
             , (android.widget.RadioButton) bindings[4]
             , (android.widget.RadioButton) bindings[3]
-            , (android.widget.RadioGroup) bindings[13]
-            , (android.widget.TextView) bindings[12]
+            , (android.widget.RadioGroup) bindings[14]
+            , (android.widget.TextView) bindings[13]
             , (android.widget.RadioButton) bindings[8]
             , (android.widget.RadioButton) bindings[1]
             , (android.widget.RadioButton) bindings[2]
             , (android.widget.RadioButton) bindings[7]
+            , (android.widget.RadioButton) bindings[11]
+            , (android.widget.RadioGroup) bindings[18]
+            , (android.widget.TextView) bindings[17]
+            , (android.widget.EditText) bindings[20]
             , (android.widget.RadioButton) bindings[10]
-            , (android.widget.RadioGroup) bindings[17]
-            , (android.widget.TextView) bindings[16]
-            , (android.widget.EditText) bindings[19]
             , (android.widget.RadioButton) bindings[5]
             , (android.widget.RadioButton) bindings[6]
-            , (android.widget.ImageView) bindings[20]
-            , (android.widget.RadioGroup) bindings[15]
-            , (android.widget.TextView) bindings[14]
-            , (android.widget.DatePicker) bindings[11]
-            , (android.widget.TimePicker) bindings[18]
+            , (android.widget.ImageView) bindings[21]
+            , (android.widget.RadioGroup) bindings[16]
+            , (android.widget.TextView) bindings[15]
+            , (android.widget.DatePicker) bindings[12]
+            , (android.widget.TimePicker) bindings[19]
             );
         this.didrikhsonaRadioButton.setTag(null);
         this.familyRadioButton.setTag(null);
@@ -89,10 +92,12 @@ public class FragmentCreateBindingImpl extends FragmentCreateBinding implements 
         this.mediumRadioButton.setTag(null);
         this.noTrainerRadioButton.setTag(null);
         this.peresypRadioButton.setTag(null);
+        this.pushkinskayaRadioButton.setTag(null);
         this.smugiljovRadioButton.setTag(null);
         this.sokolovskayaRadioButton.setTag(null);
         setRootTag(root);
         // listeners
+        mCallback11 = new com.volfam.barska.generated.callback.OnClickListener(this, 11);
         mCallback8 = new com.volfam.barska.generated.callback.OnClickListener(this, 8);
         mCallback6 = new com.volfam.barska.generated.callback.OnClickListener(this, 6);
         mCallback4 = new com.volfam.barska.generated.callback.OnClickListener(this, 4);
@@ -173,8 +178,10 @@ public class FragmentCreateBindingImpl extends FragmentCreateBinding implements 
             this.lightRadioButton.setOnClickListener(mCallback1);
             this.mediumRadioButton.setOnClickListener(mCallback2);
             this.noTrainerRadioButton.setOnClickListener(mCallback7);
-            this.peresypRadioButton.setOnClickListener(mCallback10);
+            this.peresypRadioButton.setOnClickListener(mCallback11);
             com.volfam.barska.BindingUtilsKt.setShortenedPlace(this.peresypRadioButton, peresypRadioButton.getResources().getString(R.string.place_label_peresyp));
+            this.pushkinskayaRadioButton.setOnClickListener(mCallback10);
+            com.volfam.barska.BindingUtilsKt.setShortenedPlace(this.pushkinskayaRadioButton, pushkinskayaRadioButton.getResources().getString(R.string.place_label_pushkinskaya));
             this.smugiljovRadioButton.setOnClickListener(mCallback5);
             this.sokolovskayaRadioButton.setOnClickListener(mCallback6);
         }
@@ -183,6 +190,24 @@ public class FragmentCreateBindingImpl extends FragmentCreateBinding implements 
     // callback impls
     public final void _internalCallbackOnClick(int sourceId , android.view.View callbackArg_0) {
         switch(sourceId) {
+            case 11: {
+                // localize variables for thread safety
+                // createViewModel
+                com.volfam.barska.viewmodels.CreateViewModel createViewModel = mCreateViewModel;
+                // createViewModel != null
+                boolean createViewModelJavaLangObjectNull = false;
+
+
+
+                createViewModelJavaLangObjectNull = (createViewModel) != (null);
+                if (createViewModelJavaLangObjectNull) {
+
+
+
+                    createViewModel.updatePlace(peresypRadioButton.getResources().getString(R.string.place_label_peresyp));
+                }
+                break;
+            }
             case 8: {
                 // localize variables for thread safety
                 // createViewModel
@@ -269,7 +294,7 @@ public class FragmentCreateBindingImpl extends FragmentCreateBinding implements 
 
 
 
-                    createViewModel.updatePlace(peresypRadioButton.getResources().getString(R.string.place_label_peresyp));
+                    createViewModel.updatePlace(pushkinskayaRadioButton.getResources().getString(R.string.place_label_pushkinskaya));
                 }
                 break;
             }

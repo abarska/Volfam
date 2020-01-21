@@ -24,6 +24,7 @@
     <string name="place_label">Адрес:</string>
     <string name="place_label_kuznechnaya">Кузнечная 1 Академия Связи</string>
     <string name="place_label_didrikhsona">Дидрихсона 4 Строительная Академия</string>
+    <string name="place_label_pushkinskaya">Пушкинская 49 ДЮСШ им. Б.Д.Литвака</string>
     <string name="place_label_peresyp">Черноморского Казачества 12 Механико-технологический колледж</string>
 
     <!-- fragment labels -->

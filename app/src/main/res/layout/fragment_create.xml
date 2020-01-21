@@ -183,6 +183,15 @@
                     app:shortened_place="@{@string/place_label_didrikhsona}" />
 
                 <RadioButton
+                    android:id="@+id/pushkinskaya_radio_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/spacing_half"
+                    android:onClick="@{() -> createViewModel.updatePlace(@string/place_label_pushkinskaya)}"
+                    android:textSize="@dimen/normal_text_size"
+                    app:shortened_place="@{@string/place_label_pushkinskaya}" />
+
+                <RadioButton
                     android:id="@+id/peresyp_radio_button"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"

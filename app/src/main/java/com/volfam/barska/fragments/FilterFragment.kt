@@ -18,7 +18,7 @@ import com.volfam.barska.viewmodels.ACTION_REMOVE
 import com.volfam.barska.viewmodels.FilterViewModel
 import com.volfam.barska.viewmodels.FilterViewModelFactory
 import timber.log.Timber
-import java.text.SimpleDateFormat
+
 import java.util.*
 
 const val PRICE_RANGE_BAR_TICK_VALUE = 5
@@ -45,11 +45,6 @@ class FilterFragment : Fragment() {
         arguments?.let {
             val args = FilterFragmentArgs.fromBundle(it)
             initPriceRangebar(args.maxPrice)
-
-            val sdf = SimpleDateFormat("dd:MM:yyyy HH:mm")
-            Timber.i("start date is ${sdf.format(args.minDate)}")
-            Timber.i("end date is ${sdf.format(args.maxDate)}")
-
             initDatePickerDialog(args.minDate, args.maxDate)
         }
 
@@ -79,7 +74,9 @@ class FilterFragment : Fragment() {
 
     private fun initCheckboxListeners() {
         val onCheckedListener = { view: View ->
+
             val value = (view as CheckBox).text.toString()
+
             when (val tag = view.tag.toString()) {
                 getString(R.string.trainer_label) -> {
                     if (view.isChecked) filterViewModel.modifySet(tag, value, ACTION_ADD)
@@ -90,8 +87,14 @@ class FilterFragment : Fragment() {
                     else filterViewModel.modifySet(tag, value, ACTION_REMOVE)
                 }
                 getString(R.string.place_label) -> {
-                    if (view.isChecked) filterViewModel.modifySet(tag, value, ACTION_ADD)
-                    else filterViewModel.modifySet(tag, value, ACTION_REMOVE)
+                    val placeArray = resources.getStringArray(R.array.places)
+                    val fullValue = placeArray.find { it.contains(value) }
+                    if (view.isChecked) filterViewModel.modifySet(
+                        tag,
+                        fullValue ?: value,
+                        ACTION_ADD
+                    )
+                    else filterViewModel.modifySet(tag, fullValue ?: value, ACTION_REMOVE)
                 }
             }
         }
@@ -104,6 +107,7 @@ class FilterFragment : Fragment() {
         binding.familyCheckbox.setOnClickListener(onCheckedListener)
         binding.kuznechnayaCheckbox.setOnClickListener(onCheckedListener)
         binding.didrikhsonaCheckbox.setOnClickListener(onCheckedListener)
+        binding.pushkinskayaCheckbox.setOnClickListener(onCheckedListener)
         binding.peresypCheckbox.setOnClickListener(onCheckedListener)
     }
 

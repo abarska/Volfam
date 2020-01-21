@@ -54,6 +54,9 @@ public abstract class FragmentFilterBinding extends ViewDataBinding {
   public final TextView priceRangeTextview;
 
   @NonNull
+  public final CheckBox pushkinskayaCheckbox;
+
+  @NonNull
   public final CheckBox smugiljovCheckbox;
 
   @NonNull
@@ -69,8 +72,8 @@ public abstract class FragmentFilterBinding extends ViewDataBinding {
       CalendarPickerView dateRangePicker, CheckBox didrikhsonaCheckbox, CheckBox familyCheckbox,
       CheckBox girlsCheckbox, CheckBox kuznechnayaCheckbox, CheckBox lightCheckbok,
       CheckBox mediumCheckbox, CheckBox noTrainerCheckbox, CheckBox peresypCheckbox,
-      RangeBar priceRangeBar, TextView priceRangeTextview, CheckBox smugiljovCheckbox,
-      CheckBox sokolovskayaCheckbox, ImageView submitButton) {
+      RangeBar priceRangeBar, TextView priceRangeTextview, CheckBox pushkinskayaCheckbox,
+      CheckBox smugiljovCheckbox, CheckBox sokolovskayaCheckbox, ImageView submitButton) {
     super(_bindingComponent, _root, _localFieldCount);
     this.dateRangePicker = dateRangePicker;
     this.didrikhsonaCheckbox = didrikhsonaCheckbox;
@@ -83,6 +86,7 @@ public abstract class FragmentFilterBinding extends ViewDataBinding {
     this.peresypCheckbox = peresypCheckbox;
     this.priceRangeBar = priceRangeBar;
     this.priceRangeTextview = priceRangeTextview;
+    this.pushkinskayaCheckbox = pushkinskayaCheckbox;
     this.smugiljovCheckbox = smugiljovCheckbox;
     this.sokolovskayaCheckbox = sokolovskayaCheckbox;
     this.submitButton = submitButton;

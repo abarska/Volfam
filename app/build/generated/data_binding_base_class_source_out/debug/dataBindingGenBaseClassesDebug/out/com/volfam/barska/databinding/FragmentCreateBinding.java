@@ -62,6 +62,9 @@ public abstract class FragmentCreateBinding extends ViewDataBinding {
   public final EditText priceEdittext;
 
   @NonNull
+  public final RadioButton pushkinskayaRadioButton;
+
+  @NonNull
   public final RadioButton smugiljovRadioButton;
 
   @NonNull
@@ -91,9 +94,9 @@ public abstract class FragmentCreateBinding extends ViewDataBinding {
       RadioButton kuznechnayaRadioButton, RadioButton lightRadioButton,
       RadioButton mediumRadioButton, RadioButton noTrainerRadioButton,
       RadioButton peresypRadioButton, RadioGroup placeRadioGroup, TextView placeTextview,
-      EditText priceEdittext, RadioButton smugiljovRadioButton, RadioButton sokolovskayaRadioButton,
-      ImageView submitButton, RadioGroup trainerRadioGroup, TextView trainerTextview,
-      DatePicker trainingDatePicker, TimePicker trainingStartTimePicker) {
+      EditText priceEdittext, RadioButton pushkinskayaRadioButton, RadioButton smugiljovRadioButton,
+      RadioButton sokolovskayaRadioButton, ImageView submitButton, RadioGroup trainerRadioGroup,
+      TextView trainerTextview, DatePicker trainingDatePicker, TimePicker trainingStartTimePicker) {
     super(_bindingComponent, _root, _localFieldCount);
     this.didrikhsonaRadioButton = didrikhsonaRadioButton;
     this.familyRadioButton = familyRadioButton;
@@ -108,6 +111,7 @@ public abstract class FragmentCreateBinding extends ViewDataBinding {
     this.placeRadioGroup = placeRadioGroup;
     this.placeTextview = placeTextview;
     this.priceEdittext = priceEdittext;
+    this.pushkinskayaRadioButton = pushkinskayaRadioButton;
     this.smugiljovRadioButton = smugiljovRadioButton;
     this.sokolovskayaRadioButton = sokolovskayaRadioButton;
     this.submitButton = submitButton;

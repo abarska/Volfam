@@ -55,6 +55,7 @@
     <array name="places">
         <item>@string/place_label_kuznechnaya</item>
         <item>@string/place_label_didrikhsona</item>
+        <item>@string/place_label_pushkinskaya</item>
         <item>@string/place_label_peresyp</item>
     </array>
 

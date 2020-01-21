@@ -1409,6 +1409,8 @@ id price_range_textview
 id price_textview
 id progress_circular
 id progress_horizontal
+id pushkinskaya_checkbox
+id pushkinskaya_radio_button
 id radio
 id right
 id right_icon
@@ -1699,6 +1701,7 @@ string place_label
 string place_label_didrikhsona
 string place_label_kuznechnaya
 string place_label_peresyp
+string place_label_pushkinskaya
 string place_with_label
 string placeholder_text
 string price_formatter

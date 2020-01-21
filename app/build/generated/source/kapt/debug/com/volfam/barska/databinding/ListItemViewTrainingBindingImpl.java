@@ -20,7 +20,7 @@ public class ListItemViewTrainingBindingImpl extends ListItemViewTrainingBinding
     private final androidx.constraintlayout.widget.ConstraintLayout mboundView0;
     // variables
     @Nullable
-    private final android.view.View.OnClickListener mCallback11;
+    private final android.view.View.OnClickListener mCallback12;
     // values
     // listeners
     // Inverse Binding Event Handlers
@@ -43,7 +43,7 @@ public class ListItemViewTrainingBindingImpl extends ListItemViewTrainingBinding
         this.trainerIcon.setTag(null);
         setRootTag(root);
         // listeners
-        mCallback11 = new com.volfam.barska.generated.callback.OnClickListener(this, 1);
+        mCallback12 = new com.volfam.barska.generated.callback.OnClickListener(this, 1);
         invalidateAll();
     }
 
@@ -142,7 +142,7 @@ public class ListItemViewTrainingBindingImpl extends ListItemViewTrainingBinding
         if ((dirtyFlags & 0x4L) != 0) {
             // api target 1
 
-            this.mboundView0.setOnClickListener(mCallback11);
+            this.mboundView0.setOnClickListener(mCallback12);
         }
     }
     // Listener Stub Implementations
