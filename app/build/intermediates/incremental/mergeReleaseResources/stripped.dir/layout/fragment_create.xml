@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+                                                       
+                                                  
+                                                               
+
+    
+
+                 
+                                  
+                                                                  
+           
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" android:tag="layout/fragment_create_0" xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools" tools:context="com.volfam.barska.fragments.CreateFragment">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <DatePicker
+                android:id="@+id/training_date_picker"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_normal"
+                android:calendarViewShown="false"
+                android:datePickerMode="calendar"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/group_textview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/spacing_normal"
+                android:text="@string/group_label"
+                android:textColor="@color/darkTextColor"
+                android:textSize="@dimen/header_text_size"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/training_date_picker" />
+
+            <RadioGroup
+                android:id="@+id/group_radio_group"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/spacing_double"
+                android:layout_marginTop="@dimen/spacing_normal"
+                android:layout_marginEnd="@dimen/spacing_normal"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/group_textview">
+
+                <RadioButton
+                    android:id="@+id/light_radio_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:tag="binding_1"                                                          
+                    android:text="@string/group_label_light"
+                    android:textSize="@dimen/normal_text_size" />
+
+                <RadioButton
+                    android:id="@+id/medium_radio_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/spacing_half"
+                    android:tag="binding_2"                                                           
+                    android:text="@string/group_label_medium"
+                    android:textSize="@dimen/normal_text_size" />
+
+                <RadioButton
+                    android:id="@+id/girls_radio_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/spacing_half"
+                    android:tag="binding_3"                                                          
+                    android:text="@string/group_label_girls"
+                    android:textSize="@dimen/normal_text_size" />
+
+                <RadioButton
+                    android:id="@+id/family_radio_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/spacing_half"
+                    android:tag="binding_4"                                                           
+                    android:text="@string/group_label_family"
+                    android:textSize="@dimen/normal_text_size" />
+
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/trainer_textview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/spacing_normal"
+                android:layout_marginTop="@dimen/spacing_normal"
+                android:text="@string/trainer_label"
+                android:textColor="@color/darkTextColor"
+                android:textSize="@dimen/header_text_size"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/group_radio_group" />
+
+            <RadioGroup
+                android:id="@+id/trainer_radio_group"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/spacing_double"
+                android:layout_marginTop="@dimen/spacing_normal"
+                android:layout_marginEnd="@dimen/spacing_normal"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/trainer_textview">
+
+                <RadioButton
+                    android:id="@+id/smugiljov_radio_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:tag="binding_5"                                                                 
+                    android:text="@string/trainer_label_smugilev"
+                    android:textSize="@dimen/normal_text_size" />
+
+                <RadioButton
+                    android:id="@+id/sokolovskaya_radio_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/spacing_half"
+                    android:tag="binding_6"                                                                     
+                    android:text="@string/trainer_label_sokolovskaya"
+                    android:textSize="@dimen/normal_text_size" />
+
+                <RadioButton
+                    android:id="@+id/no_trainer_radio_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/spacing_half"
+                    android:tag="binding_7"                                                           
+                    android:text="@string/no_trainer_label"
+                    android:textSize="@dimen/normal_text_size" />
+
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/place_textview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/spacing_normal"
+                android:layout_marginTop="@dimen/spacing_normal"
+                android:text="@string/place_label"
+                android:textColor="@color/darkTextColor"
+                android:textSize="@dimen/header_text_size"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/trainer_radio_group" />
+
+            <RadioGroup
+                android:id="@+id/place_radio_group"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/spacing_double"
+                android:layout_marginTop="@dimen/spacing_normal"
+                android:layout_marginEnd="@dimen/spacing_normal"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/place_textview">
+
+                <RadioButton
+                    android:id="@+id/kuznechnaya_radio_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:tag="binding_8"                                                                
+                    android:textSize="@dimen/normal_text_size"
+                                                                             />
+
+                <RadioButton
+                    android:id="@+id/didrikhsona_radio_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/spacing_half"
+                    android:tag="binding_9"                                                                
+                    android:textSize="@dimen/normal_text_size"
+                                                                             />
+
+                <RadioButton
+                    android:id="@+id/pushkinskaya_radio_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/spacing_half"
+                    android:tag="binding_10"                                                                
+                    android:textSize="@dimen/normal_text_size"
+                                                                              />
+
+                <RadioButton
+                    android:id="@+id/peresyp_radio_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/spacing_half"
+                    android:tag="binding_11"                                                           
+                    android:textSize="@dimen/normal_text_size"
+                                                                         />
+
+            </RadioGroup>
+
+            <TimePicker
+                android:id="@+id/training_start_time_picker"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/spacing_normal"
+                android:layout_marginEnd="@dimen/spacing_normal"
+                android:layoutMode="clipBounds"
+                android:timePickerMode="spinner"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/place_radio_group" />
+
+
+            <EditText
+                android:id="@+id/price_edittext"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:hint="@string/price_label"
+                android:inputType="number"
+                android:maxLength="3"
+                android:textAlignment="center"
+                android:textColor="@color/darkTextColor"
+                android:textSize="@dimen/header_text_size"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/training_start_time_picker" />
+
+            <ImageView
+                android:id="@+id/submit_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_normal"
+                android:layout_marginBottom="@dimen/spacing_normal"
+                android:src="@drawable/layer_list_confirm"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/price_edittext" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+         

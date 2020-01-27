@@ -34,7 +34,7 @@
     <string name="filter_fragment_label">Фильтры</string>
     <string name="filtered_list_fragment_label">Отфильтрованный список</string>
 
-    <string name="share_intent_text">Плюсуемся!\nДата: %s\nВремя: %s\nГруппа: %s\n%s\nЗал: %s\nСтоимость: %s\n</string>
+    <string name="share_intent_text">Отмечаемся :)\nДата: %s\nВремя: %s\nГруппа: %s\n%s\nЗал: %s\nСтоимость: %s\n</string>
     <string name="group_price_formatter">%s - %s</string>
     <string name="price_formatter">%d грн</string>
     <string name="free_of_charge_label">бесплатно</string>

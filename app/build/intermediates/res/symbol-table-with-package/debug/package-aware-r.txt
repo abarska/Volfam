@@ -1617,6 +1617,7 @@ menu menu_detail_fragment
 menu menu_list_fragment
 mipmap ic_launcher
 mipmap ic_launcher_round
+mipmap vf_launcher
 navigation navigation
 string abc_action_bar_home_description
 string abc_action_bar_up_description
