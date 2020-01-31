@@ -7,6 +7,7 @@ import androidx.room.RoomDatabase
 
 const val DATABASE_NAME = "volfam_training_database"
 
+// need to change the export schema to true when migrating the database
 @Database(entities = [Training::class], version = 1, exportSchema = false)
 abstract class VolfamDatabase : RoomDatabase() {
 

@@ -6,16 +6,17 @@ import androidx.lifecycle.*
 import com.volfam.barska.R
 import com.volfam.barska.data.Training
 import com.volfam.barska.data.TrainingDao
+import com.volfam.barska.data.TrainingRepository
 import kotlinx.coroutines.*
 import java.util.*
 
 const val STANDARD_TRAINING_START_TIME_HOUR = 19
 const val STANDARD_TRAINING_START_TIME_MINUTE = 0
 
-//Don't keep a reference to a context that has a shorter lifecycle than ViewModel
-//Use AndroidViewModel to pass Application context that lives as long as the application does
-class CreateViewModel(private val trainingDao: TrainingDao, val app: Application) :
+class CreateViewModel(trainingDao: TrainingDao, val app: Application) :
     AndroidViewModel(app) {
+
+    private val repository: TrainingRepository = TrainingRepository(trainingDao)
 
     private var group = ""
     private var trainer = ""
@@ -24,8 +25,6 @@ class CreateViewModel(private val trainingDao: TrainingDao, val app: Application
 
     private var calendar = Calendar.getInstance()
     private var currentTime = System.currentTimeMillis()
-
-    private var viewModelJob = Job()
 
     private val _error = MutableLiveData<Int?>()
     val error: LiveData<Int?>
@@ -99,10 +98,9 @@ class CreateViewModel(private val trainingDao: TrainingDao, val app: Application
 
         val newTraining = Training(0, group, trainer, place, calendar.timeInMillis, intPrice)
 
-        val ioScope = CoroutineScope(Dispatchers.IO + viewModelJob)
-        ioScope.launch {
+        viewModelScope.launch {
             withContext(Dispatchers.IO) {
-                trainingDao.insert(newTraining)
+                repository.insert(newTraining)
             }
         }
         _training.value = newTraining
@@ -111,20 +109,15 @@ class CreateViewModel(private val trainingDao: TrainingDao, val app: Application
     fun doneNewTraining() {
         _training.value = null
     }
-
-    override fun onCleared() {
-        super.onCleared()
-        viewModelJob.cancel()
-    }
 }
 
 class CreateViewModelFactory(
-    private val database: TrainingDao,
+    private val trainingDao: TrainingDao,
     private val application: Application
 ) : ViewModelProvider.Factory {
     override fun <T : ViewModel?> create(modelClass: Class<T>): T {
         if (modelClass.isAssignableFrom(CreateViewModel::class.java)) {
-            return CreateViewModel(database, application) as T
+            return CreateViewModel(trainingDao, application) as T
         }
         throw IllegalArgumentException("Unknown ViewModel class")
     }

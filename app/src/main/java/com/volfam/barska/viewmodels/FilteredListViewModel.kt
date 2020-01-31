@@ -5,8 +5,7 @@ import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.volfam.barska.data.TrainingDao
-import timber.log.Timber
-import java.text.SimpleDateFormat
+import com.volfam.barska.data.TrainingRepository
 
 class FilteredListViewModel(
     trainingDao: TrainingDao,
@@ -20,9 +19,11 @@ class FilteredListViewModel(
     endDate: Long
 ) : AndroidViewModel(app) {
 
+    private val repository: TrainingRepository = TrainingRepository(trainingDao)
+
     val selectedTrainings =
         if (groups != null && trainers != null && places != null)
-            trainingDao.getFilteredTrainings(
+            repository.getFilteredTrainings(
                 groups,
                 trainers,
                 places,
@@ -31,7 +32,7 @@ class FilteredListViewModel(
                 startDate,
                 endDate
             )
-        else trainingDao.getAllTrainings()
+        else repository.getAllTrainings()
 }
 
 class FilteredListViewModelFactory(

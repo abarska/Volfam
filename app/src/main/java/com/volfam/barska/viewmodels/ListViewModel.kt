@@ -3,15 +3,13 @@ package com.volfam.barska.viewmodels
 import android.app.Application
 import androidx.lifecycle.*
 import com.volfam.barska.data.TrainingDao
+import com.volfam.barska.data.TrainingRepository
 import kotlinx.coroutines.*
 
-class ListViewModel(private val trainingDao: TrainingDao, val app: Application) :
-    AndroidViewModel(app) {
+class ListViewModel(trainingDao: TrainingDao, val app: Application) : AndroidViewModel(app) {
 
-    private var viewModelJob = Job()
-    private val uiScope = CoroutineScope(Dispatchers.Main + viewModelJob)
-
-    val trainings = trainingDao.getAllTrainings()
+    private val repository: TrainingRepository = TrainingRepository(trainingDao)
+    val trainings = repository.getAllTrainings()
 
     private val _navigateToDetailFragment = MutableLiveData<Long>()
     val navigateToDetailFragment: LiveData<Long>
@@ -29,24 +27,14 @@ class ListViewModel(private val trainingDao: TrainingDao, val app: Application) 
         _navigateToDetailFragment.value = null
     }
 
-    fun onFilterMenuItemClicked() {
-        uiScope.launch { _navigateToFilterFragment.value = trainingDao.getMaxPrice() }
-    }
+    fun onFilterMenuItemClicked() =
+        viewModelScope.launch { _navigateToFilterFragment.value = repository.getMaxPrice() }
 
     fun onFilterFragmentNavigated() {
         _navigateToFilterFragment.value = null
     }
 
-    fun clearData() {
-        uiScope.launch {
-            trainingDao.clearAll()
-        }
-    }
-
-    override fun onCleared() {
-        super.onCleared()
-        viewModelJob.cancel()
-    }
+    fun clearData() = viewModelScope.launch { repository.clearAll() }
 }
 
 class ListViewModelFactory(

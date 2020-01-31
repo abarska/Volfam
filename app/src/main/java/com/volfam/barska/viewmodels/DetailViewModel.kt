@@ -4,20 +4,14 @@ import android.app.Application
 import androidx.lifecycle.*
 import com.volfam.barska.data.Training
 import com.volfam.barska.data.TrainingDao
+import com.volfam.barska.data.TrainingRepository
 import kotlinx.coroutines.*
-import timber.log.Timber
 
-class DetailViewModel(
-    private val trainingDao: TrainingDao,
-    app: Application,
-    private val key: Long
-) :
+class DetailViewModel(trainingDao: TrainingDao, app: Application, private val key: Long) :
     AndroidViewModel(app) {
 
-    val training: LiveData<Training> = trainingDao.getTraining(key)
-
-    private var viewModelJob = Job()
-    private val uiScope = CoroutineScope(Dispatchers.Main + viewModelJob)
+    private val repository: TrainingRepository = TrainingRepository(trainingDao)
+    val training: LiveData<Training> = repository.getTraining(key)
 
     private val _trainingDateTime = MutableLiveData<Long>()
     val trainingDateTime: LiveData<Long>
@@ -80,21 +74,16 @@ class DetailViewModel(
             _trainingDateTime.value!!,
             _trainingPrice.value!!
         )
-        uiScope.launch {
-            trainingDao.update(updatedTraining)
+        viewModelScope.launch {
+            repository.update(updatedTraining)
         }
         return updatedTraining
     }
 
     fun deleteTraining() {
-        uiScope.launch {
-            trainingDao.delete(key)
+        viewModelScope.launch {
+            repository.delete(key)
         }
-    }
-
-    override fun onCleared() {
-        super.onCleared()
-        viewModelJob.cancel()
     }
 }
 

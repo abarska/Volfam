@@ -108,11 +108,11 @@ class FilterViewModel(val app: Application) :
 }
 
 
-class FilterViewModelFactory(private val application: Application) : ViewModelProvider.Factory {
+class FilterViewModelFactory(private val app: Application) : ViewModelProvider.Factory {
 
     override fun <T : ViewModel?> create(modelClass: Class<T>): T {
         if (modelClass.isAssignableFrom(FilterViewModel::class.java)) {
-            return FilterViewModel(application) as T
+            return FilterViewModel(app) as T
         }
         throw IllegalArgumentException("Unknown ViewModel class")
     }
