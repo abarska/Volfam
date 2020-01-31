@@ -1,8 +1,8 @@
 1<?xml version="1.0" encoding="utf-8"?>
 2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
 3    package="com.volfam.barska"
-4    android:versionCode="2"
-5    android:versionName="1.1" >
+4    android:versionCode="3"
+5    android:versionName="1.2" >
 6
 7    <uses-sdk
 8        android:minSdkVersion="23"
@@ -49,11 +49,11 @@
 30        </activity>
 31
 32        <service
-32-->[androidx.room:room-runtime:2.2.2] C:\Users\ATNuser\.gradle\caches\transforms-2\files-2.1\fb0a7910f4d13a6f5297d19f22ac845e\room-runtime-2.2.2\AndroidManifest.xml:25:9-27:40
+32-->[androidx.room:room-runtime:2.2.3] C:\Users\ATNuser\.gradle\caches\transforms-2\files-2.1\969bc7780587cde477d2ee203e28c38f\room-runtime-2.2.3\AndroidManifest.xml:25:9-27:40
 33            android:name="androidx.room.MultiInstanceInvalidationService"
-33-->[androidx.room:room-runtime:2.2.2] C:\Users\ATNuser\.gradle\caches\transforms-2\files-2.1\fb0a7910f4d13a6f5297d19f22ac845e\room-runtime-2.2.2\AndroidManifest.xml:26:13-74
+33-->[androidx.room:room-runtime:2.2.3] C:\Users\ATNuser\.gradle\caches\transforms-2\files-2.1\969bc7780587cde477d2ee203e28c38f\room-runtime-2.2.3\AndroidManifest.xml:26:13-74
 34            android:exported="false" />
-34-->[androidx.room:room-runtime:2.2.2] C:\Users\ATNuser\.gradle\caches\transforms-2\files-2.1\fb0a7910f4d13a6f5297d19f22ac845e\room-runtime-2.2.2\AndroidManifest.xml:27:13-37
+34-->[androidx.room:room-runtime:2.2.3] C:\Users\ATNuser\.gradle\caches\transforms-2\files-2.1\969bc7780587cde477d2ee203e28c38f\room-runtime-2.2.3\AndroidManifest.xml:27:13-37
 35
 36        <provider
 36-->[androidx.lifecycle:lifecycle-process:2.1.0] C:\Users\ATNuser\.gradle\caches\transforms-2\files-2.1\2b875cf6d94d901dca5b027f51d471a8\lifecycle-process-2.1.0\AndroidManifest.xml:23:9-27:43

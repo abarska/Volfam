@@ -101,16 +101,11 @@ class CreateViewModel(private val trainingDao: TrainingDao, val app: Application
 
         val ioScope = CoroutineScope(Dispatchers.IO + viewModelJob)
         ioScope.launch {
-            insertIntoDatabase(newTraining)
+            withContext(Dispatchers.IO) {
+                trainingDao.insert(newTraining)
+            }
         }
-
         _training.value = newTraining
-    }
-
-    private suspend fun insertIntoDatabase(training: Training) {
-        withContext(Dispatchers.IO) {
-            trainingDao.insert(training)
-        }
     }
 
     fun doneNewTraining() {
@@ -123,7 +118,10 @@ class CreateViewModel(private val trainingDao: TrainingDao, val app: Application
     }
 }
 
-class CreateViewModelFactory(private val database: TrainingDao, private val application: Application) : ViewModelProvider.Factory {
+class CreateViewModelFactory(
+    private val database: TrainingDao,
+    private val application: Application
+) : ViewModelProvider.Factory {
     override fun <T : ViewModel?> create(modelClass: Class<T>): T {
         if (modelClass.isAssignableFrom(CreateViewModel::class.java)) {
             return CreateViewModel(database, application) as T

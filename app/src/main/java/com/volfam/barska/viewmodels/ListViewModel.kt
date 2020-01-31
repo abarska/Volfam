@@ -30,11 +30,7 @@ class ListViewModel(private val trainingDao: TrainingDao, val app: Application) 
     }
 
     fun onFilterMenuItemClicked() {
-        uiScope.launch { _navigateToFilterFragment.value = getMaxPriceInBackground() }
-    }
-
-    private suspend fun getMaxPriceInBackground() = withContext(Dispatchers.IO) {
-        trainingDao.getMaxPrice()
+        uiScope.launch { _navigateToFilterFragment.value = trainingDao.getMaxPrice() }
     }
 
     fun onFilterFragmentNavigated() {
@@ -43,12 +39,6 @@ class ListViewModel(private val trainingDao: TrainingDao, val app: Application) 
 
     fun clearData() {
         uiScope.launch {
-            clearInBackground()
-        }
-    }
-
-    private suspend fun clearInBackground() {
-        withContext(Dispatchers.IO) {
             trainingDao.clearAll()
         }
     }

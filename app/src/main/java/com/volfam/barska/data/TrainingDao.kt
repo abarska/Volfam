@@ -10,10 +10,10 @@ import androidx.room.Update
 interface TrainingDao {
 
     @Insert
-    fun insert(training: Training)
+    suspend fun insert(training: Training)
 
     @Update
-    fun update(training: Training)
+    suspend fun update(training: Training)
 
     @Query("SELECT * FROM $TRAINING_TABLE_NAME WHERE $TRAINING_COLUMN_ID = :key")
     fun getTraining(key: Long): LiveData<Training>
@@ -40,15 +40,12 @@ interface TrainingDao {
         endDate: Long
     ): LiveData<List<Training>>
 
-    @Query("SELECT COUNT ($TRAINING_COLUMN_ID) FROM $TRAINING_TABLE_NAME")
-    fun getRows(): Int
-
     @Query("SELECT MAX ($TRAINING_COLUMN_PRICE) FROM $TRAINING_TABLE_NAME")
-    fun getMaxPrice(): Int
+    suspend fun getMaxPrice(): Int
 
     @Query("DELETE FROM $TRAINING_TABLE_NAME")
-    fun clearAll()
+    suspend fun clearAll()
 
     @Query("DELETE FROM $TRAINING_TABLE_NAME WHERE $TRAINING_COLUMN_ID = :key")
-    fun delete(key: Long)
+    suspend fun delete(key: Long)
 }

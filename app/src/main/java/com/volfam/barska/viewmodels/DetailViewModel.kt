@@ -81,25 +81,13 @@ class DetailViewModel(
             _trainingPrice.value!!
         )
         uiScope.launch {
-            updateInBackground(updatedTraining)
+            trainingDao.update(updatedTraining)
         }
         return updatedTraining
     }
 
-    private suspend fun updateInBackground(training: Training) {
-        withContext(Dispatchers.IO) {
-            trainingDao.update(training)
-        }
-    }
-
     fun deleteTraining() {
         uiScope.launch {
-            deleteInBackgroung()
-        }
-    }
-
-    private suspend fun deleteInBackgroung() {
-        withContext(Dispatchers.IO) {
             trainingDao.delete(key)
         }
     }

@@ -18,7 +18,8 @@ MERGED from [android.arch.navigation:navigation-fragment-ktx:1.0.0] C:\Users\ATN
 MERGED from [android.arch.navigation:navigation-runtime-ktx:1.0.0] C:\Users\ATNuser\.gradle\caches\transforms-2\files-2.1\33bfc46a68f4b3fe60ee14d826216d32\jetified-navigation-runtime-ktx-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [android.arch.navigation:navigation-common-ktx:1.0.0] C:\Users\ATNuser\.gradle\caches\transforms-2\files-2.1\46ea22fb276202418d3831139349c4c8\jetified-navigation-common-ktx-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.lifecycle:lifecycle-extensions:2.1.0] C:\Users\ATNuser\.gradle\caches\transforms-2\files-2.1\003da091ad1e69d79a2c75346dbeec54\lifecycle-extensions-2.1.0\AndroidManifest.xml:17:1-25:12
-MERGED from [androidx.room:room-runtime:2.2.2] C:\Users\ATNuser\.gradle\caches\transforms-2\files-2.1\fb0a7910f4d13a6f5297d19f22ac845e\room-runtime-2.2.2\AndroidManifest.xml:17:1-30:12
+MERGED from [androidx.room:room-ktx:2.2.3] C:\Users\ATNuser\.gradle\caches\transforms-2\files-2.1\fd95bd5daff62e0cf52dc680fdfffbdf\room-ktx-2.2.3\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.room:room-runtime:2.2.3] C:\Users\ATNuser\.gradle\caches\transforms-2\files-2.1\969bc7780587cde477d2ee203e28c38f\room-runtime-2.2.3\AndroidManifest.xml:17:1-30:12
 MERGED from [com.jakewharton.timber:timber:4.7.1] C:\Users\ATNuser\.gradle\caches\transforms-2\files-2.1\8527d7fd562a80f730423ff4712c8b77\jetified-timber-4.7.1\AndroidManifest.xml:2:1-9:12
 MERGED from [com.edmodo:rangebar:1.0.0] C:\Users\ATNuser\.gradle\caches\transforms-2\files-2.1\bf3203bde7a9030f815506e768a730a4\rangebar-1.0.0\AndroidManifest.xml:2:1-11:12
 MERGED from [android.arch.navigation:navigation-fragment:1.0.0] C:\Users\ATNuser\.gradle\caches\transforms-2\files-2.1\f666a5ffd25db603a28cf1ea8415203e\jetified-navigation-fragment-1.0.0\AndroidManifest.xml:17:1-22:12
@@ -85,8 +86,8 @@ MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] C:\Users\ATNuser\
 MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] C:\Users\ATNuser\.gradle\caches\transforms-2\files-2.1\f00b86f8bcaa183b42a7f1e5e6a855b4\constraintlayout-1.1.3\AndroidManifest.xml:9:5-20
 MERGED from [androidx.lifecycle:lifecycle-extensions:2.1.0] C:\Users\ATNuser\.gradle\caches\transforms-2\files-2.1\003da091ad1e69d79a2c75346dbeec54\lifecycle-extensions-2.1.0\AndroidManifest.xml:22:5-23:19
 MERGED from [androidx.lifecycle:lifecycle-extensions:2.1.0] C:\Users\ATNuser\.gradle\caches\transforms-2\files-2.1\003da091ad1e69d79a2c75346dbeec54\lifecycle-extensions-2.1.0\AndroidManifest.xml:22:5-23:19
-MERGED from [androidx.room:room-runtime:2.2.2] C:\Users\ATNuser\.gradle\caches\transforms-2\files-2.1\fb0a7910f4d13a6f5297d19f22ac845e\room-runtime-2.2.2\AndroidManifest.xml:24:5-28:19
-MERGED from [androidx.room:room-runtime:2.2.2] C:\Users\ATNuser\.gradle\caches\transforms-2\files-2.1\fb0a7910f4d13a6f5297d19f22ac845e\room-runtime-2.2.2\AndroidManifest.xml:24:5-28:19
+MERGED from [androidx.room:room-runtime:2.2.3] C:\Users\ATNuser\.gradle\caches\transforms-2\files-2.1\969bc7780587cde477d2ee203e28c38f\room-runtime-2.2.3\AndroidManifest.xml:24:5-28:19
+MERGED from [androidx.room:room-runtime:2.2.3] C:\Users\ATNuser\.gradle\caches\transforms-2\files-2.1\969bc7780587cde477d2ee203e28c38f\room-runtime-2.2.3\AndroidManifest.xml:24:5-28:19
 MERGED from [com.jakewharton.timber:timber:4.7.1] C:\Users\ATNuser\.gradle\caches\transforms-2\files-2.1\8527d7fd562a80f730423ff4712c8b77\jetified-timber-4.7.1\AndroidManifest.xml:7:5-20
 MERGED from [com.jakewharton.timber:timber:4.7.1] C:\Users\ATNuser\.gradle\caches\transforms-2\files-2.1\8527d7fd562a80f730423ff4712c8b77\jetified-timber-4.7.1\AndroidManifest.xml:7:5-20
 MERGED from [androidx.core:core:1.1.0] C:\Users\ATNuser\.gradle\caches\transforms-2\files-2.1\34b5fbb7a0535d6079bdb43cc887d81a\core-1.1.0\AndroidManifest.xml:24:5-89
@@ -159,8 +160,10 @@ MERGED from [android.arch.navigation:navigation-common-ktx:1.0.0] C:\Users\ATNus
 MERGED from [android.arch.navigation:navigation-common-ktx:1.0.0] C:\Users\ATNuser\.gradle\caches\transforms-2\files-2.1\46ea22fb276202418d3831139349c4c8\jetified-navigation-common-ktx-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.lifecycle:lifecycle-extensions:2.1.0] C:\Users\ATNuser\.gradle\caches\transforms-2\files-2.1\003da091ad1e69d79a2c75346dbeec54\lifecycle-extensions-2.1.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.lifecycle:lifecycle-extensions:2.1.0] C:\Users\ATNuser\.gradle\caches\transforms-2\files-2.1\003da091ad1e69d79a2c75346dbeec54\lifecycle-extensions-2.1.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.room:room-runtime:2.2.2] C:\Users\ATNuser\.gradle\caches\transforms-2\files-2.1\fb0a7910f4d13a6f5297d19f22ac845e\room-runtime-2.2.2\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.room:room-runtime:2.2.2] C:\Users\ATNuser\.gradle\caches\transforms-2\files-2.1\fb0a7910f4d13a6f5297d19f22ac845e\room-runtime-2.2.2\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.room:room-ktx:2.2.3] C:\Users\ATNuser\.gradle\caches\transforms-2\files-2.1\fd95bd5daff62e0cf52dc680fdfffbdf\room-ktx-2.2.3\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.room:room-ktx:2.2.3] C:\Users\ATNuser\.gradle\caches\transforms-2\files-2.1\fd95bd5daff62e0cf52dc680fdfffbdf\room-ktx-2.2.3\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.room:room-runtime:2.2.3] C:\Users\ATNuser\.gradle\caches\transforms-2\files-2.1\969bc7780587cde477d2ee203e28c38f\room-runtime-2.2.3\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.room:room-runtime:2.2.3] C:\Users\ATNuser\.gradle\caches\transforms-2\files-2.1\969bc7780587cde477d2ee203e28c38f\room-runtime-2.2.3\AndroidManifest.xml:20:5-22:41
 MERGED from [com.jakewharton.timber:timber:4.7.1] C:\Users\ATNuser\.gradle\caches\transforms-2\files-2.1\8527d7fd562a80f730423ff4712c8b77\jetified-timber-4.7.1\AndroidManifest.xml:5:5-43
 MERGED from [com.jakewharton.timber:timber:4.7.1] C:\Users\ATNuser\.gradle\caches\transforms-2\files-2.1\8527d7fd562a80f730423ff4712c8b77\jetified-timber-4.7.1\AndroidManifest.xml:5:5-43
 MERGED from [com.edmodo:rangebar:1.0.0] C:\Users\ATNuser\.gradle\caches\transforms-2\files-2.1\bf3203bde7a9030f815506e768a730a4\rangebar-1.0.0\AndroidManifest.xml:7:5-9:41
@@ -254,11 +257,11 @@ INJECTED from C:\Users\ATNuser\AndroidStudioProjects\Volfam\app\src\main\Android
 		ADDED from C:\Users\ATNuser\AndroidStudioProjects\Volfam\app\src\main\AndroidManifest.xml
 		INJECTED from C:\Users\ATNuser\AndroidStudioProjects\Volfam\app\src\main\AndroidManifest.xml
 service#androidx.room.MultiInstanceInvalidationService
-ADDED from [androidx.room:room-runtime:2.2.2] C:\Users\ATNuser\.gradle\caches\transforms-2\files-2.1\fb0a7910f4d13a6f5297d19f22ac845e\room-runtime-2.2.2\AndroidManifest.xml:25:9-27:40
+ADDED from [androidx.room:room-runtime:2.2.3] C:\Users\ATNuser\.gradle\caches\transforms-2\files-2.1\969bc7780587cde477d2ee203e28c38f\room-runtime-2.2.3\AndroidManifest.xml:25:9-27:40
 	android:exported
-		ADDED from [androidx.room:room-runtime:2.2.2] C:\Users\ATNuser\.gradle\caches\transforms-2\files-2.1\fb0a7910f4d13a6f5297d19f22ac845e\room-runtime-2.2.2\AndroidManifest.xml:27:13-37
+		ADDED from [androidx.room:room-runtime:2.2.3] C:\Users\ATNuser\.gradle\caches\transforms-2\files-2.1\969bc7780587cde477d2ee203e28c38f\room-runtime-2.2.3\AndroidManifest.xml:27:13-37
 	android:name
-		ADDED from [androidx.room:room-runtime:2.2.2] C:\Users\ATNuser\.gradle\caches\transforms-2\files-2.1\fb0a7910f4d13a6f5297d19f22ac845e\room-runtime-2.2.2\AndroidManifest.xml:26:13-74
+		ADDED from [androidx.room:room-runtime:2.2.3] C:\Users\ATNuser\.gradle\caches\transforms-2\files-2.1\969bc7780587cde477d2ee203e28c38f\room-runtime-2.2.3\AndroidManifest.xml:26:13-74
 provider#androidx.lifecycle.ProcessLifecycleOwnerInitializer
 ADDED from [androidx.lifecycle:lifecycle-process:2.1.0] C:\Users\ATNuser\.gradle\caches\transforms-2\files-2.1\2b875cf6d94d901dca5b027f51d471a8\lifecycle-process-2.1.0\AndroidManifest.xml:23:9-27:43
 	android:authorities
