@@ -36,8 +36,8 @@ class CreateFragment : Fragment() {
         )
 
         val application = requireNotNull(this.activity).application
-        val trainingDao = VolfamDatabase.getInstance(application).trainingDao
-        val factory = CreateViewModelFactory(trainingDao, application)
+
+        val factory = CreateViewModelFactory(application)
         createViewModel = ViewModelProviders.of(this, factory).get(CreateViewModel::class.java)
 
         binding.createViewModel = createViewModel

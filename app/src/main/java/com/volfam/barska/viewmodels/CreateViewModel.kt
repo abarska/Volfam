@@ -7,15 +7,16 @@ import com.volfam.barska.R
 import com.volfam.barska.data.Training
 import com.volfam.barska.data.TrainingDao
 import com.volfam.barska.data.TrainingRepository
+import com.volfam.barska.data.VolfamDatabase
 import kotlinx.coroutines.*
 import java.util.*
 
 const val STANDARD_TRAINING_START_TIME_HOUR = 19
 const val STANDARD_TRAINING_START_TIME_MINUTE = 0
 
-class CreateViewModel(trainingDao: TrainingDao, val app: Application) :
-    AndroidViewModel(app) {
+class CreateViewModel(val app: Application) : AndroidViewModel(app) {
 
+    private val trainingDao = VolfamDatabase.getInstance(app).trainingDao
     private val repository: TrainingRepository = TrainingRepository(trainingDao)
 
     private var group = ""
@@ -111,13 +112,10 @@ class CreateViewModel(trainingDao: TrainingDao, val app: Application) :
     }
 }
 
-class CreateViewModelFactory(
-    private val trainingDao: TrainingDao,
-    private val application: Application
-) : ViewModelProvider.Factory {
+class CreateViewModelFactory(private val app: Application) : ViewModelProvider.Factory {
     override fun <T : ViewModel?> create(modelClass: Class<T>): T {
         if (modelClass.isAssignableFrom(CreateViewModel::class.java)) {
-            return CreateViewModel(trainingDao, application) as T
+            return CreateViewModel(app) as T
         }
         throw IllegalArgumentException("Unknown ViewModel class")
     }

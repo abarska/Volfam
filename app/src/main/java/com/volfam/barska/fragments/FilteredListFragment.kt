@@ -54,7 +54,6 @@ class FilteredListFragment : Fragment() {
 
         val app = requireNotNull(this.activity).application
         val factory = FilteredListViewModelFactory(
-            VolfamDatabase.getInstance(app).trainingDao,
             app,
             groups,
             trainers,

@@ -4,10 +4,12 @@ import android.app.Application
 import androidx.lifecycle.*
 import com.volfam.barska.data.TrainingDao
 import com.volfam.barska.data.TrainingRepository
+import com.volfam.barska.data.VolfamDatabase
 import kotlinx.coroutines.*
 
-class ListViewModel(trainingDao: TrainingDao, val app: Application) : AndroidViewModel(app) {
+class ListViewModel(val app: Application) : AndroidViewModel(app) {
 
+    private val trainingDao = VolfamDatabase.getInstance(app).trainingDao
     private val repository: TrainingRepository = TrainingRepository(trainingDao)
     val trainings = repository.getAllTrainings()
 
@@ -38,12 +40,11 @@ class ListViewModel(trainingDao: TrainingDao, val app: Application) : AndroidVie
 }
 
 class ListViewModelFactory(
-    private val trainingDao: TrainingDao,
-    private val application: Application
+    private val app: Application
 ) : ViewModelProvider.Factory {
     override fun <T : ViewModel?> create(modelClass: Class<T>): T {
         if (modelClass.isAssignableFrom(ListViewModel::class.java)) {
-            return ListViewModel(trainingDao, application) as T
+            return ListViewModel(app) as T
         }
         throw IllegalArgumentException("Unknown ViewModel class")
     }

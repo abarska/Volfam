@@ -33,9 +33,7 @@ class DetailFragment : Fragment() {
         binding.lifecycleOwner = this
 
         val app = requireNotNull(this.activity).application
-        val trainingDao = VolfamDatabase.getInstance(app).trainingDao
-        val factory = DetailViewModelFactory(
-            trainingDao, app, DetailFragmentArgs.fromBundle(arguments!!).trainingId
+        val factory = DetailViewModelFactory(app, DetailFragmentArgs.fromBundle(arguments!!).trainingId
         )
         detailViewModel = ViewModelProviders.of(this, factory).get(DetailViewModel::class.java)
         binding.detailViewModel = detailViewModel

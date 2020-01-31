@@ -4,11 +4,10 @@ import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.volfam.barska.data.TrainingDao
 import com.volfam.barska.data.TrainingRepository
+import com.volfam.barska.data.VolfamDatabase
 
 class FilteredListViewModel(
-    trainingDao: TrainingDao,
     val app: Application,
     groups: List<String>?,
     trainers: List<String>?,
@@ -19,6 +18,7 @@ class FilteredListViewModel(
     endDate: Long
 ) : AndroidViewModel(app) {
 
+    private val trainingDao = VolfamDatabase.getInstance(app).trainingDao
     private val repository: TrainingRepository = TrainingRepository(trainingDao)
 
     val selectedTrainings =
@@ -36,8 +36,7 @@ class FilteredListViewModel(
 }
 
 class FilteredListViewModelFactory(
-    private val trainingDao: TrainingDao,
-    private val application: Application,
+    private val app: Application,
     private val groups: List<String>?,
     private val trainers: List<String>?,
     private val places: List<String>?,
@@ -45,13 +44,11 @@ class FilteredListViewModelFactory(
     private val maxPrice: Int,
     private val startDate: Long,
     private val endDate: Long
-
 ) : ViewModelProvider.Factory {
     override fun <T : ViewModel?> create(modelClass: Class<T>): T {
         if (modelClass.isAssignableFrom(FilteredListViewModel::class.java)) {
             return FilteredListViewModel(
-                trainingDao,
-                application,
+                app,
                 groups,
                 trainers,
                 places,

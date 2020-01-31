@@ -35,7 +35,7 @@ class ListFragment : Fragment() {
         binding.lifecycleOwner = this
 
         val app = requireNotNull(this.activity).application
-        val factory = ListViewModelFactory(VolfamDatabase.getInstance(app).trainingDao, app)
+        val factory = ListViewModelFactory(app)
         listViewModel = ViewModelProviders.of(this, factory).get(ListViewModel::class.java)
 
         val adapter = TrainingAdapter(context!!, TrainingClickListener { trainingId ->

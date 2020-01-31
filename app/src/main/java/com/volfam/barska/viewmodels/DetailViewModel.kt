@@ -5,11 +5,12 @@ import androidx.lifecycle.*
 import com.volfam.barska.data.Training
 import com.volfam.barska.data.TrainingDao
 import com.volfam.barska.data.TrainingRepository
+import com.volfam.barska.data.VolfamDatabase
 import kotlinx.coroutines.*
 
-class DetailViewModel(trainingDao: TrainingDao, app: Application, private val key: Long) :
-    AndroidViewModel(app) {
+class DetailViewModel(app: Application, private val key: Long) : AndroidViewModel(app) {
 
+    private val trainingDao = VolfamDatabase.getInstance(app).trainingDao
     private val repository: TrainingRepository = TrainingRepository(trainingDao)
     val training: LiveData<Training> = repository.getTraining(key)
 
@@ -88,14 +89,13 @@ class DetailViewModel(trainingDao: TrainingDao, app: Application, private val ke
 }
 
 class DetailViewModelFactory(
-    private val trainingDao: TrainingDao,
-    private val application: Application,
+    private val app: Application,
     private val trainingId: Long
 ) : ViewModelProvider.Factory {
 
     override fun <T : ViewModel?> create(modelClass: Class<T>): T {
         if (modelClass.isAssignableFrom(DetailViewModel::class.java)) {
-            return DetailViewModel(trainingDao, application, trainingId) as T
+            return DetailViewModel(app, trainingId) as T
         }
         throw IllegalArgumentException("Unknown ViewModel class")
     }
