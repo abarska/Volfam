@@ -59,6 +59,7 @@
     <string name="high_price_warning">Подозрительно высокая стоимость тренировки</string>
 
     <string name="action_delete_label">Удалить все записи</string>
+    <string name="action_finance_label">Финансы</string>
     <string name="action_filter_label">Фильтры</string>
     <string name="share_again_checkbox_label">Повторить плюсовалку</string>
 

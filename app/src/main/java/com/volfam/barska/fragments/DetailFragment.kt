@@ -3,6 +3,7 @@ package com.volfam.barska.fragments
 import android.app.AlertDialog
 import android.os.Bundle
 import android.view.*
+import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
@@ -33,7 +34,8 @@ class DetailFragment : Fragment() {
         binding.lifecycleOwner = this
 
         val app = requireNotNull(this.activity).application
-        val factory = DetailViewModelFactory(app, DetailFragmentArgs.fromBundle(arguments!!).trainingId
+        val factory = DetailViewModelFactory(
+            app, DetailFragmentArgs.fromBundle(arguments!!).trainingId
         )
         detailViewModel = ViewModelProviders.of(this, factory).get(DetailViewModel::class.java)
         binding.detailViewModel = detailViewModel
@@ -214,15 +216,20 @@ class DetailFragment : Fragment() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        if (item.itemId == R.id.action_clear) {
-            detailViewModel.deleteTraining()
-            Snackbar.make(
-                binding.root,
-                getString(R.string.data_deleted_label),
-                Snackbar.LENGTH_SHORT
-            ).show()
-            fragmentManager?.popBackStack()
-            return true
+        when (item.itemId) {
+            R.id.action_clear -> {
+                detailViewModel.deleteTraining()
+                Snackbar.make(
+                    binding.root,
+                    getString(R.string.data_deleted_label),
+                    Snackbar.LENGTH_SHORT
+                ).show()
+                fragmentManager?.popBackStack()
+                return true
+            }
+            R.id.action_finance -> {
+                Toast.makeText(context, "finance", Toast.LENGTH_SHORT).show()
+            }
         }
         return super.onOptionsItemSelected(item)
     }

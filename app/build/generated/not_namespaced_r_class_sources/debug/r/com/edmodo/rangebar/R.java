@@ -27,13 +27,13 @@ public final class R {
     public static final class drawable {
         private drawable() {}
 
-        public static final int seek_thumb_normal = 0x7f08008e;
-        public static final int seek_thumb_pressed = 0x7f08008f;
+        public static final int seek_thumb_normal = 0x7f08008f;
+        public static final int seek_thumb_pressed = 0x7f080090;
     }
     public static final class string {
         private string() {}
 
-        public static final int app_name = 0x7f10001e;
+        public static final int app_name = 0x7f10001f;
     }
     public static final class style {
         private style() {}

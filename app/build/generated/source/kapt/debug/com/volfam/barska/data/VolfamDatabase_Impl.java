@@ -27,12 +27,12 @@ public final class VolfamDatabase_Impl extends VolfamDatabase {
 
   @Override
   protected SupportSQLiteOpenHelper createOpenHelper(DatabaseConfiguration configuration) {
-    final SupportSQLiteOpenHelper.Callback _openCallback = new RoomOpenHelper(configuration, new RoomOpenHelper.Delegate(1) {
+    final SupportSQLiteOpenHelper.Callback _openCallback = new RoomOpenHelper(configuration, new RoomOpenHelper.Delegate(2) {
       @Override
       public void createAllTables(SupportSQLiteDatabase _db) {
-        _db.execSQL("CREATE TABLE IF NOT EXISTS `volfam_training_table` (`volfam_training_column_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `volfam_training_column_group` TEXT NOT NULL, `volfam_training_column_trainer` TEXT NOT NULL, `volfam_training_column_place` TEXT NOT NULL, `volfam_training_column_date` INTEGER NOT NULL, `volfam_training_column_price` INTEGER NOT NULL)");
+        _db.execSQL("CREATE TABLE IF NOT EXISTS `volfam_training_table` (`volfam_training_column_number_of_players` INTEGER, `volfam_training_column_amount_collected` INTEGER, `volfam_training_column_paid_to_trainer` INTEGER, `volfam_training_column_paid_for_gym` INTEGER, `volfam_training_column_extra_incomes_amount` INTEGER, `volfam_training_column_extra_incomes_comment` TEXT, `volfam_training_column_extra_expenses_amount` INTEGER, `volfam_training_column_extra_expenses_comment` TEXT, `volfam_training_column_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `volfam_training_column_group` TEXT NOT NULL, `volfam_training_column_trainer` TEXT NOT NULL, `volfam_training_column_place` TEXT NOT NULL, `volfam_training_column_date` INTEGER NOT NULL, `volfam_training_column_price` INTEGER NOT NULL)");
         _db.execSQL("CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)");
-        _db.execSQL("INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'f1e2cfdb40cf85aa1d77e09e2f9d4f81')");
+        _db.execSQL("INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '79307e1dcb5bc9f3fccac2b8e719058a')");
       }
 
       @Override
@@ -76,7 +76,15 @@ public final class VolfamDatabase_Impl extends VolfamDatabase {
 
       @Override
       protected RoomOpenHelper.ValidationResult onValidateSchema(SupportSQLiteDatabase _db) {
-        final HashMap<String, TableInfo.Column> _columnsVolfamTrainingTable = new HashMap<String, TableInfo.Column>(6);
+        final HashMap<String, TableInfo.Column> _columnsVolfamTrainingTable = new HashMap<String, TableInfo.Column>(14);
+        _columnsVolfamTrainingTable.put("volfam_training_column_number_of_players", new TableInfo.Column("volfam_training_column_number_of_players", "INTEGER", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsVolfamTrainingTable.put("volfam_training_column_amount_collected", new TableInfo.Column("volfam_training_column_amount_collected", "INTEGER", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsVolfamTrainingTable.put("volfam_training_column_paid_to_trainer", new TableInfo.Column("volfam_training_column_paid_to_trainer", "INTEGER", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsVolfamTrainingTable.put("volfam_training_column_paid_for_gym", new TableInfo.Column("volfam_training_column_paid_for_gym", "INTEGER", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsVolfamTrainingTable.put("volfam_training_column_extra_incomes_amount", new TableInfo.Column("volfam_training_column_extra_incomes_amount", "INTEGER", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsVolfamTrainingTable.put("volfam_training_column_extra_incomes_comment", new TableInfo.Column("volfam_training_column_extra_incomes_comment", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsVolfamTrainingTable.put("volfam_training_column_extra_expenses_amount", new TableInfo.Column("volfam_training_column_extra_expenses_amount", "INTEGER", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsVolfamTrainingTable.put("volfam_training_column_extra_expenses_comment", new TableInfo.Column("volfam_training_column_extra_expenses_comment", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
         _columnsVolfamTrainingTable.put("volfam_training_column_id", new TableInfo.Column("volfam_training_column_id", "INTEGER", true, 1, null, TableInfo.CREATED_FROM_ENTITY));
         _columnsVolfamTrainingTable.put("volfam_training_column_group", new TableInfo.Column("volfam_training_column_group", "TEXT", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
         _columnsVolfamTrainingTable.put("volfam_training_column_trainer", new TableInfo.Column("volfam_training_column_trainer", "TEXT", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
@@ -94,7 +102,7 @@ public final class VolfamDatabase_Impl extends VolfamDatabase {
         }
         return new RoomOpenHelper.ValidationResult(true, null);
       }
-    }, "f1e2cfdb40cf85aa1d77e09e2f9d4f81", "8e9fa18fe12451c1640153dc47095e27");
+    }, "79307e1dcb5bc9f3fccac2b8e719058a", "fe63edfe1efcf3a62f723c6c8ddaa626");
     final SupportSQLiteOpenHelper.Configuration _sqliteConfig = SupportSQLiteOpenHelper.Configuration.builder(configuration.context)
         .name(configuration.name)
         .callback(_openCallback)

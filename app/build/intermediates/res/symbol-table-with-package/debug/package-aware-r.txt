@@ -1155,6 +1155,7 @@ drawable design_ic_visibility_off
 drawable design_password_eye
 drawable design_snackbar_background
 drawable ic_add_circle_outline_black_64dp
+drawable ic_attach_money_white_24dp
 drawable ic_delete_white_24dp
 drawable ic_edit_black_24dp
 drawable ic_fab_volleyball_white_48dp
@@ -1252,6 +1253,7 @@ id action_context_bar
 id action_divider
 id action_filter
 id action_filterFragment_to_filteredListFragment
+id action_finance
 id action_image
 id action_listFragment_to_createFragment
 id action_listFragment_to_detailFragment
@@ -1649,6 +1651,7 @@ string abc_toolbar_collapse_description
 string absent_price_error
 string action_delete_label
 string action_filter_label
+string action_finance_label
 string app_name
 string appbar_scrolling_view_behavior
 string bottom_sheet_behavior

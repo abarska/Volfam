@@ -9,4 +9,11 @@
         android:orderInCategory="100"
         android:title="@string/action_delete_label" />
 
+    <item
+        android:id="@+id/action_finance"
+        app:showAsAction="ifRoom"
+        android:icon="@drawable/ic_attach_money_white_24dp"
+        android:orderInCategory="200"
+        android:title="@string/action_finance_label" />
+
 </menu>
